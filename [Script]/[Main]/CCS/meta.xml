@@ -138,8 +138,6 @@
     <include resource="CCS_locator" />
     <include resource="CCS_scoreboard" />
     <include resource="CCS_nitro" />
-    <include resource="CCS_toptimes" />
-	<include resource="CCS_topkills" />
 	<include resource="CCS_shooterkilldetection" />
 	<include resource="CCS_cptp" />
 	<include resource="CCS_carhide" />
