@@ -1,0 +1,7 @@
+<meta>
+    <info author="Bonsai" version="1.0" type="script" name="ccs_wrapper" description="Classic Cross Shooter Wrapper" showInResourceBrowser="true" />
+    <min_mta_version client="1.3.4" server="1.3.0-9.04134" />
+    <script src="wrapper_s.lua" type="server" />
+    <script src="wrapper_c.lua" type="client" cache="false" />
+	
+</meta>

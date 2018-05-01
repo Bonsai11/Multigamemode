@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC Logger" description="Logger"/>
+	<script src="logger_c.lua" type="client" cache="false"/>
+	<script src="logger_s.lua" type="server" />
+	
+</meta>

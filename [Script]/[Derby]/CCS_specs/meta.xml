@@ -1,0 +1,7 @@
+<meta>
+	<info type='script' author='Bonsai' description='DDC specs' version="1"/>
+	
+	<script src='specs_c.lua' type='client' cache='false'/>
+	<script src='specs_s.lua' />
+	
+</meta>

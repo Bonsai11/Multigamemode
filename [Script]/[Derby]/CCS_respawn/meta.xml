@@ -1,0 +1,10 @@
+<meta>
+
+	<info author="Bonsai" version="1.0" type="script" name="CCS_respawn" description="Respawn" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="respawn_c.lua" type="client" cache="false"/>
+	<script src="respawn_s.lua" type="server"/>
+	<file src="wind.mp3" />
+	<export function="export_getRecordedData" type="client" />	
+		
+</meta>

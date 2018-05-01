@@ -1,0 +1,6 @@
+<meta>
+	<info author="Bonsai" version="1.0" type="script" name="CCS_speedo" description="Speedometer" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="speedo_c.lua" type="client" cache="false"/>
+	<file src="font/rothman.ttf"/>
+</meta>

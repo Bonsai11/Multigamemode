@@ -1,0 +1,67 @@
+<catalog type="weapon">
+	<group name="Melee">		
+		<weapon price="1000" id="2" name="Golf Club" />
+		<weapon price="1000" id="3" name="Nightstick" />
+		<weapon price="1000" id="4" name="Knife" />
+		<weapon price="1000" id="5" name="Baseball Bat" />
+		<weapon price="1000" id="6" name="Shovel" />
+		<weapon price="1000" id="7" name="Pool Cue" />
+		<weapon price="1000" id="8" name="Katana" />
+		<weapon price="1000" id="9" name="Chainsaw" />
+	</group>
+	<group name="Handguns">
+		<weapon price="2500" id="22" name="Pistol" />
+		<weapon price="2500" id="23" name="Silenced Pistol" />
+		<weapon price="2500" id="24" name="Desert Eagle" />
+	</group>
+	<group name="Shotguns">
+		<weapon price="4000" id="25" name="Shotgun" />
+		<weapon price="4000" id="26" name="Sawn-Off Shotgun" />
+		<weapon price="4000" id="27" name="SPAZ-12 Combat Shotgun" />
+	</group>
+	<group name="Sub-Machine Guns">
+		<weapon price="5000" id="28" name="Uzi" />
+		<weapon price="5000" id="29" name="MP5" />
+		<weapon price="5000" id="32" name="TEC-9" />
+	</group>
+	<group name="Assault Rifles">
+		<weapon price="7000" id="30" name="AK-47" />
+		<weapon price="7000" id="31" name="M4" />
+	</group>
+	<group name="Rifles">
+		<weapon price="8000" id="33" name="Country Rifle" />
+		<weapon price="8000" id="34" name="Sniper Rifle" />
+	</group>
+	<group name="Heavy Weapons">
+		<weapon price="10000" id="35" name="Rocket Launcher" />
+		<weapon price="10000" id="36" name="Heat-Seeking RPG" />
+		<weapon price="10000" id="37" name="Flamethrower" />
+		<weapon price="20000" id="38" name="Minigun" />
+	</group>
+	<group name="Projectiles">
+		<weapon price="5000" id="16" name="Grenade" />
+		<weapon price="5000" id="17" name="Tear Gas" />
+		<weapon price="5000" id="18" name="Molotov Cocktails" />
+		<weapon price="5000" id="39" name="Satchel Charges" />
+	</group>
+	<group name="Special 1">
+		<weapon price="10000" id="41" name="Spraycan" />
+		<weapon price="10000" id="42" name="Fire Extinguisher" />
+		<weapon price="10000" id="43" name="Camera" />		
+	</group>
+	<group name="Gifts/Other">
+		<weapon price="500" id="10" name="Long Purple Dildo" />
+		<weapon price="500" id="11" name="Short tan Dildo" />
+		<weapon price="500" id="12" name="Vibrator" />			
+		<weapon price="500" id="14" name="Flowers" />
+		<weapon price="500" id="15" name="Cane" />	
+	</group>
+	<group name="Special 2">
+		<weapon price="5000" id="44" name="Night-Vision Goggles" />
+		<weapon price="5000" id="45" name="Infrared Goggles" />
+		<weapon price="5000" id="46" name="Parachute" />		
+	</group>
+	<group name="Satchel Detonator">
+		<weapon price="1000" id="40" name="Satchel Detonator" />
+	</group>		
+</catalog>	

@@ -1,0 +1,127 @@
+local localPlayer = getLocalPlayer()
+
+function startclient()
+	setSkyGradient(0 , 0 , 0 , 0 , 0 , 0)
+	local tekstura = engineLoadTXD("files/a51jdrx.txd") 
+	engineImportTXD(tekstura, 3095)
+	local tekstura1 = engineLoadTXD("files/vgsoffice1.txd") 
+	engineImportTXD(tekstura1, 8434)
+	local tekstura2 = engineLoadTXD("files/vgsn_billboard.txd") 
+	engineImportTXD(tekstura2, 7301)
+	boxobj = createObject(971, 5010.175, -1853.2252197266, 53.17, 0, 0, 0)
+	boxobj1 = createObject(971, 5019.046, -1853.234, 53.170, 0, 0, 180)
+	boxobj2 = createObject(971, 4982.647, -1931.62, 53.145, 0, 0, 135.088)
+	boxobj3 = createObject(971, 4976.414, -1925.386, 53.145, 0, 0, 314.874)
+	boxobj4 = createObject(971, 4967.703, -1900.875, 53.145, 0, 0, 89.5)
+	boxobj5 = createObject(971, 4967.791, -1892.063, 53.145, 0, 0, 269.286)
+	boxobj6 = createObject(971, 5057.563, -1895.274, 53.145, 0, 0, 269.896)
+	boxobj7 = createObject(971, 5057.542, -1904.096, 53.145, 0, 0, 89.687)
+	boxobj8 = createObject(971, 5042.393, -1864.403, 53.145, 0, 0, 315.192)
+	boxobj9 = createObject(971, 5048.632, -1870.652, 53.145, 0, 0, 134.984)
+	boxobj10 = createObject(971, 5008.762, -1898.047, 41.327, 0, 0, 90)
+	boxobj11 = createObject(971, 5013.179, -1893.65, 41.327, 0, 0, 0)
+	boxobj12 = createObject(971, 5017.574, -1898.035, 41.327, 0, 0, 90)
+	boxobj13 = createObject(971, 5013.147, -1902.439, 41.327, 0, 0, 0)
+	boxobj14 = createObject(971, 5046.272, -1927.948, 53.145, 0, 0, 223.54)
+	boxobj15 = createObject(971, 5039.902, -1934.042, 53.145, 0, 0, 43.83)
+	boxobj16 = createObject(971, 5015.078, -1942.84, 53.145, 0, 0, 180.895)
+	boxobj17 = createObject(971, 5006.281, -1943.011, 53.145, 0, 0, 1.434)
+	grav1 = createMarker(4974.033, -1857.81, 50.55, "corona", 8, 0, 0, 204, 200)
+	grav1a = createMarker(4544.023, -1075.564, 245.237, "corona", 4, 155, 100, 200, 200)
+	grav2 = createMarker(5012.31, -1842.936, 50.55, "corona", 8, 0, 0, 204, 200)
+	grav2a = createMarker(5067.169, -808.416, 113.866, "corona", 4, 81, 223, 31, 200)
+	grav3 = createMarker(5052.139, -1858.598, 50.55, "corona", 8, 0, 0, 204, 200)
+	grav3a = createMarker(5478.053, -905.408, 2.281, "corona", 4, 81, 223, 31, 200)
+	grav4 = createMarker(5067.342, -1898.056, 50.55, "corona", 8, 0, 0, 204, 200)
+	grav4a = createMarker(7743.076, -1873.369, 46.777, "corona", 4, 81, 223, 31, 200)
+	grav5 = createMarker(5051.524, -1936.013, 50.55, "corona", 8, 255, 0, 0, 200)
+	grav5a = createMarker(3390.563, 1731.956, 53.539, "corona", 8, 81, 223, 31, 200)
+	grav6 = createMarker(5012.771, -1953.454, 50.55, "corona", 8, 255, 0, 0, 200)
+	grav6a = createMarker(608.247, -3032.164, 670.486, "corona", 4, 200, 50, 100, 200)
+	grav7 = createMarker(4973.045, -1937.823, 50.55, "corona", 8, 255, 0, 0, 200)
+	grav7a = createMarker(-292.942, -3665.739, 45.304, "corona", 8, 81, 223, 31, 200)
+	grav8 = createMarker(4957.057, -1897.882, 50.55, "corona", 8, 255, 0, 0, 200)
+	grav8a = createMarker(3831.716, -1998.715, 46.626, "corona", 4, 81, 223, 31, 200)
+	addEventHandler("onClientMarkerHit", resourceRoot, warp)
+end
+
+function warp(player)
+
+	if player~=localPlayer then
+		if source==grav8a then
+			moveObject(boxobj10, 6000, 5008.762, -1898.047, 53.108)
+			moveObject(boxobj11, 6000, 5013.179, -1893.65, 53.108)
+			moveObject(boxobj12, 6000, 5017.574, -1898.035, 53.108)
+			moveObject(boxobj13, 6000, 5013.147, -1902.439, 53.108)
+		end
+		return
+	end
+	if isPedInVehicle(localPlayer) then
+		local vehicle=getPedOccupiedVehicle(localPlayer)
+		setVehicleFrozen(vehicle, true)
+		playSound("files/warp.mp3")
+		if source~=grav5 then setTimer(setVehicleFrozen, 750, 1, vehicle, false) end
+		if source==grav1 then
+			setElementPosition(vehicle, 4540.732, -1288.828, 238.627)
+		elseif source==grav1a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, 0)
+			moveObject(boxobj, 3000, 5010.175,-1853.225, 41.327)
+			moveObject(boxobj1, 3000, 5019.046,-1853.225, 41.327)
+		elseif source==grav2 then
+			setElementPosition(vehicle, 5066.782, -1230.15, 70.881)
+		elseif source==grav2a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, -45)
+			moveObject(boxobj8, 3000, 5042.393, -1864.403, 41.327)
+			moveObject(boxobj9, 3000, 5048.632, -1870.652, 41.327)
+		elseif source==grav3 then
+			setElementPosition(vehicle, 5704.286, -933.202, 2.391)
+			setElementRotation(vehicle, 0, 0, 100)
+		elseif source==grav3a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, -90)
+			moveObject(boxobj6, 3000, 5057.563, -1895.274, 41.327)
+			moveObject(boxobj7, 3000, 5057.542, -1904.096, 41.327)
+		elseif source==grav4 then
+			setElementPosition(vehicle, 7707.915, -1893.286, 46.558)
+		elseif source==grav4a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, -135)
+			moveObject(boxobj14, 3000, 5046.272, -1927.948, 41.327)
+			moveObject(boxobj15, 3000, 5039.902, -1934.042, 41.327)
+		elseif source==grav5 then
+			setTimer(setVehicleFrozen, 600, 1, vehicle, false)
+			setElementPosition(vehicle, 3016.373, 1896.37, 3.76)
+		elseif source==grav5a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, -180)
+			moveObject(boxobj16, 3000, 5015.078, -1942.84, 41.327)
+			moveObject(boxobj17, 3000, 5006.281, -1943.011, 41.327)
+		elseif source==grav6 then
+			setElementPosition(vehicle, 328.119, -3056.395, 629.35)
+		elseif source==grav6a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, -225)
+			moveObject(boxobj2, 3000, 4982.647, -1931.62, 41.327)
+			moveObject(boxobj3, 3000, 4976.414, -1925.386, 41.327)
+		elseif source==grav7 then
+			setElementRotation(vehicle, 0, 0, 180)
+			setElementPosition(vehicle, -382.799, -3250.597, 5.272)
+		elseif source==grav7a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 50.286)
+			setElementRotation(vehicle, 0, 0, -270)
+			moveObject(boxobj4, 3000, 4967.703, -1900.875, 41.327)
+			moveObject(boxobj5, 3000, 4967.791, -1892.063, 41.327)
+		elseif source==grav8 then
+			setElementPosition(vehicle, 4038.591, -1869.676, 4.691)
+		elseif source==grav8a then
+			setElementPosition(vehicle, 5013.247, -1897.528, 110.939)
+			moveObject(boxobj10, 3000, 5008.762, -1898.047, 53.108)
+			moveObject(boxobj11, 3000, 5013.179, -1893.65, 53.108)
+			moveObject(boxobj12, 3000, 5017.574, -1898.035, 53.108)
+			moveObject(boxobj13, 3000, 5013.147, -1902.439, 53.108)
+		end
+	end
+end
+addEventHandler("onClientResourceStart", resourceRoot, startclient)

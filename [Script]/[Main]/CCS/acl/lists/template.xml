@@ -1,0 +1,78 @@
+<acl>
+    <group name="1">
+		<acl name="1"></acl>
+	</group>
+    <group name="2">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+	</group>
+    <group name="3">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+	</group>
+    <group name="4">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+	</group>
+    <group name="5">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+		<acl name="5"></acl>
+	</group>
+    <group name="6">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+		<acl name="5"></acl>
+		<acl name="6"></acl>
+	</group>
+    <group name="7">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+		<acl name="5"></acl>
+		<acl name="6"></acl>	
+		<acl name="7"></acl>
+	</group>
+    <group name="8">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+		<acl name="5"></acl>
+		<acl name="6"></acl>	
+		<acl name="7"></acl>
+		<acl name="8"></acl>
+	</group>
+    <group name="9">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+		<acl name="5"></acl>
+		<acl name="6"></acl>	
+		<acl name="7"></acl>
+		<acl name="8"></acl>
+		<acl name="9"></acl>
+	</group>
+    <group name="10">
+		<acl name="1"></acl>
+		<acl name="2"></acl>
+		<acl name="3"></acl>
+		<acl name="4"></acl>
+		<acl name="A"></acl>
+		<acl name="5"></acl>
+		<acl name="6"></acl>	
+		<acl name="7"></acl>
+		<acl name="8"></acl>
+		<acl name="9"></acl>
+		<acl name="10"></acl>
+	</group>
+</acl>

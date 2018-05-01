@@ -1,0 +1,6 @@
+<meta>
+	<info author="Bonsai" version="1.0" type="script" name="CCS_topkills" description="Top Kills" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="topkills_s.lua" type="server" />
+	<script src="topkills_c.lua" type="client" cache="false"/>
+</meta>

@@ -1,0 +1,217 @@
+<catalog type="vehicle">
+	<group name="Aircraft">
+		<vehicle price="50000" id="548" name="Cargobob" />
+		<vehicle price="50000" id="417" name="Leviathan" />
+		<vehicle price="50000" id="487" name="Maverick" />
+		<vehicle price="50000" id="488" name="News Chopper" />
+		<vehicle price="50000" id="497" name="Police Maverick" />
+		<vehicle price="50000" id="563" name="Raindance" />
+		<vehicle price="200000" id="447" name="Seasparrow" />
+		<vehicle price="50000" id="469" name="Sparrow" />
+		<vehicle price="50000" id="592" name="Andromada" />
+		<vehicle price="50000" id="577" name="AT-400" />
+		<vehicle price="50000" id="511" name="Beagle" />
+		<vehicle price="50000" id="512" name="Cropduster" />
+		<vehicle price="50000" id="593" name="Dodo" />
+		<vehicle price="500000" id="520" name="Hydra" />
+		<vehicle price="50000" id="553" name="Nevada" />
+		<vehicle price="50000" id="476" name="Rustler" />
+		<vehicle price="50000" id="519" name="Shamal" />
+		<vehicle price="50000" id="460" name="Skimmer" />
+		<vehicle price="50000" id="513" name="Stuntplane" />
+	</group>
+	<group name="Bikes">
+		<vehicle price="5000" id="581" name="BF-400" />
+		<vehicle price="5000" id="462" name="Faggio" />
+		<vehicle price="5000" id="521" name="FCR-900" />
+		<vehicle price="5000" id="463" name="Freeway" />
+		<vehicle price="5000" id="523" name="HPV1000" />
+		<vehicle price="5000" id="522" name="NRG-500" />
+		<vehicle price="5000" id="461" name="PCJ-600" />
+		<vehicle price="5000" id="448" name="Pizza Boy" />
+		<vehicle price="5000" id="468" name="Sanchez" />
+		<vehicle price="5000" id="586" name="Wayfarer" />
+		<vehicle price="5000" id="471" name="Quadbike" />
+		<vehicle price="5000" id="509" name="Bike" />
+		<vehicle price="5000" id="481" name="BMX" />
+		<vehicle price="5000" id="510" name="Mountain bike" />
+	</group>
+	<group name="Cars">
+		<vehicle price="20000" id="602" name="Alpha" />
+		<vehicle price="20000" id="429" name="Banshee" />
+		<vehicle price="20000" id="402" name="Buffalo" />
+		<vehicle price="20000" id="541" name="Bullet" />
+		<vehicle price="20000" id="415" name="Cheetah" />
+		<vehicle price="20000" id="480" name="Comet" />
+		<vehicle price="20000" id="562" name="Elegy" />
+		<vehicle price="20000" id="587" name="Euros" />
+		<vehicle price="20000" id="565" name="Flash" />
+		<vehicle price="20000" id="411" name="Infernus" />
+		<vehicle price="20000" id="559" name="Jester" />
+		<vehicle price="20000" id="603" name="Phoenix" />
+		<vehicle price="20000" id="560" name="Sultan" />
+		<vehicle price="20000" id="506" name="Super GT" />
+		<vehicle price="20000" id="451" name="Turismo" />
+		<vehicle price="20000" id="558" name="Uranus" />
+		<vehicle price="20000" id="555" name="Windsor" />
+		<vehicle price="20000" id="477" name="ZR-350" />
+		<vehicle price="20000" id="536" name="Blade" />
+		<vehicle price="20000" id="575" name="Broadway" />
+		<vehicle price="20000" id="518" name="Buccaneer" />
+		<vehicle price="20000" id="419" name="Esperanto" />
+		<vehicle price="20000" id="534" name="Remington" />
+		<vehicle price="20000" id="567" name="Savanna" />
+		<vehicle price="20000" id="535" name="Slamvan" />
+		<vehicle price="20000" id="576" name="Tornado" />
+		<vehicle price="20000" id="412" name="Voodoo" />
+		<vehicle price="20000" id="496" name="Blista Compact" />
+		<vehicle price="20000" id="401" name="Bravura" />
+		<vehicle price="20000" id="527" name="Cadrona" />
+		<vehicle price="20000" id="542" name="Clover" />
+		<vehicle price="20000" id="533" name="Feltzer" />
+		<vehicle price="20000" id="526" name="Fortune" />
+		<vehicle price="20000" id="474" name="Hermes" />
+		<vehicle price="20000" id="545" name="Hustler" />
+		<vehicle price="20000" id="517" name="Majestic" />
+		<vehicle price="20000" id="410" name="Manana" />
+		<vehicle price="20000" id="436" name="Previon" />
+		<vehicle price="20000" id="475" name="Sabre" />
+		<vehicle price="20000" id="439" name="Stallion" />
+		<vehicle price="20000" id="549" name="Tampa" />
+		<vehicle price="20000" id="491" name="Virgo" />
+		<vehicle price="20000" id="445" name="Admiral" />
+		<vehicle price="20000" id="438" name="Cabbie" />
+		<vehicle price="20000" id="507" name="Elegant" />
+		<vehicle price="20000" id="585" name="Emperor" />
+		<vehicle price="20000" id="466" name="Glendale" />
+		<vehicle price="20000" id="492" name="Greenwood" />
+		<vehicle price="20000" id="546" name="Intruder" />
+		<vehicle price="20000" id="551" name="Merit" />
+		<vehicle price="20000" id="516" name="Nebula" />
+		<vehicle price="20000" id="467" name="Oceanic" />
+		<vehicle price="20000" id="426" name="Premier" />
+		<vehicle price="20000" id="547" name="Primo" />
+		<vehicle price="20000" id="405" name="Sentinel" />
+		<vehicle price="20000" id="580" name="Stafford" />
+		<vehicle price="20000" id="409" name="Stretch" />
+		<vehicle price="20000" id="550" name="Sunrise" />
+		<vehicle price="20000" id="566" name="Tahoma" />
+		<vehicle price="20000" id="420" name="Taxi" />
+		<vehicle price="20000" id="540" name="Vincent" />
+		<vehicle price="20000" id="421" name="Washington" />
+		<vehicle price="20000" id="529" name="Willard" />
+	</group>
+	<group name="Heavy Vehicles">
+		<vehicle price="50000" id="416" name="Ambulance" />
+		<vehicle price="50000" id="433" name="Barracks" />
+		<vehicle price="50000" id="427" name="Enforcer" />
+		<vehicle price="50000" id="490" name="FBI rancher" />
+		<vehicle price="50000" id="528" name="FBI truck" />
+		<vehicle price="50000" id="407" name="Fire truck" />
+		<vehicle price="50000" id="544" name="Fire truck (ladder)" />
+		<vehicle price="50000" id="596" name="Police car (LS)" />
+		<vehicle price="50000" id="598" name="Police car (LV)" />
+		<vehicle price="50000" id="597" name="Police car (SF)" />
+		<vehicle price="50000" id="599" name="Police ranger" />
+		<vehicle price="50000" id="601" name="S.W.A.T." />
+		<vehicle price="50000" id="524" name="Cement truck" />
+		<vehicle price="50000" id="578" name="DFT-30" />
+		<vehicle price="50000" id="486" name="Dozer" />
+		<vehicle price="50000" id="406" name="Dumper" />
+		<vehicle price="50000" id="573" name="Dune" />
+		<vehicle price="50000" id="455" name="Flatbed" />
+		<vehicle price="50000" id="530" name="Forklift" />
+		<vehicle price="50000" id="403" name="Linerunner" />
+		<vehicle price="50000" id="443" name="Packer" />
+		<vehicle price="50000" id="515" name="Roadtrain" />
+		<vehicle price="50000" id="574" name="Sweeper" />
+		<vehicle price="50000" id="514" name="Tanker" />
+		<vehicle price="50000" id="525" name="Towtruck" />
+		<vehicle price="50000" id="408" name="Trashmaster" />
+		<vehicle price="50000" id="552" name="Utility van" />
+		<vehicle price="50000" id="606" name="Baggage trailer (covered)" />
+		<vehicle price="50000" id="607" name="Baggage trailer (Uncovered)" />
+		<vehicle price="50000" id="610" name="Farm trailer" />
+		<vehicle price="50000" id="537" name="Freight train" />
+		<vehicle price="50000" id="590" name="Freight train boxcar" />
+		<vehicle price="50000" id="569" name="Freight train flatbed" />
+		<vehicle price="50000" id="611" name="Street Clean trailer" />
+		<vehicle price="50000" id="584" name="Gas trailer" />
+		<vehicle price="50000" id="608" name="Trailer 1" />
+		<vehicle price="50000" id="435" name="Trailer 2" />
+		<vehicle price="50000" id="450" name="Trailer 3" />
+		<vehicle price="50000" id="591" name="Trailer 4" />
+		<vehicle price="50000" id="499" name="Benson" />
+		<vehicle price="50000" id="609" name="Black Boxville" />
+		<vehicle price="50000" id="422" name="Bobcat" />
+		<vehicle price="50000" id="498" name="Boxville" />
+		<vehicle price="50000" id="414" name="Mule" />
+		<vehicle price="50000" id="600" name="Picador" />
+		<vehicle price="50000" id="543" name="Sadler" />
+		<vehicle price="50000" id="428" name="Securicar" />
+		<vehicle price="50000" id="478" name="Walton" />
+		<vehicle price="50000" id="456" name="Yankee" />
+		<vehicle price="50000" id="554" name="Yosemite" />
+		<vehicle price="50000" id="459" name="Berkley's RC van" />
+		<vehicle price="50000" id="482" name="Burrito" />
+		<vehicle price="50000" id="483" name="Camper" />
+		<vehicle price="50000" id="508" name="Journey" />
+		<vehicle price="50000" id="418" name="Moonbeam" />
+		<vehicle price="50000" id="582" name="News van" />
+		<vehicle price="50000" id="413" name="Pony" />
+		<vehicle price="50000" id="440" name="Rumpo" />
+	</group>
+	<group name="Misc">
+		<vehicle price="200000" id="472" name="Coastguard" />
+		<vehicle price="10000" id="473" name="Dinghy" />
+		<vehicle price="10000" id="493" name="Jetmax" />
+		<vehicle price="10000" id="595" name="Launch" />
+		<vehicle price="10000" id="484" name="Marquis" />
+		<vehicle price="200000" id="430" name="Predator" />
+		<vehicle price="10000" id="453" name="Reefer" />
+		<vehicle price="10000" id="452" name="Speeder" />
+		<vehicle price="10000" id="446" name="Squalo" />
+		<vehicle price="10000" id="454" name="Tropic" />
+		<vehicle price="50000" id="485" name="Baggage" />
+		<vehicle price="20000" id="568" name="Bandito" />
+		<vehicle price="20000" id="424" name="BF Injection" />
+		<vehicle price="20000" id="504" name="Bloodring Banger" />
+		<vehicle price="20000" id="538" name="Brownstreak Engine" />
+		<vehicle price="20000" id="431" name="Bus" />
+		<vehicle price="20000" id="457" name="Caddy" />
+		<vehicle price="20000" id="437" name="Coach" />
+		<vehicle price="20000" id="532" name="Combine harvester" />
+		<vehicle price="20000" id="588" name="Hotdog" />
+		<vehicle price="20000" id="434" name="Hotknife" />
+		<vehicle price="20000" id="494" name="Hotring racer" />
+		<vehicle price="20000" id="502" name="Hotring racer 2" />
+		<vehicle price="20000" id="503" name="Hotring racer 3" />
+		<vehicle price="20000" id="444" name="Monster" />
+		<vehicle price="20000" id="556" name="Monster 2" />
+		<vehicle price="20000" id="557" name="Monster 3" />
+		<vehicle price="20000" id="572" name="Mower" />
+		<vehicle price="20000" id="423" name="Mr. Whoopee" />
+		<vehicle price="20000" id="571" name="Kart" />
+		<vehicle price="20000" id="531" name="Tractor" />
+		<vehicle price="20000" id="449" name="Trolly" />
+		<vehicle price="20000" id="583" name="Tug" />
+		<vehicle price="20000" id="539" name="Vortex" />
+		<vehicle price="20000" id="441" name="RC Bandit" />
+		<vehicle price="20000" id="594" name="RC Flower Pot" />
+		<vehicle price="20000" id="501" name="RC Goblin" />
+		<vehicle price="20000" id="465" name="RC Raider" />
+		<vehicle price="20000" id="564" name="RC Tiger" />
+		<vehicle price="20000" id="589" name="Club" />
+		<vehicle price="20000" id="579" name="Huntley" />
+		<vehicle price="20000" id="400" name="Landstalker" />
+		<vehicle price="20000" id="500" name="Mesa" />
+		<vehicle price="20000" id="470" name="Patriot" />
+		<vehicle price="20000" id="404" name="Perennial" />
+		<vehicle price="20000" id="489" name="Rancher" />
+		<vehicle price="20000" id="479" name="Regina" />
+		<vehicle price="20000" id="442" name="Romero" />
+		<vehicle price="20000" id="495" name="Sandking" />
+		<vehicle price="20000" id="458" name="Solair" />
+		<vehicle price="20000" id="561" name="Stratum" />
+	</group>
+</catalog>

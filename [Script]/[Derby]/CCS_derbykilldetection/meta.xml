@@ -1,0 +1,8 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC Derby Killdetection" description="DDC Derby Killdetection"/>
+	<script src="killdetection_c.lua" type="client" cache="false"/>
+	<script src="killdetection_s.lua" type="server" />
+	<oop>true</oop>
+	
+</meta>

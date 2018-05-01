@@ -1,0 +1,6 @@
+<meta>
+	<info author="Bonsai" version="1.0" type="script" name="CCS_autoteam" description="Autoteam" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="autoteam_c.lua" type="client" cache="false"/>
+	<script src="autoteam_s.lua" type="server"/>
+</meta>

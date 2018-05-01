@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC Antispawnkill" description="Antispawnkill"/>
+	<script src="antispawnkill_c.lua" type="client" cache="false"/>
+	<script src="antispawnkill_s.lua" type="server" />
+	
+</meta>

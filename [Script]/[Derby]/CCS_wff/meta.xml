@@ -1,0 +1,6 @@
+<meta>
+	<info name="WFF" author="Bonsai" description="CCS wff" version="1" type="script" />
+	<script src="wff_c.lua" type="client" cache="false"/>
+	<script src="wff_s.lua" />
+	<file src="img/rip.png" />
+</meta>

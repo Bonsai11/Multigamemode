@@ -1,0 +1,90 @@
+<acl>
+	<acl name="1">
+		<right name="command.gm" normal="true" private="true"></right>
+        <right name="command.qm" normal="true" private="true"></right>
+        <right name="command.mute" normal="true" private="true"></right>
+        <right name="command.gmute" normal="true" private="false"></right>
+		<right name="command.lmute" normal="true" private="true"></right>
+    </acl>
+    <acl name="2">
+        <right name="command.srl" normal="true" private="true"></right>
+        <right name="command.boom" normal="true" private="true"></right>
+    </acl>
+    <acl name="3">
+        <right name="command.count" normal="true" private="true"></right>
+		<right name="command.c" normal="true" private="true"></right>
+		<right name="command.lobby" normal="true" private="true"></right>
+    </acl>
+    <acl name="4">
+        <right name="command.kick" normal="true" private="false"></right>
+    </acl>
+    <acl name="5">
+		<right name="command.ban" normal="true" private="true"></right>
+        <right name="command.unban" normal="true" private="true"></right>
+		<right name="command.reloadbanlist" normal="true" private="true"></right>
+		<right name="command.spectate" normal="true" private="true"></right>
+    </acl>
+    <acl name="6">
+		<right name="command.random" normal="true" private="true"></right>
+    </acl>
+    <acl name="7">
+        <right name="command.redo" normal="true" private="true"></right>
+        <right name="command.nextmap" normal="true" private="true"></right>
+		<right name="command.force" normal="true" private="true"></right>
+		<right name="command.run" normal="true" private="true"></right>
+		<right name="command.again" normal="true" private="true"></right>
+		<right name="command.nm" normal="true" private="true"></right>
+        <right name="command.goto" normal="true" private="true"></right>
+        <right name="command.cancel" normal="true" private="true"></right>
+		<right name="command.cancelall" normal="true" private="true"></right>
+		<right name="command.hidenicks" normal="true" private="true"></right>
+		<right name="command.silence" normal="true" private="true"></right>
+        <right name="command.smash" normal="true" private="true"></right>
+		<right name="command.push" normal="true" private="true"></right>
+		<right name="command.speed" normal="true" private="true"></right>
+		<right name="command.slow" normal="true" private="true"></right>
+    </acl>
+    <acl name="8">
+        <right name="command.fix" normal="true" private="true"></right>
+        <right name="command.nos" normal="true" private="true"></right>
+        <right name="command.here" normal="true" private="true"></right>
+        <right name="command.warp" normal="true" private="true"></right>
+		<right name="command.boomall" normal="true" private="true"></right>
+		<right name="command.fixall" normal="true" private="true"></right>
+		<right name="command.nosall" normal="true" private="true"></right>
+        <right name="command.setlevel" normal="true" private="true"></right>
+		<right name="command.setarenapassword" normal="true" private="true"></right>
+		<right name="command.setarenamode" normal="true" private="true"></right>
+		<right name="command.setarenadetector" normal="true" private="true"></right>
+		<right name="command.setarenaping" normal="true" private="true"></right>
+		<right name="command.setarenafps" normal="true" private="true"></right>
+		<right name="command.setarenacptp" normal="true" private="true"></right>
+		<right name="command.setarenawff" normal="true" private="true"></right>
+		<right name="command.setarenarewind" normal="true" private="true"></right>
+		<right name="command.setarenaspectators" normal="true" private="true"></right>
+		<right name="command.adminpanel" normal="true" private="true"></right>
+		<right name="command.dannounce" normal="true" private="true"></right>
+		<right name="command.sannounce" normal="true" private="true"></right>
+		<right name="command.rannounce" normal="true" private="true"></right>
+		<right name="command.skipsong" normal="true" private="false"></right>
+		<right name="command.setarenavehiclecolor" normal="true" private="true"></right>
+		<right name="command.resetarenavehiclecolor" normal="true" private="true"></right>
+		<right name="command.removerepairs" normal="true" private="true"></right>
+		<right name="command.removeobjects" normal="true" private="true"></right>
+		<right name="command.tank" normal="false" private="true"></right>
+		<right name="command.bantt" normal="true" private="false"></right>
+    </acl>
+    <acl name="9">
+        <right name="command.deletetime" normal="true" private="false"></right>
+		<right name="command.deletekill" normal="true" private="false"></right>
+    </acl>
+    <acl name="10">
+		<right name="command.skick" normal="true" private="false"></right>
+		<right name="command.reloadacls" normal="true" private="false"></right>
+		<right name="command.reloadcommandlist" normal="true" private="false"></right>
+		<right name="command.lobbyall" normal="true" private="false"></right>
+		<right name="command.getarenapassword" normal="true" private="false"></right>
+		<right name="command.newchallenge" normal="true" private="false"></right>
+    </acl>
+	
+</acl>	

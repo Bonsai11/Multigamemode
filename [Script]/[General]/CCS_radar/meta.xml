@@ -1,0 +1,10 @@
+<meta>
+	<info author="Bonsai" version="1.0" type="script" name="CCS_radar" description="Radar" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="radar_c.lua" type="client" cache="false"/>
+	<file src="img/blip.png" />
+	<file src="img/map.png" />
+	<file src="img/blipNormal.png" />
+	<file src="img/blipUp.png" />
+	<file src="img/blipDown.png" />
+</meta>

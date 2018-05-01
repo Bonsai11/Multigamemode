@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="1" type="script" name="DDC Glue" description="Glue"/>
+	<script src="glue_c.lua" type="client" cache="false"/>
+	<script src="glue_s.lua" type="server" />
+	
+</meta>

@@ -1,0 +1,8 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC Ghost" description="Ghost"/>
+	<min_mta_version client="1.4" server="1.4" />
+	<script src="ghost_c.lua" type="client" cache="false"/>
+	<script src="ghost_s.lua" type="server" />
+	
+</meta>

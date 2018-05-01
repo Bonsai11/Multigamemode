@@ -1,0 +1,6 @@
+<meta>
+	<info author="AirNab" version="1.0" type="script" name="CCS_panel" description="Admin Panel" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="panel_c.lua" type="client" cache="false"/>
+	<script src="panel_s.lua" type="server" />
+</meta>

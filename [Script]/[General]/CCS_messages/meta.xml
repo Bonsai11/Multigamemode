@@ -1,0 +1,5 @@
+<meta>
+	<info author="Bonsai" version="1.0" type="script" name="Messages" description="Messages" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="messages_c.lua" type="client" cache="false"/>
+</meta>

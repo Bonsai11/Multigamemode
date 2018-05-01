@@ -1,0 +1,16 @@
+<meta>
+
+	<info author="Bonsai" version="1.0" type="script" name="CCS_notifications" description="Notification" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="notification_c.lua" type="client" cache="false"/>
+	
+	<file src="img/information.png" />	
+	<file src="img/warning.png" />	
+	<file src="img/success.png" />	
+	<file src="img/error.png" />	
+	<file src="sound/error.mp3" />		
+	<file src="sound/notify.mp3" />		
+	
+	<export function="export_showNotification" type="client" />	
+	
+</meta>

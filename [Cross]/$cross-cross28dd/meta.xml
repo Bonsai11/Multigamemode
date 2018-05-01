@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-16" ?>
+<meta>
+    <info type="map" gamemodes="race" name="Cross 28 DD" author="Unknown" />
+    <map src="Cross 28 DD.map" />
+    <settings>
+        <setting name="#weather" value="2" />
+        <setting name="#respawn" value="none" />
+        <setting name="#respawntime" value="5" />
+    </settings>
+</meta>

@@ -1,0 +1,6 @@
+<meta>
+	<info author="Bonsai" version="1.0" type="script" name="CCS_antispam" description="Antispam" showInResourceBrowser="true"/>
+	<min_mta_version client="1.3.5" server="1.3.0-9.04134" />
+	<script src="antispam_c.lua" type="client" cache="false"/>
+	<script src="antispam_s.lua" type="server"/>
+</meta>

@@ -1,0 +1,23 @@
+<meta>
+    <file src="files/a51jdrx.txd" />
+    <file src="files/vgsoffice1.txd" />
+    <file src="files/warp.mp3" />
+    <file src="files/vgsn_billboard.txd" />
+    <script src="client.lua" type="client" />
+    <script src="server.lua" type="client" />
+    <info gamemodes="race" type="map" name="8 Portal" author="Bonsai" version="1.0.0" />
+    <map src="8 Portal.map" dimension="0" />
+    <settings>
+        <setting name="#gamespeed" value="[ 1 ]" />
+        <setting name="#vehicleweapons" value='[ &quot;true&quot; ]' />
+        <setting name="#ghostmode" value='[ &quot;true&quot; ]' />
+        <setting name="#time" value="12:0" />
+        <setting name="#minplayers" value="[ 0 ]" />
+        <setting name="#weather" value="[ 0 ]" />
+        <setting name="#gravity" value="[ 0.008000 ]" />
+        <setting name="#waveheight" value="[ 0 ]" />
+        <setting name="#locked_time" value="[ false ]" />
+        <setting name="#duration" value="[ 2500 ]" />
+        <setting name="#respawn" value='[ &quot;none&quot; ]' />
+    </settings>
+</meta>
