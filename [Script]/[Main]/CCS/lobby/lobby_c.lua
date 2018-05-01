@@ -151,7 +151,7 @@ function Login.start()
 	Login.lobby.loginWindow.setVisible(true)
 	Login.loadPassword()
 	
-	triggerServerEvent("onChallengeRequestInfo", localPlayer)
+	--triggerServerEvent("onChallengeRequestInfo", localPlayer)
 
 end
 addEventHandler("onClientResourceStart", resourceRoot, Login.start)
@@ -1084,7 +1084,7 @@ function Login.loginResponse(code, remember_me, username, password)
 	if code == 3 then
 		
 		Login.savePassword(remember_me, username, password)
-		triggerServerEvent("onPlayerLoggedIn", localPlayer)
+		--triggerServerEvent("onPlayerLoggedIn", localPlayer)
 		Login.login.success()
 		return
 		
