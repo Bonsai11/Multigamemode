@@ -13,6 +13,14 @@ All other resources are optional and not needed, yet they offer a better experie
 <br/>
 <br/>
 
+**Setup**  
+Copy all the directories into your /resources folder of your MTA server.  
+Replace your servers ACL file with the ACL file provided.  
+Edit your mtaserver.conf file to automatically start the "CCS" resource.  
+<br/>
+# Screenshots 
+<br/>
+
 **Login Screen:**
 
 ![](https://i.imgur.com/ztyZ6bX.jpg)
