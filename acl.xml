@@ -11,7 +11,7 @@
         <acl name="Resources"></acl>
         <object name="resource.CCS"></object>
         <object name="resource.CCS_wrapper"></object>
-        <object name="resource.CCS_checkers"></object>
+        <object name="resource.CCS_antispam"></object>
     </group>
     <group name="Console">
         <acl name="Console"></acl>
