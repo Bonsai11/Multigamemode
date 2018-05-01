@@ -138,17 +138,10 @@
     <include resource="CCS_locator" />
     <include resource="CCS_scoreboard" />
     <include resource="CCS_nitro" />
-    <include resource="CCS_reactiontest" />
-	<include resource="CCS_database" />
     <include resource="CCS_toptimes" />
 	<include resource="CCS_topkills" />
-	<include resource="CCS_stats" />
-	<include resource="CCS_userpanel" />
-	<include resource="CCS_clanpack" />
 	<include resource="CCS_shooterkilldetection" />
-	<include resource="CCS_funcommands" />
 	<include resource="CCS_cptp" />
-	<include resource="CCS_gametime" />
 	<include resource="CCS_carhide" />
 	<include resource="CCS_pingchecker" />	
 	<include resource="CCS_fpschecker" />	
@@ -162,7 +155,6 @@
 	<include resource="CCS_wff" />
 	<include resource="CCS_freecam" />
 	<include resource="CCS_panel" />
-	<include resource="CCS_srl" />
 	<include resource="CCS_antimegajump" />
 	<include resource="CCS_glue" />
 	<include resource="CCS_autoteam" />
@@ -170,10 +162,8 @@
 	<include resource="CCS_antimod" />
 	<include resource="CCS_derbykilldetection" />
 	<include resource="CCS_skip" />
-	<include resource="CCS_challenge" />
 	<include resource="CCS_ghost" />
 	<include resource="CCS_joinquit" />
-	<include resource="CCS_events" />
 	
 	<!--FILES-->
 	<file src="img/white.png" />	
