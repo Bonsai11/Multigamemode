@@ -21,6 +21,10 @@ All other resources are optional and not needed, yet they offer a better experie
 
 ![](https://i.imgur.com/mql3HTm.jpg)
 
+**Lobby on 4/3 resolution:**
+
+![](https://i.imgur.com/KrcOjkE.jpg)
+
 **Create Arena Window:**
 
 ![](https://i.imgur.com/qZJA7mz.jpg)
