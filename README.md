@@ -1,10 +1,10 @@
 # Multigamemode
 
 This project includes the two main resources:
-- **CSS**
+- **CCS**
 
 _This resources handles everything that is essential to be able to play, Lobby, Arenas, ACLs, Map loading and more._
-- **CSS_wrapper**
+- **CCS_wrapper**
 
 _This resources handles the loading of map scripts. Only clientside scripts are supported._
 
