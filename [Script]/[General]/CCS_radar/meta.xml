@@ -7,4 +7,7 @@
 	<file src="img/blipNormal.png" />
 	<file src="img/blipUp.png" />
 	<file src="img/blipDown.png" />
+	<file src="img/hud_mask.fx" />
+	<file src="img/circle_mask.png" />
+	<file src="img/tex_matrix.fx" />
 </meta>

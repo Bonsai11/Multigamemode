@@ -24,6 +24,8 @@ function Freeroam.load()
 	
 	triggerEvent("onStartNewMap", source, MapManager.getRandomArenaMap("Freeroam"), false)
 
+	setElementData(source, "state", "In Progress")
+
 end
 addEvent("onSetUpFreeroamDefinitions", true)
 addEventHandler("onSetUpFreeroamDefinitions", root, Freeroam.load)
@@ -43,6 +45,8 @@ function Freeroam.unload()
 	removeEventHandler("changeAnim", source, changeAnim)
 	removeEventHandler("onPlayerLeaveArena", source, Freeroam.quit)
 	removeEventHandler("onPlayerRequestSpawn", source, Freeroam.spawn)
+	
+	setElementData(source, "state", "End")
 	
 	for i, vehicle in ipairs(Freeroam.createdVehicles[source]) do 
 	
@@ -77,6 +81,13 @@ function Freeroam.spawn()
 	local arenaElement = getElementParent(source)
 
 	triggerClientEvent(source, "onClientPlayerReady", arenaElement, false, false)	
+
+	if getElementData(source, "Spectator") then
+
+		triggerClientEvent(source, "onClientRequestSpectatorMode", source, true)
+		return
+
+	end
 
 	spawnPlayer(source, 2485, -1670, 13, 0, 0, 0, getElementDimension(arenaElement))
 	setElementFrozen(source, false)

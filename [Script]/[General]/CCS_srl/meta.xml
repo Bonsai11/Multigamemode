@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC SRL" description="SRL"/>
+	<script src="srl_c.lua" type="client" cache="false"/>
+	<script src="srl_s.lua" type="server" />
+	
+</meta>

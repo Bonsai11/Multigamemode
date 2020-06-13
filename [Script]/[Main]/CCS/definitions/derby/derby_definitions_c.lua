@@ -21,6 +21,7 @@ function Derby.load()
 	addEventHandler("onClientPlayerWin", root, Derby.winScreen)
 	addEventHandler("onClientVoteStart", root, Derby.clear)
 	addEventHandler("onClientMapStart", root, Derby.mapStart)
+	addEventHandler("onClientPreMapEnd", root, Derby.preMapEnd)
 	
 end
 addEvent("onClientSetUpDerbyDefinitions", true)
@@ -43,6 +44,14 @@ function Derby.unload()
 	removeEventHandler("onClientMapStart", root, Derby.mapStart)
 	removeEventHandler('onClientElementStreamIn', root, Derby.handleGhostMode)
 	removeEventHandler('onClientElementDataChange', root, Derby.handleGhostModeChange)
+	removeEventHandler("onClientPreMapEnd", root, Derby.preMapEnd)	
+	
+	if Derby.loadingScreen then 
+	
+		Derby.loadingScreen:destroy()
+		Derby.loadingScreen = nil
+		
+	end
 	
 end
 addEvent("onClientSetDownDerbyDefinitions", true)
@@ -99,6 +108,13 @@ function Derby.reset()
 		
 	end
 	
+	if Derby.mapEndCountDown then
+	
+		Derby.mapEndCountDown:destroy()
+		Derby.mapEndCountDown = nil
+		
+	end
+	
 	if isTimer(Derby.rankTimer) then killTimer(Derby.rankTimer) end
 	if isTimer(Derby.setupRespawnTimer) then killTimer(Derby.setupRespawnTimer) end
 	if isElement(Derby.winSound) then destroyElement(Derby.winSound) end
@@ -121,7 +137,7 @@ addEvent("onClientArenaReset", true)
 addEventHandler("onClientArenaReset", root, Derby.reset)
 
 
-function Derby.loadingFinished(duration, passed, waitTime, isRaceMap)
+function Derby.loadingFinished(duration, passed, waitTime)
 
 	if getElementData(source, "state") == "Waiting" then
 		
@@ -153,7 +169,7 @@ function Derby.loadingFinished(duration, passed, waitTime, isRaceMap)
 
 	Derby.mapInfoMessage = OnScreenMessage.new(color.."Name: #ffffff"..map.name.."\n "..color.."Author: #ffffff"..map.author.."\n "..color.."Type: #ffffff"..map.type, 0.75, "#ffffff", 2, 3000, true)
 	
-	if isRaceMap then
+	if MapManager.isRaceMap() then
 
 		setElementData(localPlayer, "checkpoint", 0)
 		
@@ -169,7 +185,6 @@ function Derby.loadingFinished(duration, passed, waitTime, isRaceMap)
 		
 		addEventHandler("onClientColShapeHit", root, Derby.checkpoint)
 		addEventHandler("onClientRender", root, Derby.render)
-		addEventHandler("onClientPlayerWasted", localPlayer, Derby.death)
 		addEventHandler("onClientPlayerRespawn", root, Derby.respawn)
 		
 		setElementData(localPlayer, "racestate", "0 / "..#Derby.checkpointList)
@@ -177,6 +192,8 @@ function Derby.loadingFinished(duration, passed, waitTime, isRaceMap)
 		bindKey("b", "down", "racespectate")
 	
 	end
+	
+	addEventHandler("onClientPlayerWasted", localPlayer, Derby.death)	
 	
 	if map.type == "Linez" then
 	
@@ -203,7 +220,22 @@ end
 addEvent("onClientMapChange", true)
 
 
-function Derby.setNextMapCountDown(text, countTime, timeUp)
+function Derby.setNextMapCountDown(text, countTime)
+
+	if Derby.timeUpMessage then 
+	
+		Derby.timeUpMessage:destroy() 
+		Derby.timeUpMessage = nil
+		
+	end
+	
+	Derby.nextMapCountDown = OnScreenMessage.new(text.."\n", 0.75, "#ffffff", 2, countTime, false, true)
+
+end
+addEvent("onClientMapEnding", true)
+
+
+function Derby.preMapEnd(text, countTime, timeUp)
 
 	if Derby.respawnInfo then
 	
@@ -218,11 +250,11 @@ function Derby.setNextMapCountDown(text, countTime, timeUp)
 		toggleAllControls(false, true, false)	
 	
 	end
-	
-	Derby.nextMapCountDown = OnScreenMessage.new(text.."\n", 0.75, "#ffffff", 2, countTime, false, true)
+
+	Derby.mapEndCountDown = OnScreenMessage.new(text.."\n", 0.75, "#ffffff", 2, countTime, false, true)
 
 end
-addEvent("onClientMapEnding", true)
+addEvent("onClientPreMapEnd", true)
 
 
 function Derby.preMapStart()
@@ -273,15 +305,21 @@ end
 addEvent("onClientMapStart", true)
 
 
-function Derby.winScreen(player, message)
+function Derby.winScreen(message)
 
-	Derby.winMessage = OnScreenMessage.new(message, 0.5, "#04B404", 3, 5000)
-
-	if getElementData(player, "setting:winsound") then
+	local arenaElement = getElementParent(localPlayer)
 	
-		local soundName = getElementData(player, "setting:winsound")
+	if getElementData(arenaElement, "mode") ~= "Competitive" then 
+
+		Derby.winMessage = OnScreenMessage.new(message, 0.5, "#04B404", 3, 5000)
+
+	end	
+
+	if getElementData(source, "setting:winsound") then
+	
+		local soundName = getElementData(source, "setting:winsound")
 		
-		Derby.winSound = playSound("http://ddc.community/mta/mvp/"..soundName..".mp3", false)
+		Derby.winSound = playSound("http://ddc.community/api/mta/mvp/mvp"..soundName..".mp3", false)
 		
 	end
 	
@@ -434,7 +472,7 @@ function Derby.setRespawnPoint()
 	Derby.respawnData[respawnIndex].x, Derby.respawnData[respawnIndex].y, Derby.respawnData[respawnIndex].z = getElementPosition(vehicle)
 	Derby.respawnData[respawnIndex].rx, Derby.respawnData[respawnIndex].ry, Derby.respawnData[respawnIndex].rz = getElementRotation(vehicle)
 	Derby.respawnData[respawnIndex].sx, Derby.respawnData[respawnIndex].sy, Derby.respawnData[respawnIndex].sz = getElementVelocity(vehicle)
-	Derby.respawnData[respawnIndex].tx, Derby.respawnData[respawnIndex].ty, Derby.respawnData[respawnIndex].tz = getVehicleTurnVelocity(vehicle)
+	Derby.respawnData[respawnIndex].tx, Derby.respawnData[respawnIndex].ty, Derby.respawnData[respawnIndex].tz = getElementAngularVelocity(vehicle)
 	Derby.respawnData[respawnIndex].nitro = getVehicleUpgradeOnSlot(vehicle, 8)
 	Derby.respawnData[respawnIndex].model = getElementModel(vehicle)
 
@@ -486,8 +524,16 @@ end
 
 function Derby.death()
 	
-	Derby.setupRespawnTimer = setTimer(Derby.setupRespawn, 2000, 1)
-
+	if MapManager.isRaceMap() then
+	
+		Derby.setupRespawnTimer = setTimer(Derby.setupRespawn, 2000, 1)
+	
+	else
+	
+		removeCommandHandler("suicide", Derby.suicide)
+	
+	end
+	
 end
 
 
@@ -536,7 +582,7 @@ function adjustAttributes(car, index)
 	setElementFrozen(car, false)
 	setElementModel(car, Derby.respawnData[index].model)
 	setElementVelocity(car, Derby.respawnData[index].sx, Derby.respawnData[index].sy, Derby.respawnData[index].sz)
-	setVehicleTurnVelocity(car, Derby.respawnData[index].tx, Derby.respawnData[index].ty, Derby.respawnData[index].tz)
+	setElementAngularVelocity(car, Derby.respawnData[index].tx, Derby.respawnData[index].ty, Derby.respawnData[index].tz)
 	
 	if Derby.respawnData[index].nitro == 1010 then addVehicleUpgrade(car, 1010) end
 	

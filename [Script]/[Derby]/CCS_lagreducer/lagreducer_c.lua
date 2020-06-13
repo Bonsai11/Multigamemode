@@ -348,6 +348,10 @@ end
 
 function DecoHider.main()
 
+	local arenaElement = getElementParent(localPlayer)
+	
+	if getElementData(arenaElement, "gamemode") ~= "Race" then return end
+
 	if not DecoHider.messageShown then
 
 		triggerEvent("onClientCreateNotification", localPlayer, "Press N to activate Lag Reducer!", "information")

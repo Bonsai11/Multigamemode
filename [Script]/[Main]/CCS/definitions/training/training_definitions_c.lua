@@ -16,16 +16,19 @@ function Training.load()
 	bindKey("F3", "down", Training.showMapsChooseWindow)
 	addEventHandler("onClientLobbyEnable", root, Training.disableWindow)
 	addEventHandler("onClientLobbyDisable", root, Training.enableWindow)
-	addEventHandler("onRecieveMapList", root, Training.recieveMaps)
 	addEventHandler("showMapsChooseWindow", root, Training.showMapsChooseWindow)
 	addEventHandler("onClientPlayerTrainingWasted", root, Training.reset)
 	addEventHandler("onClientSetDownTrainingDefinitions", root, Training.unload)
 	
 	setTimer(Training.showMapsChooseWindow, 1000, 1)
 	
+	triggerEvent("onClientPlayerReady", source, false, false)
+	
 	triggerServerEvent("onRequestMapList", localPlayer, getElementData(getElementParent(localPlayer), "type"))	
 	
-	triggerEvent("onClientCreateNotification", localPlayer, "Press F3 to show the map selection!", "information")
+	outputChatBox("#ffff00Press F3 to show the map selection!", 255, 255, 255, true)
+	
+	exports["CCS_notifications"]:export_showNotification("Press F3 to show the map selection!", "information")
 	
 end
 addEvent("onClientSetUpTrainingDefinitions", true)
@@ -38,21 +41,12 @@ function Training.unload()
 	if Training.trainingWindow then Training.trainingWindow.destroy() end
 	removeEventHandler("onClientLobbyEnable", root, Training.disableWindow)
 	removeEventHandler("onClientLobbyDisable", root, Training.enableWindow)
-	removeEventHandler("onRecieveMapList", root, Training.recieveMaps)
 	removeEventHandler("showMapsChooseWindow", root, Training.showMapsChooseWindow)
 	removeEventHandler("onClientPlayerTrainingWasted", root, Training.reset)
 	removeEventHandler("onClientSetDownTrainingDefinitions", root, Training.unload)	
 	
 end
 addEvent("onClientSetDownTrainingDefinitions", true)
-
-
-function Training.recieveMaps(maps)
-
-	Training.trainingWindow.update(maps)
-
-end
-addEvent("onRecieveMapList", true)
 
 
 function Training.showMapsChooseWindow()

@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="1" type="script" name="Podium" description="Podium"/>
+	<script src="podium_c.lua" type="client" cache="false"/>
+	<script src="podium_s.lua" type="server" />
+	
+</meta>

@@ -5,7 +5,7 @@ OnScreenMessage.instances = {}
 OnScreenMessage.x, OnScreenMessage.y =  guiGetScreenSize()
 OnScreenMessage.relX, OnScreenMessage.relY =  (OnScreenMessage.x/800), (OnScreenMessage.y/600)
 
-function OnScreenMessage.new(message, horizontalPosition, color, scale, lifetime, fade, countdown)
+function OnScreenMessage.new(message, horizontalPosition, color, scale, lifetime, fade, countdown, formatTime)
 
     local self = setmetatable({}, OnScreenMessage)
 	self.x = 0
@@ -28,6 +28,8 @@ function OnScreenMessage.new(message, horizontalPosition, color, scale, lifetime
 	self.lastTick = nil
 	self.lastCount = 0
 	self.expired = false
+	self.formatTime = formatTime
+	self.visible = true
 
 	if self.fade then
 	
@@ -45,6 +47,13 @@ end
 function OnScreenMessage:setText(message)
 
 	self.message = message
+
+end
+
+
+function OnScreenMessage:setVisible(visible)
+
+	self.visible = visible
 
 end
 
@@ -98,12 +107,26 @@ function OnScreenMessage.draw()
 
 		if self.countdown and self.lifetime then
 		
-			self.countValue = math.round((self.lifetime - (getTickCount() - self.startTime))/1000)
+			local timeLeft = self.lifetime - (getTickCount() - self.startTime)
+		
+			if self.formatTime then
+			
+				self.countValue = msToTime(timeLeft, false)
+				
+			else
+
+				self.countValue = math.round(timeLeft/1000)
+			
+			end
 
 		end
 		
-		dxDrawText(self.message:gsub('#%x%x%x%x%x%x', '')..self.countValue, self.x+1, self.y+1, self.x+self.width+1, self.y+self.height+1, tocolor (0, 0, 0, self.alpha), self.fontSize, self.font, "center", "top", false, false, self.postGUI, true, false)	
-		dxDrawText(self.message..self.countValue, self.x, self.y, self.x+self.width, self.y+self.height, tocolor(self.r, self.g, self.b, self.alpha), self.fontSize, self.font, "center", "top", false, false, self.postGUI, true, false)
+		if self.visible then
+		
+			dxDrawText(self.message:gsub('#%x%x%x%x%x%x', '')..self.countValue, self.x+1, self.y+1, self.x+self.width+1, self.y+self.height+1, tocolor (0, 0, 0, self.alpha), self.fontSize, self.font, "center", "top", false, false, self.postGUI, true, false)	
+			dxDrawText(self.message..self.countValue, self.x, self.y, self.x+self.width, self.y+self.height, tocolor(self.r, self.g, self.b, self.alpha), self.fontSize, self.font, "center", "top", false, false, self.postGUI, true, false)
+
+		end
 
 	end
 		

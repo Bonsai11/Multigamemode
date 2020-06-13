@@ -1,6 +1,7 @@
 <meta>
 	<info author="Bonsai" version="1.0" type="script" name="CCS" description="Classic Cross Shooter" showInResourceBrowser="true"/>
-	<min_mta_version client="1.4" server="1.4" />
+
+	<min_mta_version client="1.5.5-9.14060" server="1.5.5-9.14060" />
 
     <!--SETTINGS-->	
 	<settings>
@@ -9,46 +10,29 @@
 	<oop>true</oop>
 	
 	<!--Lobby-->
-	<file src="img/lobby/lemon_preview.png" />
 	<file src="img/lobby/lemon.png" />
 	<file src="img/lobby/red.png" />
-	<file src="img/lobby/red_preview.png" />	
 	<file src="img/lobby/cross.png" />
-	<file src="img/lobby/cross_preview.png" />	
 	<file src="img/lobby/night.png" />
-	<file src="img/lobby/night_preview.png" />
 	<file src="img/lobby/pink.png" />
-	<file src="img/lobby/pink_preview.png" />	
 	<file src="img/lobby/shooter.png" />
-	<file src="img/lobby/shooter_preview.png" />	
 	<file src="img/lobby/hunter.png" />
-	<file src="img/lobby/hunter_preview.png" />	
 	<file src="img/lobby/freeroam.png" />
-	<file src="img/lobby/freeroam_preview.png" />	
 	<file src="img/lobby/linez.png" />
-	<file src="img/lobby/linez_preview.png" />	
-	<file src="img/lobby/dynamic.png" />
-	<file src="img/lobby/dynamic_preview.png" />	
+	<file src="img/lobby/dynamic.png" />	
 	<file src="img/lobby/maptest.png" />
-	<file src="img/lobby/maptest_preview.png" />
 	<file src="img/lobby/custom.png" />	
-	<file src="img/lobby/custom_preview.png" />	
 	<file src="img/lobby/clan.png" />	
-	<file src="img/lobby/clan_preview.png" />
+	<file src="img/lobby/competitive.png" />	
 	<file src="img/lobby/background.jpg" />
 	<file src="img/lobby/arrow_left.png" />
 	<file src="img/lobby/arrow_right.png" />
 	<file src="img/lobby/plus.png" />
-	<file src="img/lobby/plus_preview.png" />
 	<file src="img/lobby/circle_empty.png" />
-	
-	<!--Loadinscreen HTML-->
-	<file src="img/loadingscreen/html/index.html" />
-	<file src="img/loadingscreen/html/css/style.css" />
-	<file src="img/loadingscreen/html/css/anton.woff2" />
-	<file src="img/loadingscreen/html/js/index.js" />
-	<file src="img/loadingscreen/html/js/MorphSVGPlugin.min.js" />
-	<file src="img/loadingscreen/html/js/TweenMax.min.js" />
+	<file src="img/blur.fx" />
+	<file src="img/lobby/battle_royale_los_santos.png" />	
+	<file src="img/lobby/battle_royale_san_fierro.png" />	
+	<file src="img/lobby/battle_royale_las_venturas.png" />
 	
 	<!--SERVER SCRIPTS-->
 	<script src="lobby/lobby_s.lua" type="server"/>
@@ -58,6 +42,7 @@
 	<script src="definitions/freeroam/freeroam_definitions_s.lua" type="server" />
 	<script src="definitions/linez/linez_definitions_s.lua" type="server" />
 	<script src="definitions/competitive/competitive_definitions_s.lua" type="server" />
+	<script src="definitions/battle royale/battle_royale_definitions_s.lua" type="server" />
 	<script src="mapmanager/mapmanager_s.lua" type="server" />
 	<script src="general/identification_s.lua" type="server" />
 	<script src="acl/acl_s.lua" type="server" />
@@ -79,6 +64,7 @@
 	<script src="definitions/training/training_definitions_c.lua" type="client" cache="false"/>
 	<script src="definitions/linez/linez_definitions_c.lua" type="client" cache="false"/>
 	<script src="definitions/competitive/competitive_definitions_c.lua" type="client" cache="false"/>
+	<script src="definitions/battle royale/battle_royale_definitions_c.lua" type="client" cache="false"/>
 	<script src="lobby/lobby_c.lua" type="client" cache="false"/>
 	<script src="downloader/downloader_c.lua" type="client" cache="false"/>
 	<script src="main/main_c.lua" type="client" cache="false"/>
@@ -92,6 +78,9 @@
 	<script src="classes/ArenaCreateWindow_c.lua" type="client" cache="false"/>
 	<script src="classes/PasswordWindow_c.lua" type="client" cache="false"/>
 	<script src="classes/LoginWindow_c.lua" type="client" cache="false"/>
+	<script src="classes/RegisterWindow_c.lua" type="client" cache="false"/>
+	<script src="classes/SettingsWindow_c.lua" type="client" cache="false"/>
+	<script src="classes/ClanArenaWindow_c.lua" type="client" cache="false"/>
 	
 	<!--SHARED SCRIPTS-->
 	<script src="general/shared.lua" type="shared" cache="false"/>	
@@ -112,12 +101,15 @@
 	<export function="export_aclremovePlayer" type="server" />
 	<export function="export_acladdPlayer" type="server" />
 	<export function="export_getRandomArenaMap" type="server" />
+	<export function="export_getLanguages" type="server" />	
 	
 	<export function="export_hex2rgb" type="client" />
 	<export function="export_isRaceMap" type="client" />	
+	<export function="export_getSpawnPoints" type="shared" />	
 	
 	<export function="export_round" type="shared" />
 	<export function="export_getPlayersInArena" type="shared" />
+	<export function="export_getPlayersAndSpectatorsInArena" type="shared" />
 	<export function="export_msToTime" type="shared" />
 	<export function="export_getTimePassed" type="shared" />
 	<export function="export_msToHourTime" type="shared" />	
@@ -126,6 +118,7 @@
 	<export function="export_getElementSpeed" type="shared" />
 	<export function="export_getAlivePlayersInArena" type="shared" />
 	<export function="export_table_contains" type="shared" />
+	<export function="export_getWallProgress" type="client" />
 	
 	<!--INCLUDED RESOURCES-->
     <include resource="CCS_radar" />	
@@ -138,8 +131,16 @@
     <include resource="CCS_locator" />
     <include resource="CCS_scoreboard" />
     <include resource="CCS_nitro" />
+    <include resource="CCS_reactiontest" />
+	<include resource="CCS_database" />
+    <include resource="CCS_toptimes" />
+	<include resource="CCS_stats" />
+	<include resource="CCS_userpanel" />
+	<include resource="CCS_clanpack" />
 	<include resource="CCS_shooterkilldetection" />
+	<include resource="CCS_funcommands" />
 	<include resource="CCS_cptp" />
+	<include resource="CCS_gametime" />
 	<include resource="CCS_carhide" />
 	<include resource="CCS_pingchecker" />	
 	<include resource="CCS_fpschecker" />	
@@ -153,15 +154,20 @@
 	<include resource="CCS_wff" />
 	<include resource="CCS_freecam" />
 	<include resource="CCS_panel" />
-	<include resource="CCS_antimegajump" />
-	<include resource="CCS_glue" />
+	<include resource="CCS_srl" />
 	<include resource="CCS_autoteam" />
 	<include resource="CCS_notifications" />
 	<include resource="CCS_antimod" />
 	<include resource="CCS_derbykilldetection" />
 	<include resource="CCS_skip" />
+	<include resource="CCS_challenge" />
 	<include resource="CCS_ghost" />
 	<include resource="CCS_joinquit" />
+	<include resource="CCS_events" />
+	<include resource="CCS_invisible" />
+	<include resource="parachute" />
+	<include resource="CCS_podium" />
+	<include resource="CCS_keys" />
 	
 	<!--FILES-->
 	<file src="img/white.png" />	
@@ -169,6 +175,12 @@
 	<file src="img/travel.ttf"/>
 	<file src="img/map.png" />
 	<file src="sound/winsong.mp3" />
+	<file src="img/blip.png" />	
+	<file src="img/blipNormal.png" />	
+	<file src="img/plane.png" />	
+	<file src="img/arrow.png" />
+	<file src="img/compass.png" />
+	<file src="img/flags.png" />
 	
 	<file src="img/countdown/countdown_bg.png" />
 	<file src="img/countdown/countdown_0.png" />
@@ -198,5 +210,24 @@
 	<file src="conf/weapons.xml" />
 	<file src="conf/skins.xml" />
 	<file src="conf/animations.xml" />
+	
+	<file src="textures/cross/ddcramp.txd" />
+	<file src="textures/cross/ddcroof.txd" />
+	<file src="textures/dynamic/ddcramp.txd" />
+	<file src="textures/dynamic/ddcroof.txd" />
+	<file src="textures/lemon/ddcramp.txd" />
+	<file src="textures/lemon/ddcroof.txd" />
+	<file src="textures/linez/ddcramp.txd" />
+	<file src="textures/linez/ddcroof.txd" />
+	<file src="textures/night/ddcramp.txd" />
+	<file src="textures/night/ddcroof.txd" />
+	<file src="textures/pink/ddcramp.txd" />
+	<file src="textures/pink/ddcroof.txd" />
+	<file src="textures/red/ddcramp.txd" />
+	<file src="textures/red/ddcroof.txd" />
+	<file src="textures/shooter/ddcramp.txd" />
+	<file src="textures/shooter/ddcroof.txd" />
+	<file src="textures/default/ddcramp.txd" />
+	<file src="textures/default/ddcroof.txd" />
 	
 </meta>

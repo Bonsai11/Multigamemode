@@ -1,0 +1,14 @@
+<meta>
+	<info author="Bonsai" version="1" type="script" name="Userpanel" description="Userpanel"/>
+	<script src="userpanel_c.lua" type="client" cache="false"/>
+	<script src="userpanel_s.lua" type="server" />
+	<file src="RobotoCondensed-Regular.ttf" />
+	<file src="Roboto-Bold.ttf" />
+	<file src="Roboto-Medium.ttf" />
+	<file src="palette.jpg" />
+	<file src="avatar.png" />
+	<file src="clan.png" />
+	<file src="maps.png" />
+	<file src="tops.png" />
+	<file src="fav.png" />	
+</meta>

@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC Events" description="Events"/>
+	<script src="events_c.lua" type="client" cache="false"/>
+	<script src="events_s.lua" type="server" />
+	
+</meta>

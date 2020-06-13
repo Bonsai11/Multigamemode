@@ -135,9 +135,9 @@ function Freeroam.leaveZone(leaveElement)
 	toggleControl("action", false)
 	toggleControl("aim_weapon", false)
 	
-	setControlState("fire", false)
-	setControlState("vehicle_fire", false)
-	setControlState("vehicle_secondary_fire", false)
+	setPedControlState(localPlayer, "fire", false)
+	setPedControlState(localPlayer, "vehicle_fire", false)
+	setPedControlState(localPlayer, "vehicle_secondary_fire", false)
 		
 end
 

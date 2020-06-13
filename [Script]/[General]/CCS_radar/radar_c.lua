@@ -14,6 +14,12 @@ Radar.rotorRotation = 0
 Radar.show = true
 Radar.renderTarget = dxCreateRenderTarget( Radar.width, Radar.height, true )
 
+Radar.wallProgressOffset = 5 * Radar.relY
+Radar.wallProgressHeight = Radar.barHeight * 2
+Radar.wallProgressWidth = Radar.width
+Radar.wallProgressPosX = Radar.posX
+Radar.wallProgressPosY = Radar.posY - Radar.wallProgressHeight - 2 * Radar.edge - Radar.wallProgressOffset
+
 function Radar.getCameraRotation()
 
     px, py, pz, lx, ly, lz = getCameraMatrix()
@@ -64,24 +70,24 @@ addEventHandler("showRadar", root, Radar.show)
 
 function Radar.render()
 
-	showPlayerHudComponent("radar", false)
+	setPlayerHudComponentVisible("radar", false)
 
 	if not Radar.show then return end
-	
+
 	Radar.theTarget = getCameraTarget(localPlayer)
-	
+
 	if not Radar.theTarget then return end
-	
+
 	if getElementType(Radar.theTarget) == "player" then
 	
-		Radar.theTarget = getPedOccupiedVehicle(Radar.theTarget)
+		local vehicle = getPedOccupiedVehicle(Radar.theTarget)
 		
-	end
-	
-	if not Radar.theTarget then 
-	
-		Radar.theTarget = getCameraTarget(localPlayer)
-	
+		if vehicle then
+		
+			Radar.theTarget = vehicle
+			
+		end
+		
 	end
 	
 	if not Radar.theTarget then return end
@@ -123,6 +129,26 @@ function Radar.render()
 		
 	end
 
+	local resource = getResourceFromName("CCS")
+
+	if resource then 
+
+		if getResourceState(resource) == "running" then 
+
+			local wallProgress = exports["CCS"]:export_getWallProgress()
+			
+			if wallProgress then
+			
+				--Battle Royale
+				dxDrawRectangle(Radar.wallProgressPosX, Radar.wallProgressPosY, Radar.wallProgressWidth, Radar.wallProgressHeight, tocolor ( 0, 0, 0, 255 ))
+				dxDrawRectangle(Radar.wallProgressPosX + Radar.edge, Radar.wallProgressPosY + Radar.edge, Radar.wallProgressWidth - 2 * Radar.edge, Radar.wallProgressHeight - 2 * Radar.edge, tocolor ( 200, 100, 100, 255 ))
+				dxDrawRectangle(Radar.wallProgressPosX + Radar.edge, Radar.wallProgressPosY + Radar.edge, (Radar.wallProgressWidth - 2 * Radar.edge) * wallProgress, Radar.wallProgressHeight - 2 * Radar.edge, tocolor ( 175, 0, 0, 255 ))
+			
+			end
+		
+		end
+		
+	end
 	
 	dxDrawRectangle ( Radar.posX, Radar.posY+Radar.height+Radar.barHeight+Radar.edge, Radar.width, Radar.edge, tocolor ( 0, 0, 0, 255 ) )	
 	dxDrawRectangle ( Radar.posX+Radar.width/2, Radar.posY+Radar.height+Radar.edge, Radar.edge, Radar.barHeight, tocolor ( 0, 0, 0, 255 ) )	
@@ -131,10 +157,16 @@ function Radar.render()
 	dxDrawRectangle(Radar.posX+Radar.edge, Radar.posY+Radar.height+Radar.edge, Radar.width/2-Radar.edge*2+Radar.edge/2, Radar.barHeight, tocolor(r,g,0,75) )				
 	dxDrawRectangle(Radar.posX+Radar.edge, Radar.posY+Radar.height+Radar.edge, health*(Radar.width/2-Radar.edge*2+Radar.edge/2), Radar.barHeight, tocolor(r,g,0,255) )
 	
-	--nitro
-	dxDrawRectangle(Radar.posX+Radar.width/2+Radar.edge/2, Radar.posY+Radar.height+Radar.edge, Radar.width/2-Radar.edge*2+Radar.edge/2, Radar.barHeight, tocolor(0,150,220,75) )				
-	dxDrawRectangle(Radar.posX+Radar.width/2+Radar.edge/2, Radar.posY+Radar.height+Radar.edge, nitro*(Radar.width/2-Radar.edge*2+Radar.edge/2), Radar.barHeight, tocolor(0,50,255,255) )
-
+	if getElementData(Radar.theTarget, "fuel") then
+		--fuel
+		local fuel = getElementData(Radar.theTarget, "fuel") / 100
+		dxDrawRectangle(Radar.posX+Radar.width/2+Radar.edge/2, Radar.posY+Radar.height+Radar.edge, Radar.width/2-Radar.edge*2+Radar.edge/2, Radar.barHeight, tocolor(252, 207, 133, 75) )				
+		dxDrawRectangle(Radar.posX+Radar.width/2+Radar.edge/2, Radar.posY+Radar.height+Radar.edge, fuel*(Radar.width/2-Radar.edge*2+Radar.edge/2), Radar.barHeight, tocolor(216, 145, 30, 255) )	
+	else
+		--nitro
+		dxDrawRectangle(Radar.posX+Radar.width/2+Radar.edge/2, Radar.posY+Radar.height+Radar.edge, Radar.width/2-Radar.edge*2+Radar.edge/2, Radar.barHeight, tocolor(0,150,220,75) )				
+		dxDrawRectangle(Radar.posX+Radar.width/2+Radar.edge/2, Radar.posY+Radar.height+Radar.edge, nitro*(Radar.width/2-Radar.edge*2+Radar.edge/2), Radar.barHeight, tocolor(0,50,255,255) )
+	end
 
 	local rotation = Radar.getCameraRotation()	
 	
@@ -157,6 +189,14 @@ function Radar.render()
 		while true do
 	
 			if getElementParent(player) ~= getElementParent(localPlayer) then break end
+			
+			if getElementData(getElementParent(localPlayer), "gamemode") == "Battle Royale" then 
+			
+				if not getPlayerTeam(localPlayer) then break end
+			
+				if getPlayerTeam(player) ~= getPlayerTeam(localPlayer) then break end
+				
+			end
 			
 			if getElementData(player, "state") ~= "Alive" then break end
 			
@@ -289,7 +329,7 @@ function Radar.render()
 				dxDrawRectangle(xd-2, yd-2, 5, 5, tocolor (blipr, blipg, blipb, 255 ))	
 			
 			end
-				
+
 			break
 			
 		end 
@@ -301,4 +341,5 @@ function Radar.render()
 	
 	
 end
-addEventHandler("onClientRender", root, Radar.render)
+addEventHandler("onClientRender", root, Radar.render) 
+

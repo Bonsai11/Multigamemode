@@ -37,8 +37,10 @@ function RankingBoard.add(position)
 end
 addEvent("onPlayerFinishRace", true)
 addEvent("onPlayerDerbyWasted", true)
+addEvent("onPlayerBattleRoyaleWasted", false)
 addEventHandler("onPlayerFinishRace", root, RankingBoard.add)
 addEventHandler("onPlayerDerbyWasted", root, RankingBoard.add)
+addEventHandler("onPlayerBattleRoyaleWasted", root, RankingBoard.add)
 
 
 function RankingBoard.send(arenaElement)

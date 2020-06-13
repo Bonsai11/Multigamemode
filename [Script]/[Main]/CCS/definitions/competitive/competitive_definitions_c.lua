@@ -1,78 +1,89 @@
 Competitive = {}
-Competitive.matchID = nil
+Competitive.matchType = nil
+Competitive.finishMessage = nil
 
-function Competitive.matchFound(matchID)
+function Competitive.reset()
 
-	outputDebugString("Client: Match Found")
+	if Competitive.finishMessage then 
+		
+		Competitive.finishMessage:destroy()
+		Competitive.finishMessage = nil
+		
+	end
 
-	Competitive.matchID = matchID
+	if Competitive.roundWinMessage then 
+		
+		Competitive.roundWinMessage:destroy()
+		Competitive.roundWinMessage = nil
+		
+	end	
 	
-	addCommandHandler("accept", Competitive.acceptMatch)
-	addCommandHandler("decline", Competitive.declineMatch)
+end
+addEvent("onClientArenaReset", true)
+addEventHandler("onClientArenaReset", root, Competitive.reset)
+
+
+function Competitive.matchFound(type, timeout)
 	
-	outputChatBox("Match found! Use /accept or /decline within 30 seconds!", 255, 255, 0)
+	Competitive.matchType = type
+	
+	outputChatBox("Competitive: Match found! Accept in Lobby!", 255, 255, 0)
+	
+	exports["CCS_notifications"]:export_showNotification("Competitive: Match found! Accept in Lobby!", "success")
 	
 end
 addEvent("onClientCompetitiveMatchFound", true)
 addEventHandler("onClientCompetitiveMatchFound", root, Competitive.matchFound)
 
 
-addCommandHandler("regist", function() triggerServerEvent("onCompetitiveRegister", localPlayer) end)
-addCommandHandler("deregist", function() triggerServerEvent("onCompetitiveDeregister", localPlayer) end)
-
 function Competitive.acceptMatch()
 
-	triggerServerEvent("onCompetitivePlayerMatchResponse", localPlayer, Competitive.matchID, true)
-	
-	Competitive.matchID = nil
-	
-	removeCommandHandler("accept", Competitive.acceptMatch)
-	removeCommandHandler("decline", Competitive.declineMatch)
-	
+	triggerServerEvent("onCompetitivePlayerMatchResponse", localPlayer, Competitive.matchType, true)
+
 end
 
 
 function Competitive.declineMatch()
 
-	triggerServerEvent("onCompetitivePlayerMatchResponse", localPlayer, Competitive.matchID, false)
-
-	Competitive.matchID = nil
-	
-	removeCommandHandler("accept", Competitive.acceptMatch)
-	removeCommandHandler("decline", Competitive.declineMatch)
+	triggerServerEvent("onCompetitivePlayerMatchResponse", localPlayer, Competitive.matchType, false)
 	
 end
 
 
 function Competitive.cancelled(timeout)
 
-	Competitive.matchID = nil
+	Competitive.matchType = nil
 
 	if timeout then
 	
-		outputDebugString("client: match timeout")
-	
-		outputChatBox("Competitive: Match cancelled!", 255, 255, 0)	
+		exports["CCS_notifications"]:export_showNotification("Competitive: Match cancelled!", "error")
 	
 	else
 	
-		outputDebugString("client: match cancelled")
-
-		outputChatBox("Competitive: Match timeout!", 255, 255, 0)	
+		exports["CCS_notifications"]:export_showNotification("Competitive: Match timeout!", "error")
 		
 	end	
-		
+
 end
 addEvent("onClientCompetitiveMatchCancelled", true)
 addEventHandler("onClientCompetitiveMatchCancelled", root, Competitive.cancelled)
 
 
-function Competitive.update(num, total)
+function Competitive.finished(byPlayerWin)
 
-	outputDebugString(num.." of "..total)
+	Competitive.finishMessage = OnScreenMessage.new("Arena will be cleared in:\n", 0.75, "#ffffff", 2, 60000, false, true)
 
-	outputChatBox("Competitive: "..num.." of "..total.." players ready!", 255, 255, 0)	
-	
 end
-addEvent("onClientCompetitiveMatchUpdate", true)
-addEventHandler("onClientCompetitiveMatchUpdate", root, Competitive.update)
+addEvent("onClientCompetitiveMatchFinished", true)
+addEventHandler("onClientCompetitiveMatchFinished", root, Competitive.finished)
+
+
+function Competitive.roundWin()
+
+	local message = "#ffffff"..getPlayerName(source).."#04B404 has won the round!"
+
+	Competitive.roundWinMessage = OnScreenMessage.new(message, 0.5, "#04B404", 3, 5000)
+
+end
+addEvent("onClientCompetitiveRoundWin", true)
+addEventHandler("onClientCompetitiveRoundWin", root, Competitive.roundWin)

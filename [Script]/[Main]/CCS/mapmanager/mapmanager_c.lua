@@ -2,10 +2,10 @@ MapManager = {}
 MapManager.objects = {}
 MapManager.pickups = {}
 MapManager.elements = {}
-MapManager.vehicles = {}
 MapManager.helicopterIDs = {425, 592, 553, 577, 488, 511, 497, 548, 563, 512, 476, 593, 447, 425, 519, 520, 460, 417, 469, 487, 513, 501, 465}
 MapManager.pickUpTimer = nil
 MapManager.checkpoints = {}
+MapManager.spawnpoints = {}
 
 function MapManager.loadMap(mapTable, session)
 
@@ -85,30 +85,6 @@ function MapManager.loadMap(mapTable, session)
 		
 	end
 	
-	for i, m in ipairs(mapTable.vehicles) do
-	
-		local vehicle = createVehicle(m.modelId, m.posX, m.posY, m.posZ, m.rotX, m.rotY, m.rotZ)
-		
-		if vehicle then
-		
-			if m.frozen == "false" then
-			
-				setElementFrozen(vehicle, false)
-			
-			else
-			
-				setElementFrozen(vehicle, true)
-				
-			end
-
-			setElementDimension(vehicle, getElementDimension(source))
-			setElementInterior(vehicle, m.interiorID)
-			table.insert(MapManager.vehicles, vehicle)
-			
-		end
-			
-	end
-	
 	for i, r in ipairs(mapTable.removeWorldObjects) do
 	
 		removeWorldModel(r.model, r.radius, r.posX, r.posY, r.posZ, r.interior)
@@ -170,6 +146,8 @@ function MapManager.loadMap(mapTable, session)
 		end
 	
 	end
+
+	MapManager.spawnpoints = mapTable.spawnpoints
 
 	local orderedList
 	
@@ -317,12 +295,6 @@ function MapManager.unloadMap()
 		if isElement(object) then destroyElement(object) end
 		
 	end
-
-	for i, vehicle in pairs(MapManager.vehicles) do
-	
-		if isElement(vehicle) then destroyElement(vehicle) end
-		
-	end
 	
 	for i, p in pairs(MapManager.pickups) do
 	
@@ -346,9 +318,9 @@ function MapManager.unloadMap()
 
 	MapManager.objects = {}
 	MapManager.elements = {}
-	MapManager.vehicles = {}
 	MapManager.pickups = {}
 	MapManager.checkpoints = {}
+	MapManager.spawnpoints = {}
 	restoreAllWorldModels()
 	removeEventHandler("onClientRender", root, MapManager.rotatePickups)
 	removeEventHandler("onClientColShapeHit", root, MapManager.pickupHit)
@@ -371,6 +343,14 @@ function MapManager.isRaceMap()
 
 end
 export_isRaceMap = MapManager.isRaceMap
+
+
+function MapManager.getSpawnPoints()
+
+	return MapManager.spawnpoints
+
+end
+export_getSpawnPoints = MapManager.getSpawnPoints
 
 
 function MapManager.rotatePickups()

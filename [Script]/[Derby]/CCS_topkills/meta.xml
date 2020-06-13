@@ -1,0 +1,6 @@
+<meta>
+	<info author="Bonsai, Cat.Master" version="2.0.0" type="script" name="leaderboard" description="leaderboard" showInResourceBrowser="true"/>
+	<min_mta_version client="1.5.2" server="1.5.2" />
+	<script src="leaderboard_s.lua" type="server" />
+	<script src="leaderboard_c.lua" type="client" cache="false"/>
+</meta>

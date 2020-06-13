@@ -6,11 +6,11 @@ ACL.commandList = nil
 
 function ACL.playerCommand(command)
 
-	if command == "logout" or command == "login" or command == "register" then 
+	if command == "logout" or command == "login" then 
 	
 		if not getElementData(source, "account") or not isObjectInACLGroup("user."..getElementData(source, "account"):gsub(" ", ""), aclGetGroup ("11")) then
 			
-			--FIXME cancelEvent() 
+			cancelEvent() 
 			return
 	
 		end
@@ -263,13 +263,7 @@ function ACL.check(player, command)
 	
 	if not account then return false end
 	
-	if isObjectInACLGroup ( "user." .. account:gsub(" ", ""), aclGetGroup("11")) and not isGuestAccount(getPlayerAccount(player)) then
-	
-		return true
-		
-	end
-	
-	local playerGroups = ACL.getPlayerACLGroup(account, arena)
+	local playerGroups = ACL.getPlayerACLGroup(player, arena)
 	
 	if not playerGroups or #playerGroups == 0 then
 	
@@ -277,11 +271,11 @@ function ACL.check(player, command)
 		return false
 		
 	end
-	
+
 	for i, group in pairs(playerGroups) do
 		
 		for j, includedGroup in pairs(group.includes) do
-		
+			
 			if includedGroup == commandGroup[1] and commandGroup[2] == "true" then
 				
 				outputServerLog("ACL: "..arena..": Command: "..getCleanPlayerName(player).." - "..command)
@@ -301,16 +295,43 @@ end
 export_acl_check = ACL.check
 
 
-function ACL.getPlayerACLGroup(account, arena)
+function ACL.getPlayerACLGroup(player, arena)
+	
+	local account = getElementData(player, "account")
+	
+	if not account then return false end	
+	
+	local playerGroups = {}
 
-	if not ACL.aclLists[arena] then return false end
+	--server admin
+	local includedGroups = {}
+   
+	for i, group in ipairs(aclGroupList()) do
+	
+		local groupName = aclGroupGetName(group)
+	
+		if groupName ~= "Everyone" and isObjectInACLGroup( "user." ..account, group) then
+			
+			for i, group in ipairs(aclGroupListACL(group)) do
+				
+				table.insert(includedGroups, aclGetName(group))
+			
+			end
+			
+			table.insert(playerGroups, {group = groupName, includes = includedGroups})
+			break
+			
+		end
+		
+	end
+	
+	if not ACL.aclLists[arena] then return playerGroups end
 
 	local arenaACL = ACL.aclLists[arena].xmlNode
 	
-	if not arenaACL then return false end
+	if not arenaACL then return playerGroups end
 	
-	local playerGroups = {}
-	
+	--arena admin
 	for i, m in ipairs(xmlNodeGetChildren(arenaACL)) do
 	
 		if xmlNodeGetName(m) == "group" then
@@ -330,6 +351,7 @@ function ACL.getPlayerACLGroup(account, arena)
 					if xmlNodeGetAttribute(n, "name") == account then
 						
 						table.insert(playerGroups, {group = xmlNodeGetAttribute(m, "name"), includes = includedGroups})
+						break
 						
 					end
 					
@@ -350,6 +372,8 @@ function ACL.getCommandACLGroup(command, isPrivate)
 
 	if not ACL.commandList then return false end
 	
+	local group, access
+	
 	for i, m in ipairs(xmlNodeGetChildren(ACL.commandList)) do
 	
 		if xmlNodeGetName(m) == "acl" then
@@ -360,9 +384,7 @@ function ACL.getCommandACLGroup(command, isPrivate)
 					
 					if xmlNodeGetAttribute(n, "name") == "command."..command then
 							
-						local group = xmlNodeGetAttribute(m, "name")
-						
-						local access
+						group = xmlNodeGetAttribute(m, "name")
 						
 						if isPrivate then
 						
@@ -374,16 +396,24 @@ function ACL.getCommandACLGroup(command, isPrivate)
 
 						end
 
-						return {group, access}
-
 					end
 					
 				end
+				
+				if access == "true" then break end
 			
 			end
 			
 		end
 	
+		if access == "true" then break end
+	
+	end
+	
+	if group then
+	
+		return {group, access}
+		
 	end
 	
 	return true
@@ -466,7 +496,7 @@ function ACL.getAdminList(p, c, t)
 
 	local arena = getElementData(p, "Arena")
 	
-	local toElement = getElementParent(p)
+	local arenaElement = getElementParent(p)
 	
 	local adminsOnline = false
 
@@ -478,13 +508,13 @@ function ACL.getAdminList(p, c, t)
 	
 		adminList[level] = {}
 		
-		for i, player in pairs(getPlayersInArena(toElement)) do
+		for i, player in pairs(getPlayersAndSpectatorsInArena(arenaElement)) do
 	
 			if getElementData(player, "account") then
 		
-				local playerGroups = ACL.getPlayerACLGroup(getElementData(player, "account"), arena)
+				local playerGroups = ACL.getPlayerACLGroup(player, arena)
 
-				if playerGroups and #playerGroups ~= 0 and playerGroups[1].group == level or (aclGetGroup(level) and (isObjectInACLGroup("user."..getElementData(player, "account"):gsub(" ", ""), aclGetGroup(level))) and not isGuestAccount(getPlayerAccount(player))) then
+				if playerGroups and #playerGroups ~= 0 and playerGroups[#playerGroups].group == level then
 				
 					table.insert(adminList[level], getPlayerName(player))
 
@@ -496,7 +526,7 @@ function ACL.getAdminList(p, c, t)
 		
 	end	
 
-	exports["CCS"]:export_outputArenaChat(toElement, "#ffff00<"..playerName.." is checking online admins>")
+	exports["CCS"]:export_outputArenaChat(arenaElement, "#ffff00<"..playerName.." is checking online admins>")
 	
 	for i=11, 1, -1 do
 		
@@ -558,7 +588,7 @@ function ACL.addAdmin(p, c, t, level)
 	
 	if not account then
 	
-		outputChatBox("Player is not logged in!" , p, 255 , 0, 128, true)
+		outputChatBox("Error: Player is not logged in!" , p, 255 , 0, 128, true)
 		return
 	
 	end
@@ -573,15 +603,24 @@ function ACL.addAdmin(p, c, t, level)
 	
 	if not table.contains(ACL.adminLevels, level) then 
 	
-		outputChatBox("No such Level available!" , p, 255 , 0, 128, true)
+		outputChatBox("Error: No such Level available!" , p, 255 , 0, 128, true)
 		return 
 		
 	end
 	
-	if level == "A" or level == "9" or level == "10" or level == "11" then 
+	if level == "8" or level == "9" or level == "10" or level == "11" then 
 	
-		outputChatBox("You cannot set levels higher than 8!" , p, 255 , 0, 128, true)
-		return
+		if ACL.aclLists[arena] and not ACL.aclLists[arena].isTemporary and level == "8" then
+			
+			outputChatBox("Error: You cannot set levels higher than 7!" , p, 255 , 0, 128, true)
+			return
+			
+		elseif level ~= "8" then
+		
+			outputChatBox("Error: You cannot set levels higher than 8!" , p, 255 , 0, 128, true)
+			return
+		
+		end
 	
 	end	
 	
@@ -711,48 +750,80 @@ end
 addCommandHandler("reloadcommandlist", ACL.reloadCommandList)
 
 
-function ACL.addServerAdmin(p, c, account)
-	
-	if not account then return end
-	
-	local group = aclGetGroup("11")
+function ACL.removeServerAdmin(account)
 
-	if not group then return end
+	local removed
 
+	 for i, group in ipairs(aclGroupList()) do
+	 
+		if (isObjectInACLGroup( "user." ..account, group)) then
+		
+			if aclGroupRemoveObject(group, "user."..account) then
+		
+				removed = true
+		
+			end
+			
+		end
+		
+	end
+	
+	return removed
+
+end
+
+
+function ACL.addServerAdmin(p, c, t, group)
+
+	local arenaElement = getElementParent(p)
+	
+	local player = findArenaPlayer(arenaElement, t)
+	
+	if not player then return end
+	
+	if player == p then return end
+
+	local account = getElementData(player, "account")
+	
+	if not account then
+	
+		outputChatBox("Error: Player is not logged in!" , p, 255 , 0, 128, true)
+		return
+	
+	end
+	
+	if group == "0" then
+	
+		if ACL.removeServerAdmin(account) then
+		
+			exports["CCS"]:export_outputGlobalChat("#ffff00"..getCleanPlayerName(p).." removed "..getCleanPlayerName(player).." from server admins!")
+			return
+		
+		end
+	
+	end
+	
+	local group = aclGetGroup(group)
+
+	if not group then 
+	
+		outputChatBox("Error: No such Level available!" , p, 255 , 0, 128, true)
+		return 
+		
+	end
+
+	--remove all levels if existing already
+	ACL.removeServerAdmin(account)
+		
 	if aclGroupAddObject(group, "user."..account) then
 	
-		outputServerLog("ACL: Added account "..account.." as server admin!")
+		exports["CCS"]:export_outputGlobalChat("#ffff00"..getCleanPlayerName(p).." added "..getCleanPlayerName(player).." to server admins!")
 
 	else
 	
-		outputServerLog("Error: Failed to add account!")
+		outputChatBox("Error: Failed to add account!" , p, 255 , 0, 128, true)
 
 	end
 		
 end
 addCommandHandler("addserveradmin", ACL.addServerAdmin)
-
-
-function ACL.register(p, c, username, password)
-
-	if not username or not password then return end
-
-	if getAccount(username) then
-	
-		outputChatBox("Error: Account already exists!", p, 255, 0, 128)
-		return
-		
-	end
-	
-	if addAccount(username, password) then
-	
-		outputChatBox("Successfully registered! Use /login to login!", p, 255, 0, 128)
-		
-	else
-	
-		outputChatBox("Error: Failed to register!", p, 255, 0, 128)
-	
-	end
-		
-end
-addCommandHandler("register", ACL.register)

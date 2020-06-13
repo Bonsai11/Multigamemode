@@ -332,7 +332,7 @@ function Panel.bind()
 	triggerServerEvent("onPanelRequestAccess", localPlayer)
 
 end
-addEvent("onClientPlayerJoinArena")
+addEvent("onClientPlayerJoinArena", true)
 addEventHandler("onClientPlayerJoinArena", localPlayer, Panel.bind)
 
 

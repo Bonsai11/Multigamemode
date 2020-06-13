@@ -1,0 +1,14 @@
+<meta>
+	<info type='script' author='Bonsai' description='DDC keys' version="1"/>
+	<script src='keys_c.lua' type='client' cache='false'/>
+	<script src='keys_s.lua' />
+	<file src="WnotPressed.png" />
+	<file src="SnotPressed.png" />
+	<file src="AnotPressed.png" />
+	<file src="DnotPressed.png" />
+	<file src="SpaceNotPressed.png" />
+	<file src="ArrowLeftnotPressed.png" />
+	<file src="ArrowUpnotPressed.png" />
+	<file src="ArrowDownnotPressed.png" />
+	<file src="ArrowRightnotPressed.png" />
+</meta>

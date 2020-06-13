@@ -1,12 +1,14 @@
 Arena = {}
+Arena.__index = Arena
+setmetatable(Arena, {__call = function (cls, ...) return cls.new(...) end,})
 Arena.timers = {}
 Arena.dimensionList = {}
 
-function Arena.new(name, gamemode, category, type, maxplayers, password, mode, color, duration, afk_detector, pingcheck, fpscheck, inLobby, creator, inScoreboard, temporary, voteRedo, toptimes, topkills, stats, mapstats, gambling, userpanel, spectators, mods)
+function Arena.new(name, alias, gamemode, category, type, maxplayers, password, mode, color, duration, inLobby, creator, inScoreboard, temporary)
 	
 	if Arena.isNameTaken(name) then return false end
 	
-    local self = {}
+    local self = setmetatable({}, Arena)
 
 	--Find available Dimension
 	self.dimension = Arena.generateNewDimension()
@@ -14,6 +16,7 @@ function Arena.new(name, gamemode, category, type, maxplayers, password, mode, c
 	self.name = name
 	self.element = createElement("Arena", self.name)
 	setElementData(self.element, "name", self.name)
+	setElementData(self.element, "alias", alias)
 	setElementData(self.element, "gamemode", gamemode)
 	setElementData(self.element, "category", category)
 	setElementData(self.element, "type", type)
@@ -23,29 +26,37 @@ function Arena.new(name, gamemode, category, type, maxplayers, password, mode, c
 	setElementData(self.element, "mode", mode)
 	setElementData(self.element, "color", color)
 	setElementData(self.element, "Duration", duration)
-	setElementData(self.element, "Detector", afk_detector)
-	setElementData(self.element, "pingchecker", pingcheck)
-	setElementData(self.element, "fpschecker", fpscheck)	
+	setElementData(self.element, "Detector", false)
+	setElementData(self.element, "pingchecker", false)
+	setElementData(self.element, "fpschecker", false)	
 	setElementData(self.element, "inLobby", inLobby)
 	setElementData(self.element, "creator", creator)
 	setElementData(self.element, "inScoreboard", inScoreboard)
 	setElementData(self.element, "temporary", temporary)
-	setElementData(self.element, "voteRedo", voteRedo)
-	setElementData(self.element, "toptimes", toptimes)
-	setElementData(self.element, "topkills", topkills)
-	setElementData(self.element, "stats", stats)
-	setElementData(self.element, "mapstats", mapstats)
-	setElementData(self.element, "gambling", gambling)
-	setElementData(self.element, "userpanel", userpanel)
-	setElementData(self.element, "spectators", spectators)
-	setElementData(self.element, "allow_mods", mods)
+	setElementData(self.element, "voteRedo", false)
+	setElementData(self.element, "toptimes", false)
+	setElementData(self.element, "topkills", false)
+	setElementData(self.element, "stats", false)
+	setElementData(self.element, "mapstats", false)
+	setElementData(self.element, "gambling", false)
+	setElementData(self.element, "userpanel", false)
+	setElementData(self.element, "spectators", false)
+	setElementData(self.element, "allow_mods", false)
+	setElementData(self.element, "timer:waitingForPlayers", 30000)
+	setElementData(self.element, "showSpectatorChat", true)
+	setElementData(self.element, "podium", false)
+	setElementData(self.element, "challenges", false)
 	setElementData(self.element, "nextmap", {})
 	setElementDimension(self.element, self.dimension)
 	Arena.timers[self.element] = {}
 
 	triggerEvent("onArenaCreate", self.element, self.name)
+	
+	triggerClientEvent(root, "onClientArenaCreate", self.element, self.name)
 
 	function self.destroy(arenaName)
+		
+		triggerClientEvent(root, "onClientArenaDestroy", self.element, self.name)
 		
 		for i, team in pairs(getTeamsInArena(self.element)) do
 		
@@ -65,6 +76,111 @@ function Arena.new(name, gamemode, category, type, maxplayers, password, mode, c
 	return self
 	
 end
+
+
+function Arena:setPodiumEnabled(state)
+
+	setElementData(self.element, "podium", state)
+
+end
+
+
+function Arena:setChallengesEnabled(state)
+
+	setElementData(self.element, "challenges", state)
+
+end
+
+
+function Arena:setUserpanelEnabled(state)
+
+	setElementData(self.element, "userpanel", state)
+
+end
+
+
+function Arena:setSpectatorsEnabled(state)
+
+	setElementData(self.element, "spectators", state)
+
+end
+
+
+function Arena:setGamblingEnabled(state)
+
+	setElementData(self.element, "gambling", state)
+
+end
+
+
+function Arena:setModsEnabled(state)
+
+	setElementData(self.element, "allow_mods", state)
+
+end
+
+
+function Arena:setAFKCheckEnabled(state)
+
+	setElementData(self.element, "Detector", state)
+
+end
+
+
+function Arena:setPingCheckEnabled(state)
+
+	setElementData(self.element, "pingchecker", state)
+
+end
+
+
+function Arena:setFPSCheckEnabled(state)
+
+	setElementData(self.element, "fpschecker", state)
+
+end
+
+
+function Arena:setVoteredoEnabled(state)
+
+	setElementData(self.element, "voteRedo", state)
+
+end
+
+
+function Arena:setToptimesEnabled(state)
+
+	setElementData(self.element, "toptimes", state)
+
+end
+	
+	
+function Arena:setTopkillsEnabled(state)
+
+	setElementData(self.element, "topkills", state)
+
+end	
+
+
+function Arena:setStatsEnabled(state)
+
+	setElementData(self.element, "stats", state)
+
+end	
+
+
+function Arena:setMapstatsEnabled(state)
+
+	setElementData(self.element, "mapstats", state)
+
+end	
+
+
+function Arena:setWaitingTime(time)
+
+	setElementData(self.element, "timer:waitingForPlayers", time)
+
+end	
 
 
 function Arena.generateNewDimension()

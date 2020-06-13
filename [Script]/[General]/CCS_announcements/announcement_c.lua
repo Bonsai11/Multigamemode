@@ -25,7 +25,6 @@ Announcement.adsList = {"You can chat with players in other Arenas using 'g' for
 						"You can turn on/off the radar by typing /showradar",
 						"Hold F6 to show the full rankingboard.",
 						"Press 'c' for Clan Chat.",
-						"Please mind that using shortcuts is forbidden.",
 						"Use /create to create a group chat.",
 						"Use /leave to leave the language chat.",
 						"Use /join <Language> to join a language chat.",

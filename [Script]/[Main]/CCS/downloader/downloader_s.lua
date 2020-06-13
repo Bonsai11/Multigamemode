@@ -10,7 +10,7 @@ function Downloader.create(element, filePackage)
 end
 
 function Downloader.start(player)
-
+	
 	--Arena has nothing that needs to be downloaded, spawn handled different way
 	if not Downloader.filePackage[source] then return end
 
@@ -24,7 +24,7 @@ addEventHandler("onStartDownload", root, Downloader.start)
 
 
 function Downloader.finished(session)
-
+	
 	local arenaElement = getElementParent(source)
 	local arenaID = getElementID(arenaElement)
 	

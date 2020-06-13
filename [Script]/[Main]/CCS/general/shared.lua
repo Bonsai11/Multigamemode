@@ -59,7 +59,7 @@ function getPlayersAndSpectatorsInArena(arenaElement)
 	return playerTable
 
 end
-
+export_getPlayersAndSpectatorsInArena = getPlayersAndSpectatorsInArena
 
 function getSpectatorsInArena(arenaElement)
 
@@ -107,7 +107,6 @@ function getCleanPlayerName(p)
 end
 
 
-
 function findArenaPlayer(arenaElement, name)
 
 	if not name then return false end
@@ -127,7 +126,7 @@ function findArenaPlayer(arenaElement, name)
     return false
 	
 end
-export_findArenaPlayer = findArenaPlayer
+export_findArenaPlayer = findArenaPlayer 
 
 
 function findPlayerAll(name)

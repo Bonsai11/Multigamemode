@@ -2,11 +2,11 @@ Derby = {}
 Derby.spawnIndex = {}
 Derby.spawnpoints = {}
 Derby.isRaceMap = {}
-Derby.isHunterFight = {}
 Derby.finishedPlayers = {}
 Derby.playerSpawn = {}
 Derby.playerVehicles = {}
 Derby.integrityTimer = {}
+Derby.isHunterFight = {}
 
 function Derby.load()
 
@@ -18,8 +18,8 @@ function Derby.load()
 	addEventHandler("onSetDownDerbyDefinitions", source, Derby.unload)
 	addEventHandler("onPlayerDerbyPickupHit", source, Derby.handleHunter)
 	addEventHandler("onFinishRace", source, Derby.mapEnd)
-	addEventHandler("onPlayerWasted", source, Derby.killPlayer)
-	addEventHandler("onPlayerQuit", source, Derby.killPlayer)
+	addEventHandler("onPlayerWasted", source, Derby.killDerbyPlayer)
+	addEventHandler("onPlayerQuit", source, Derby.killDerbyPlayer)
 	addEventHandler("onVehicleExplode", source, Derby.removeVehicle)
 	addEventHandler("onMapChange", source, Derby.mapChange)
 	addEventHandler("onArenaReset", source, Derby.reset)
@@ -28,24 +28,25 @@ function Derby.load()
 	addEventHandler("onCountdownStart", source, Derby.doCountdown)
 	addEventHandler("onMapLoading", source, Derby.loadNewMap)
 	addEventHandler("onMapEnd", source, Derby.forceEndMap)
+	addEventHandler("onPreMapEnd", source, Derby.mapPreEnd)
 	addEventHandler("onPlayerDerbySpawn", source, Derby.playerReady)
-	
+		
 	if getElementData(source, "mode") ~= "Training" then
 
-		if getElementData(source, "temporary") and getElementData(source, "mode") ~= "Competitive" then
+		if getElementData(source, "temporary") then
 
 			local map = MapManager.findMap("Airport Dogfight DD", "Classic")[1]
 		
 			if not map then
 			
-				map = MapManager.getRandomArenaMap(typ)
+				map = MapManager.getRandomArenaMap()
 				
 			end
 		
 			triggerEvent("onStartNewMap", source, map, false)
 
 		else
-
+		
 			local typ = getElementData(source, "type")
 
 			triggerEvent("onStartNewMap", source, MapManager.getRandomArenaMap(typ), false)
@@ -63,9 +64,8 @@ function Derby.mapChange(map)
 
 	Derby.spawnIndex[source] = 1
 	Derby.isRaceMap[source] = false
-	Derby.isHunterFight[source] = false
 	setElementData(source, "GhostMode", true)
-	setElementData(source, "finishTime", 5000)
+	setElementData(source, "finishTime", 3000)
 	Derby.playerSpawn[source] = {}
 	Derby.finishedPlayers[source] = 0
 	Derby.spawnpoints[source] = MapManager.getSpawnpoints(source)
@@ -119,7 +119,9 @@ function Derby.reset()
 
 	Derby.playerSpawn[source] = {}
 	Derby.spawnpoints[source] = {}
+	Derby.isHunterFight[source] = false
 	if isTimer(Derby.integrityTimer[source]) then killTimer(Derby.integrityTimer[source]) end
+	if isTimer(Arena.timers[source].hunterFightTimer) then killTimer(Arena.timers[source].hunterFightTimer) end
 	triggerEvent("onSetDownLinezDefinitions", source)
 
 end
@@ -131,8 +133,8 @@ function Derby.unload()
 	outputServerLog(getElementID(source)..": Unloading Derby Definitions")
 
 	removeEventHandler("onVehicleExplode", source, Derby.removeVehicle)
-	removeEventHandler("onPlayerWasted", source, Derby.killPlayer)
-	removeEventHandler("onPlayerQuit", source, Derby.killPlayer)
+	removeEventHandler("onPlayerWasted", source, Derby.killDerbyPlayer)
+	removeEventHandler("onPlayerQuit", source, Derby.killDerbyPlayer)
 	removeEventHandler("onPlayerWasted", source, Derby.mapEnd)
 	removeEventHandler("onPlayerRequestSpawn", source, Derby.spawn)
 	removeEventHandler("onMapStart", source, Derby.mapStart)
@@ -146,6 +148,7 @@ function Derby.unload()
 	removeEventHandler("onCountdownStart", source, Derby.doCountdown)
 	removeEventHandler("onMapLoading", source, Derby.loadNewMap)
 	removeEventHandler("onMapEnd", source, Derby.forceEndMap)
+	removeEventHandler("onPreMapEnd", source, Derby.mapPreEnd)
 	removeEventHandler("onPlayerDerbySpawn", source, Derby.playerReady)
 
 end
@@ -165,7 +168,7 @@ addEvent("onSetMapStartCountdown", true)
 
 
 function Derby.prepareMapCountdown()
-
+	
 	setElementData(source, "state", "Ready")
 
 	if getElementData(source, "mode") == "Manual" then
@@ -175,16 +178,20 @@ function Derby.prepareMapCountdown()
 		outputChatBox("Arena Mode: 'Manual' - Use /run to start the countdown!", source, 255, 255, 0)
 		return
 
+	elseif getElementData(source, "mode") == "Competitive" then
+	
+		return
+		
 	end
 
 	triggerEvent("onCountdownStart", source)
-
+	
 end
 addEvent("onPrepareCountdown", true)
 
 
 function Derby.doCountdown()
-
+	
 	Arena.timers[source].secondaryTimer = setTimer(triggerEvent, 3000, 1, "onMapStart", source, getElementData(source, "map"))
 
 	setElementData(source, "state", "Countdown")
@@ -229,15 +236,7 @@ end
 addEvent("onMapLoading", true)
 
 
-function Derby.forceEndMap(timeUp)
-
-	if getElementData(source, "mode") == "Training" then return end
-
-	if getElementData(source, "state") ~= "In Progress" then return end
-
-	setElementData(source, "state", "End")
-
-	local finishTime = getElementData(source, "finishTime") or 5000
+function Derby.forceEndMap()
 
 	if getElementData(source, "mode") == "Manual" then
 
@@ -245,21 +244,21 @@ function Derby.forceEndMap(timeUp)
 
 	elseif #getElementData(source, "nextmap") > 0 then
 
-		triggerClientEvent(source, "onClientMapEnding", source, "Next map map starts in: ", finishTime, timeUp)
+		triggerClientEvent(source, "onClientMapEnding", source, "Next map starts in: ", 7000)
 		
-		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, finishTime, 1, "onMapLoading", source)
+		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, 7000, 1, "onMapLoading", source)
 
 	elseif getElementData(source, "mode") == "Random" then
 
-		triggerClientEvent(source, "onClientMapEnding", source, "Random map starts in: ", finishTime, timeUp)
+		triggerClientEvent(source, "onClientMapEnding", source, "Random map starts in: ", 7000)
 		
-		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, finishTime, 1, "onMapLoading", source)
+		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, 7000, 1, "onMapLoading", source)
 
 	elseif getElementData(source, "mode") == "Voting" then
 
-		triggerClientEvent(source, "onClientMapEnding", source, "Vote for next map starts in: ", finishTime, timeUp)
+		triggerClientEvent(source, "onClientMapEnding", source, "Vote for next map starts in: ", 7000)
 		
-		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, finishTime, 1, "onMapLoading", source)
+		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, 7000, 1, "onMapLoading", source)
 
 	end
 
@@ -267,37 +266,67 @@ end
 addEvent("onMapEnd", true)
 
 
-function Derby.handleHunter(type, model)
+function Derby.mapPreEnd(timeUp)
 
+	if getElementData(source, "mode") == "Training" then return end
+
+	if getElementData(source, "state") ~= "In Progress" then return end
+
+	setElementData(source, "state", "End")
+
+	local finishTime = getElementData(source, "finishTime") or 3000
+
+	if getElementData(source, "podium") then
+	
+		Arena.timers[source].secondaryTimer = setTimer(triggerEvent, finishTime, 1, "onMapEnd", source)
+
+		triggerClientEvent(source, "onClientPreMapEnd", source, "Map will end in: ", finishTime, timeUp)
+
+	else
+	
+		triggerEvent("onMapEnd", source)
+	
+	end
+
+end
+addEvent("onPreMapEnd", true)
+
+
+function Derby.handleHunter(type, model)
+	
 	if type ~= "vehiclechange" then return end
 
 	if not getPedOccupiedVehicle(source) then return end
-
+	
 	if model == 425 then
-
-		local element = getElementParent(source)
-
+		
+		local arenaElement = getElementParent(source)
+		
+		local isFirst = not Derby.isHunterFight[arenaElement]
+		
 		toggleControl(source, "vehicle_secondary_fire", false)
 
-		if #getAlivePlayersInArena(element) == 1 then
+		if #getAlivePlayersInArena(arenaElement) == 1 then
 
-			triggerEvent("onMapEnd", element)
+			triggerEvent("onPreMapEnd", arenaElement)
 
 		else
-
-			if not Derby.isHunterFight[element] then
 			
-				--Max 3 minutes to finish after a player got hunter
-				Arena.timers[element].hunterFightTimer = setTimer(triggerEvent, 180000, 1, "onMapEnd", element, true)
-			
-				triggerClientEvent(element, "onPlayerHunterPickup", source, not Derby.isHunterFight[element])
-			
-				Derby.isHunterFight[element] = true
+			if not Derby.isHunterFight[arenaElement] then
+				
+				--Max 1 minute to finish after a player got hunter
+				Arena.timers[arenaElement].hunterFightTimer = setTimer(triggerEvent, 180000, 1, "onPreMapEnd", arenaElement, true)
+				
+				Derby.isHunterFight[arenaElement] = true
 			
 			end
-			
-		end
 
+		end
+		
+		triggerEvent("onPlayerHunterPickup", source, isFirst)
+			
+		triggerClientEvent(arenaElement, "onClientPlayerHunterPickup", source, isFirst)	
+			
 	else
 
 		toggleControl(source, "vehicle_secondary_fire", true)
@@ -336,18 +365,18 @@ function Derby.mapEnd()
 		
 		toggleAllControls(source, false, true, false)
 		
-		triggerClientEvent(arenaElement, "onClientFinishRace", source, getCleanPlayerName(source))
+		triggerClientEvent(source, "onClientRequestSpectatorMode", source)
 
 		--Only for the winner of the Race
 		if Derby.finishedPlayers[arenaElement] ~= 1 then return end
 
-		triggerClientEvent(arenaElement, "onClientPlayerWin", arenaElement, source, "#ffffff"..getPlayerName(source).."#04B404 has won the Race!")
+		triggerClientEvent(arenaElement, "onClientPlayerWin", source, "#ffffff"..getPlayerName(source).."#04B404 has won the Race!")
 		
 		triggerEvent("onPlayerWin", source, getCleanPlayerName(source))
 		
 		triggerEvent("onPlayerRaceWin", source, getCleanPlayerName(source))
 		
-		triggerEvent("onMapEnd", arenaElement)
+		triggerEvent("onPreMapEnd", arenaElement)
 
 		return
 
@@ -358,6 +387,8 @@ function Derby.mapEnd()
 
 	triggerEvent("onPlayerDerbyWasted", source, #getAlivePlayersInArena(arenaElement))
 
+	triggerClientEvent(source, "onClientRequestSpectatorMode", source)
+
 	setElementData(source, "state", "Dead")
 	
 	setElementAlpha(source, 0)
@@ -366,19 +397,21 @@ function Derby.mapEnd()
 
 		local alivePlayers = getAlivePlayersInArena(arenaElement)
 		
-		triggerClientEvent(arenaElement, "onClientPlayerWin", arenaElement, alivePlayers[1], "#ffffff"..getPlayerName(alivePlayers[1]).."#04B404 has won as last player alive!")
+		triggerClientEvent(arenaElement, "onClientPlayerWin", alivePlayers[1], "#ffffff"..getPlayerName(alivePlayers[1]).."#04B404 has won as last player alive!")
 
 		triggerEvent("onPlayerWin", alivePlayers[1], getCleanPlayerName(alivePlayers[1]))
 
+		Derby.finishedPlayers[arenaElement] = 1
+
 		if not getElementData(arenaElement, "GhostMode") or getElementModel(getPedOccupiedVehicle(alivePlayers[1])) == 425 then
 
-			triggerEvent("onMapEnd", arenaElement)
+			triggerEvent("onPreMapEnd", arenaElement)
 
 		end
 
 	elseif #getAlivePlayersInArena(arenaElement) == 0 then
 
-		triggerEvent("onMapEnd", arenaElement)
+		triggerEvent("onPreMapEnd", arenaElement)
 
 	end
 
@@ -487,8 +520,8 @@ function Derby.spawn()
 
 	if getElementData(source, "Spectator") then
 
-		triggerClientEvent(source, "onClientRequestSpectatorMode", source)
-		triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Core.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
+		triggerClientEvent(source, "onClientRequestSpectatorMode", source, true)
+		triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Derby.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
 
 		return
 
@@ -498,8 +531,8 @@ function Derby.spawn()
 
 		if not Derby.isRaceMap[arenaElement] then
 
-			triggerClientEvent(source, "onClientRequestSpectatorMode", source)
-			triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Core.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
+			triggerClientEvent(source, "onClientRequestSpectatorMode", source, true)
+			triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Derby.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
 
 			return
 
@@ -524,8 +557,8 @@ function Derby.spawn()
 
 			spawnPlayer(source, 0, 0, 3, 0, 0, 0, getElementDimension(arenaElement))
 			setElementAlpha(source, 255)
-			triggerClientEvent(source, "onClientRequestSpectatorMode", source)
-			triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Core.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
+			triggerClientEvent(source, "onClientRequestSpectatorMode", source, true)
+			triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Derby.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
 
 			return
 
@@ -565,7 +598,7 @@ function Derby.spawn()
 	bindKey(source, "mouse_wheel_up", "down", Derby.switchSpawnpoint)
 	bindKey(source, "mouse_wheel_down", "down", Derby.switchSpawnpoint)
 
-	triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Core.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
+	triggerClientEvent(source, "onClientPlayerReady", arenaElement, getElementData(arenaElement, "Duration"), Core.getTimePassed(arenaElement), Derby.getWaitingTime(arenaElement), Derby.isRaceMap[arenaElement])
 
 	triggerEvent("onPlayerDerbySpawn", source)
 
@@ -582,16 +615,22 @@ function Derby.playerReady()
 	--Handle map start
 	if getElementData(arenaElement, "state") ~= "Waiting" then return end
 
-	if not isTimer(Arena.timers[arenaElement].secondaryTimer) then
+	if not isTimer(Arena.timers[arenaElement].secondaryTimer) and getElementData(arenaElement, "mode") ~= "Competitive" then
 
-		Arena.timers[arenaElement].secondaryTimer = setTimer(triggerEvent, 30000, 1, "onSetMapStartCountdown", arenaElement)
+		Arena.timers[arenaElement].secondaryTimer = setTimer(triggerEvent, getElementData(arenaElement, "timer:waitingForPlayers"), 1, "onSetMapStartCountdown", arenaElement)
 
 	end
-
+	
 	local onlinePlayers = #getPlayersInArena(arenaElement)
-
+	
 	local readyPlayers = #getAlivePlayersInArena(arenaElement)
 
+	if getElementData(arenaElement, "mode") == "Competitive" and onlinePlayers < 2 then
+	
+		return
+		
+	end		
+	
 	if readyPlayers < onlinePlayers then return end
 
 	outputServerLog(arenaID..": All players ready!")
@@ -604,7 +643,7 @@ addEvent("onPlayerDerbySpawn")
 
 function Derby.mapStart()
 
-	Arena.timers[source].primaryTimer = setTimer(triggerEvent, getElementData(source, "Duration"), 1, "onMapEnd", source, true)
+	Arena.timers[source].primaryTimer = setTimer(triggerEvent, getElementData(source, "Duration"), 1, "onPreMapEnd", source, true)
 
 	triggerClientEvent(source, "onClientMapStart", source, getElementData(source, "map"))
 	
@@ -697,6 +736,10 @@ function Derby.switchSpawnpoint(keyPresser, key, keyState)
 
 	if getElementData(arenaElement, "state") ~= "Waiting" and getElementData(arenaElement, "state") ~= "Countdown" and getElementData(arenaElement, "state") ~= "Ready" then return end
 
+	triggerEvent("onPlayerSwitchSpawnpoint", keyPresser)
+
+	if wasEventCancelled() then return end
+
 	local direction
 
 	if key == "arrow_r" or key == "mouse_wheel_up" then
@@ -732,7 +775,7 @@ function Derby.switchSpawnpoint(keyPresser, key, keyState)
 end
 
 
-function Derby.killPlayer()
+function Derby.killDerbyPlayer()
 
 	if not isElement(source) then return end
 
@@ -779,5 +822,16 @@ end
 function Derby.removeVehicle()
 
 	setTimer(Derby.destroyVehicle, 4000, 1, source)
+
+end
+
+
+function Derby.getWaitingTime(arenaElement)
+
+	if getElementData(arenaElement, "state") ~= "Waiting" then return false end
+
+	if not isTimer(Arena.timers[arenaElement].secondaryTimer) then return getElementData(arenaElement, "timer:waitingForPlayers") end
+
+	return getTimerDetails(Arena.timers[arenaElement].secondaryTimer)
 
 end

@@ -1,6 +1,5 @@
 Glue = {}
 
-
 function Glue.main()
 
 	if getElementData(source, "gamemode") ~= "Freeroam" then return end

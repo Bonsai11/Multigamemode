@@ -1,5 +1,6 @@
 Ghost = {}
 Ghost.data = {}
+Ghost.enabled = nil
 Ghost.vehicle = nil
 Ghost.ped = nil
 Ghost.currentIndex = 1
@@ -7,11 +8,14 @@ Ghost.fetchInterval = 50
 Ghost.lastTick = 0
 Ghost.currentMap = nil
 Ghost.marker = nil
+Ghost.lineSize = 5
 
 function Ghost.main()
 
 	if getElementData(source, "gamemode") ~= "Race" then return end
 
+	if not getElementData(source, "GhostMode") then return end
+	
 	local map = getElementData(source, "map")
 
 	Ghost.currentMap = map
@@ -45,12 +49,14 @@ function Ghost.main()
 		setElementDimension(Ghost.vehicle, getElementDimension(localPlayer))
 		setElementDimension(Ghost.ped, getElementDimension(localPlayer))
 		setElementDimension(Ghost.marker, getElementDimension(localPlayer))
+		Ghost.enabled = true
 		
 	else
 	
 		setElementDimension(Ghost.vehicle, 0)
 		setElementDimension(Ghost.ped, 0)
 		setElementDimension(Ghost.marker, 0)
+		Ghost.enabled = false
 	
 	end
 	
@@ -126,6 +132,8 @@ function Ghost.toggle()
 			
 		triggerServerEvent("onGhostDriverSettingChange", localPlayer, 1)
 		
+		Ghost.enabled = true
+		
 		outputChatBox("#00ccffGhosts are now turned #ffffffon#00ccff!", 255, 255, 255, true)
 		
 	else
@@ -139,6 +147,8 @@ function Ghost.toggle()
 		end
 		
 		triggerServerEvent("onGhostDriverSettingChange", localPlayer, 0)
+		
+		Ghost.enabled = false
 		
 		outputChatBox("#00ccffGhosts are now turned #ffffffoff#00ccff!", 255, 255, 255, true)
 	
@@ -198,10 +208,6 @@ end
 
 function Ghost.process()
 
-	if getTickCount() - Ghost.lastTick < Ghost.fetchInterval then return end
-
-	Ghost.lastTick = getTickCount()
-
 	if not isElement(Ghost.vehicle) then return end
 	
 	if Ghost.currentIndex > #Ghost.data then 
@@ -212,15 +218,48 @@ function Ghost.process()
 		return 
 	
 	end
+
+	if Ghost.enabled then
+	
+		for i = 2, Ghost.currentIndex, 1 do
+		
+			local speed = Ghost.getSpeed(Ghost.data[i-1].velX, Ghost.data[i-1].velY, Ghost.data[i-1].velZ)
+			
+			local r, g, b, n
+			
+			n = (speed / 197) * 100
+			n = math.abs(n - 100)
+			n = math.min(100, n)
+			n = math.max(0, n)
+			
+			r = (255 * n) / 100
+			g = (255 * (100 - n)) / 100 
+			b = 0
+		
+			dxDrawLine3D(Ghost.data[i-1].posX, Ghost.data[i-1].posY, Ghost.data[i-1].posZ, Ghost.data[i].posX, Ghost.data[i].posY, Ghost.data[i].posZ, tocolor ( r, g, b, 255 ), Ghost.lineSize)
+
+		end
+		
+	end
+
+	if getTickCount() - Ghost.lastTick < Ghost.fetchInterval then return end
+
+	Ghost.lastTick = getTickCount()
 	
 	setElementModel(Ghost.vehicle, Ghost.data[Ghost.currentIndex].model)
 	setElementPosition(Ghost.vehicle, Ghost.data[Ghost.currentIndex].posX, Ghost.data[Ghost.currentIndex].posY, Ghost.data[Ghost.currentIndex].posZ)
 	setElementRotation(Ghost.vehicle, Ghost.data[Ghost.currentIndex].rotX, Ghost.data[Ghost.currentIndex].rotY, Ghost.data[Ghost.currentIndex].rotZ)
 	setElementVelocity(Ghost.vehicle, Ghost.data[Ghost.currentIndex].velX, Ghost.data[Ghost.currentIndex].velY, Ghost.data[Ghost.currentIndex].velZ)
-	setVehicleTurnVelocity(Ghost.vehicle, Ghost.data[Ghost.currentIndex].turX, Ghost.data[Ghost.currentIndex].turY, Ghost.data[Ghost.currentIndex].turZ)
+	setElementAngularVelocity(Ghost.vehicle, Ghost.data[Ghost.currentIndex].turX, Ghost.data[Ghost.currentIndex].turY, Ghost.data[Ghost.currentIndex].turZ)
 	addVehicleUpgrade(Ghost.vehicle, Ghost.data[Ghost.currentIndex].nitro)
 	setVehicleNitroActivated(Ghost.vehicle, Ghost.data[Ghost.currentIndex].isNosActive)
 	
 	Ghost.currentIndex = Ghost.currentIndex + 1
 	
+end
+
+function Ghost.getSpeed(velX, velY, velZ)
+
+	return (velX^2 + velY^2 + velZ^2) ^ 0.5 * 1.61 * 100
+
 end

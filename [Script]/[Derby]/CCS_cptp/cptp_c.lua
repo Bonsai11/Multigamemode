@@ -18,10 +18,11 @@ function CPTP.create()
 	table.insert(CPTP.data, {posX = select(1, getElementPosition(vehicle)), posY = select(2, getElementPosition(vehicle)), posZ = select(3, getElementPosition(vehicle)),
 							   rotX = select(1, getElementRotation(vehicle)), rotY = select(2, getElementRotation(vehicle)), rotZ = select(3, getElementRotation(vehicle)),
 							   velX = select(1, getElementVelocity(vehicle)), velY = select(2, getElementVelocity(vehicle)), velZ = select(3, getElementVelocity(vehicle)),
-							   turX = select(1, getVehicleTurnVelocity(vehicle)), turY = select(2, getVehicleTurnVelocity(vehicle)), turZ = select(3, getVehicleTurnVelocity(vehicle)),
+							   turX = select(1, getElementAngularVelocity(vehicle)), turY = select(2, getElementAngularVelocity(vehicle)), turZ = select(3, getElementAngularVelocity(vehicle)),
 							   nitro = getVehicleUpgradeOnSlot(vehicle, 8), model = getElementModel(vehicle), isNosActive = isVehicleNitroActivated(vehicle),
 							   camX = select(1, getCameraMatrix()), camY = select(2, getCameraMatrix()), camZ = select(3, getCameraMatrix()), roll = select(7, getCameraMatrix()),
-							   camLX = select(4, getCameraMatrix()), camLY = select(5, getCameraMatrix()), camLZ = select(6, getCameraMatrix()), fov = select(8, getCameraMatrix())})
+							   camLX = select(4, getCameraMatrix()), camLY = select(5, getCameraMatrix()), camLZ = select(6, getCameraMatrix()), fov = select(8, getCameraMatrix()),
+							   nitroLevel = getVehicleNitroLevel(vehicle), health = getElementHealth(vehicle)})
 
 	CPTP.state = true
 	
@@ -48,12 +49,19 @@ function CPTP.teleport()
 	end
 
 	setElementFrozen(vehicle, true)
-	fixVehicle(vehicle)
+	setElementHealth(vehicle, CPTP.data[1].health)
 	setElementModel(vehicle, CPTP.data[1].model)
 	setElementPosition(vehicle, CPTP.data[1].posX, CPTP.data[1].posY, CPTP.data[1].posZ)
 	setElementRotation(vehicle, CPTP.data[1].rotX, CPTP.data[1].rotY, CPTP.data[1].rotZ)
 	addVehicleUpgrade(vehicle, CPTP.data[1].nitro)
 	setVehicleNitroActivated(vehicle, CPTP.data[1].isNosActive)
+	
+	if CPTP.data[1].nitroLevel then
+	
+		setVehicleNitroLevel(vehicle, CPTP.data[1].nitroLevel)
+		
+	end
+	
 	setCameraMatrix(CPTP.data[1].camX, CPTP.data[1].camY, CPTP.data[1].camZ, CPTP.data[1].camLX, CPTP.data[1].camLY, CPTP.data[1].camLZ, CPTP.data[1].roll, CPTP.data[1].fov)
 	setCameraTarget(localPlayer)
 	
@@ -75,7 +83,7 @@ function CPTP.release()
 
 	setElementFrozen(vehicle, false)
 	setElementVelocity(vehicle, CPTP.data[1].velX, CPTP.data[1].velY, CPTP.data[1].velZ)
-	setVehicleTurnVelocity(vehicle, CPTP.data[1].turX, CPTP.data[1].turY, CPTP.data[1].turZ)
+	setElementAngularVelocity(vehicle, CPTP.data[1].turX, CPTP.data[1].turY, CPTP.data[1].turZ)
 
 end
 

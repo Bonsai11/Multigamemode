@@ -1,0 +1,7 @@
+<meta>
+
+	<info author="Bonsai" version="0.1.1" type="script" name="DDC Reactions" description="Reactions"/>
+	<script src="reaction_c.lua" type="client" cache="false"/>
+	<script src="reaction_s.lua" type="server" />
+	
+</meta>

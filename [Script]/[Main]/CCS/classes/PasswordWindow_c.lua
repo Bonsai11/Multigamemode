@@ -2,12 +2,15 @@ PasswordWindow = {}
 PasswordWindow.x, PasswordWindow.y = guiGetScreenSize()
 PasswordWindow.width = 400
 PasswordWindow.height = 500
+PasswordWindow.posX = PasswordWindow.x / 2 - PasswordWindow.width / 2
+PasswordWindow.posY = PasswordWindow.y / 2 - PasswordWindow.height / 2
 
-function PasswordWindow.new()
+function PasswordWindow.new(animationX)
 
     local self = {}
 	
-	self.window = guiCreateWindow ( PasswordWindow.x / 2 - PasswordWindow.width / 2, PasswordWindow.y / 2 - PasswordWindow.height / 2, PasswordWindow.width, PasswordWindow.height, "Password", false)
+	PasswordWindow.posX = PasswordWindow.posX + animationX	
+	self.window = guiCreateWindow ( PasswordWindow.posX, PasswordWindow.posY, PasswordWindow.width, PasswordWindow.height, "Password", false)
 	guiWindowSetSizable(self.window, false)
 	guiWindowSetMovable(self.window, false)
 	
@@ -23,7 +26,8 @@ function PasswordWindow.new()
 	
 	self.passwordLabel = guiCreateLabel(0.05, 0.80, 0.2, 0.05, "Password:", true, self.window)
 	guiLabelSetVerticalAlign(self.passwordLabel, "center")
-	self.passwordBox = guiCreateEdit(0.25, 0.80, 0.65, 0.05, "", true, self.window)			
+	self.passwordBox = guiCreateEdit(0.25, 0.80, 0.65, 0.05, "", true, self.window)
+	guiEditSetMasked(self.passwordBox, true)	
 	
 	self.joinButton = guiCreateButton( 0.25, 0.925, 0.2, 0.05, "Join", true, self.window)	
 	self.closeButton = guiCreateButton( 0.55, 0.925, 0.2, 0.05, "Close", true, self.window)
@@ -57,6 +61,12 @@ function PasswordWindow.new()
 	
 	end
 	
+	function self.setAnimationPosition(x)
+	
+		guiSetPosition(self.window, x + PasswordWindow.posX, PasswordWindow.posY, false)
+	
+	end	
+	
 	function self.destroy()
 		
 		destroyElement(self.window)
@@ -74,11 +84,11 @@ function PasswordWindow.new()
 	
 		if source == self.closeButton then
 		
-			self.setVisible(false)
+			triggerEvent ( "onLobbyWindowClose", localPlayer )
 			
 		elseif source == self.joinButton then
 		
-			self.setVisible(false)
+			triggerEvent ( "onLobbyWindowClose", localPlayer )
 		
 			local password = guiGetText(self.passwordBox)
 			local arenaID = getElementID(self.arenaElement)

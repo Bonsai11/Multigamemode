@@ -74,8 +74,8 @@ function DurationWindow.finish(text, countTime)
 end
 addEvent("onClientMapEnding", true)
 addEventHandler("onClientMapEnding", root, DurationWindow.finish)
-
 	
+
 function DurationWindow.hunterPickup(isFirst)
 
 	if not isFirst then return end
@@ -84,10 +84,10 @@ function DurationWindow.hunterPickup(isFirst)
 	DurationWindow.timeLeftColorCurrent = DurationWindow.timeLeftColorHunter
 	
 end
-addEvent("onPlayerHunterPickup", true)
-addEventHandler("onPlayerHunterPickup", root, DurationWindow.hunterPickup)
-	
-	
+addEvent("onClientPlayerHunterPickup", true)
+addEventHandler("onClientPlayerHunterPickup", root, DurationWindow.hunterPickup)
+
+
 function DurationWindow.draw()
 
 	if not DurationWindow.show then return end

@@ -1,11 +1,14 @@
 TrainingWindow = {}
 TrainingWindow.x, TrainingWindow.y =  guiGetScreenSize()
-TrainingWindow.relX, TrainingWindow.relY =  (TrainingWindow.x/800), (TrainingWindow.y/600)
+TrainingWindow.width = 400
+TrainingWindow.height = 500
+TrainingWindow.posX = TrainingWindow.x / 2 - TrainingWindow.width / 2
+TrainingWindow.posY = TrainingWindow.y / 2 - TrainingWindow.height / 2
 
 function TrainingWindow.new()
 
 	local self = {}
-	self.window = guiCreateWindow ( 0.33, 0.2, 0.33, 0.60, "Choose a Map", true )
+	self.window = guiCreateWindow ( TrainingWindow.posX, TrainingWindow.posY, TrainingWindow.width, TrainingWindow.height, "Choose a Map", false )
 	guiWindowSetSizable(self.window, false)
 	guiWindowSetMovable(self.window, false)
 	self.searchLabel = guiCreateLabel(0.04, 0.05, 0.1, 0.05, "Search", true, self.window)
@@ -31,6 +34,7 @@ function TrainingWindow.new()
 		
 	end
 	
+	
 	function self.update(maps)
 	
 		self.maps = maps
@@ -45,6 +49,8 @@ function TrainingWindow.new()
 		end
 	
 	end
+	addEvent("onRecieveMapList", true)
+	addEventHandler("onRecieveMapList", root, self.update)
 	
 	function self.click()
 
@@ -104,8 +110,11 @@ function TrainingWindow.new()
 		destroyElement(self.window)
 		removeEventHandler("onClientGUIChanged", root, self.search)
 		removeEventHandler("onClientGUIDoubleClick", root, self.click)
+		removeEventHandler("onRecieveMapList", root, self.update)
 	
 	end
+	
+	triggerServerEvent("onRequestMapList", localPlayer, "Cross;Classic;Oldschool;Modern;Race;Shooter;Linez;Dynamic")	
 
 	return self
 	

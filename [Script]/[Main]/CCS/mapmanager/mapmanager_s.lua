@@ -1,5 +1,7 @@
 MapManager = {}
 MapManager.mapDataCache = {}
+MapManager.vehicles = {}
+MapManager.pickups = {}
 
 function MapManager.startMap(map, sendToPlayers)
 	
@@ -75,13 +77,12 @@ function MapManager.loadMap(mapname, arenaElement)
 	MapTable.mapData.Flip = {}
 	MapTable.mapData.Reverse = {}
 	MapTable.mapData.Rotate = {}
-	MapTable.mapData.vehicles = {}
 	MapTable.mapData.checkpoints = {}
 	MapTable.mapData.removeWorldObjects = {}
-	MapTable.mapData.DMpickup = {}
 	MapTable.mapData.name = nil
 	MapTable.mapData.author = nil
 	MapTable.mapData.settings = {}
+	MapTable.mapData.spawnpoints = {}
 
 	MapTable.fileData = {}
 	MapTable.fileData.data = {}
@@ -92,6 +93,8 @@ function MapManager.loadMap(mapname, arenaElement)
 	MapManager.mapDataCache[arenaElement] = {}
 	MapManager.mapDataCache[arenaElement].spawnpoints = {}
 	MapManager.mapDataCache[arenaElement].isRaceMap = false
+	MapManager.mapDataCache[arenaElement].pickups = {}
+	MapManager.mapDataCache[arenaElement].vehicles = {}
 	
     local metaXML = xmlLoadFile(":"..mapname.."/meta.xml")
 	
@@ -156,7 +159,7 @@ function MapManager.loadMap(mapname, arenaElement)
 					
 				elseif objectType == "vehicle" then
 				
-					table.insert(MapTable.mapData.vehicles,{
+					table.insert(MapManager.mapDataCache[arenaElement].vehicles,{
 					modelId = tonumber(xmlNodeGetAttribute(p,"model")),
 					interiorID = tonumber(xmlNodeGetAttribute(p, "interior")) or 0,
 					posX = tonumber(xmlNodeGetAttribute(p,"posX")),
@@ -233,7 +236,7 @@ function MapManager.loadMap(mapname, arenaElement)
 					
 				elseif objectType == "pickup" then
 				
-					table.insert(MapTable.mapData.DMpickup,{
+					table.insert(MapManager.mapDataCache[arenaElement].pickups,{
 					amount = tonumber(xmlNodeGetAttribute(p, "amount")) or 50,
 					interior = tonumber(xmlNodeGetAttribute(p, "interior")) or 0,
 					respawn = tonumber(xmlNodeGetAttribute(p, "respawn")) or 0,
@@ -389,6 +392,8 @@ function MapManager.loadMap(mapname, arenaElement)
 
 	xmlUnloadFile(metaXML)
 
+	MapTable.mapData.spawnpoints = MapManager.mapDataCache[arenaElement].spawnpoints
+
 	outputServerLog(getElementID(arenaElement)..": Loading new Map: "..MapTable.mapData.name)
 	
 	return MapTable
@@ -402,6 +407,7 @@ function MapManager.getSpawnpoints(arenaElement)
 	return MapManager.mapDataCache[arenaElement].spawnpoints
 
 end
+export_getSpawnPoints = MapManager.getSpawnpoints
 
 
 function MapManager.getIsRaceMap(arenaElement)
@@ -410,9 +416,102 @@ function MapManager.getIsRaceMap(arenaElement)
 	
 end
 
+
+function MapManager.mapChange()
+
+	for i, m in ipairs(MapManager.mapDataCache[source].vehicles) do
+	
+		local vehicle = createVehicle(m.modelId, m.posX, m.posY, m.posZ, m.rotX, m.rotY, m.rotZ)
+		
+		if vehicle then
+		
+			if m.frozen == "false" then
+			
+				setElementFrozen(vehicle, false)
+			
+			else
+			
+				setElementFrozen(vehicle, true)
+				
+			end
+
+			setElementParent(vehicle, source)
+			setElementDimension(vehicle, getElementDimension(source))
+			setElementInterior(vehicle, m.interiorID)
+			table.insert(MapManager.vehicles[source], vehicle)
+			
+		end
+			
+	end
+
+	for i, p in ipairs(MapManager.mapDataCache[source].pickups) do
+		
+		local pickup
+		
+		if p.typ == "health" then 
+		
+			pickup = createPickup ( p.posX, p.posY, p.posZ, 0, p.amount, p.respawn)
+			
+		elseif p.typ == "armor" then 
+		
+			pickup = createPickup ( p.posX, p.posY, p.posZ, 1, p.amount, p.respawn)
+			
+		else
+		
+			pickup = createPickup ( p.posX, p.posY, p.posZ, 2, tonumber(p.typ), p.respawn, p.amount)
+			
+		end
+	
+		setElementParent(pickup, source)
+		setElementInterior(pickup, p.interior)
+		setElementDimension(pickup, getElementDimension(source))
+		
+		table.insert(MapManager.pickups[source], pickup)
+		
+	end
+
+end
+addEvent("onMapChange", true)
+addEventHandler("onMapChange", root, MapManager.mapChange)
+
+
+function MapManager.reset()
+
+	if not MapManager.pickups[source] then
+	
+		MapManager.pickups[source] = {}
+		
+	end
+	
+	if not MapManager.vehicles[source] then
+	
+		MapManager.vehicles[source] = {}
+		
+	end	
+
+	for i, pickup in ipairs(MapManager.pickups[source]) do
+		
+		if isElement(pickup) then destroyElement(pickup) end
+		
+	end
+
+	for i, vehicle in pairs(MapManager.vehicles[source]) do
+	
+		if isElement(vehicle) then destroyElement(vehicle) end
+		
+	end
+	
+	MapManager.pickups[source] = {}
+	MapManager.vehicles[source] = {}
+
+end
+addEvent("onArenaReset", true)
+addEventHandler("onArenaReset", root, MapManager.reset)
+
+
 function MapManager.fetchMaps(element)
 
-	MapTypes = {"Classic", "Cross", "Oldschool", "Shooter", "Hunter", "Modern", "Race", "Freeroam", "Linez", "Dynamic", "Maptest"}
+	MapTypes = {"Classic", "Cross", "Oldschool", "Shooter", "Hunter", "Modern", "Race", "Freeroam", "Linez", "Dynamic", "Maptest", "BattleRoyale"}
 
 	Maps = {}
 	
@@ -484,6 +583,12 @@ addEventHandler("onRequestMapList", root, MapManager.requestMaps)
 
 function MapManager.getMaps(type)
 
+	if not type or type == "" then
+	
+		type = "Cross;Classic;Oldschool;Modern;Race;Shooter;Linez;Dynamic"
+	
+	end
+
 	local temp = {}
 
 	for i, subType in pairs(split(type, ";")) do
@@ -513,9 +618,9 @@ function MapManager.findMap(query, type)
 	query = string.gsub(query, "([%*%+%?%.%(%)%[%]%{%}%\%/%|%^%$%-])","%%%1")
 	
 	local mapsTable = MapManager.getMaps(type)
-
+	
 	for i, map in ipairs(mapsTable) do
-		
+
 		if query == map.name:gsub("([%*%+%?%.%(%)%[%]%{%}%\%/%|%^%$%-])","%%%1") then
 		
 			return {map}
@@ -581,5 +686,91 @@ addEvent("onPlayerDerbyPickupHit", true)
 addEventHandler("onPlayerDerbyPickupHit", root, MapManager.pickupHit)
 
 
+function MapManager.moveMap(p, c, newType)
+
+	if not newType then return end
+
+	local arenaElement = getElementParent(p)
+
+	local map = getElementData(arenaElement, "map")
+
+	if not map then return end
+
+	if not table.contains(MapTypes, newType) then
+	
+		outputChatBox("Valid map types are:", p, 255, 0, 128, true)
+		
+		for i, mapType in pairs(MapTypes) do
+			
+			outputChatBox("- "..mapType, p, 255, 0, 128, true)
+			
+		end
+		
+		return
+	
+	end
+	
+	local newResource = "$"..newType:lower()..string.sub(map.resource, string.find(map.resource, "-"), -1)
+	
+	renameResource(map.resource, newResource, "[Maps]/["..newType.."]")
+	
+	refreshResources()
+	
+	MapManager.fetchMaps()
+	
+	Chat.outputArenaChat(arenaElement, "#ffff00This map was moved to type '"..newType.."' by "..getCleanPlayerName(p))
+
+end
+addCommandHandler("movemap", MapManager.moveMap)
 
 
+function MapManager.deleteMap(p, c)
+
+	local arenaElement = getElementParent(p)
+
+	local map = getElementData(arenaElement, "map")
+
+	if not map then return end
+
+	local resource = getResourceFromName(map.resource)
+
+	if not resource then return end
+
+	deleteResource(resource)
+
+	refreshResources()
+
+	MapManager.fetchMaps()
+
+	Chat.outputArenaChat(arenaElement, "#ffff00"..getCleanPlayerName(p).." deleted this map from the Arena!")
+
+end
+addCommandHandler("deletemap", MapManager.deleteMap)
+
+
+function MapManager.renameMap(p, c, ...)
+
+	local arenaElement = getElementParent(p)
+
+	local map = getElementData(arenaElement, "map")
+
+	if not map then return end
+
+	local resource = getResourceFromName(map.resource)
+
+	if not resource then return end
+
+	local query = #{...}>0 and table.concat({...},' ') or nil
+
+	if not query then return end
+
+	setResourceInfo(resource, "name", query) 
+
+	refreshResources(true, resource)
+
+	MapManager.fetchMaps()
+
+	Chat.outputArenaChat(arenaElement, "#ffff00"..getCleanPlayerName(p).." renamed this map to "..query.."!")
+
+end
+addCommandHandler("renamemap", MapManager.renameMap)

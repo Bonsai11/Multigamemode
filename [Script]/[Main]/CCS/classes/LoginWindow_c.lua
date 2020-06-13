@@ -13,7 +13,7 @@ function LoginWindow.new()
 	guiWindowSetMovable(self.window, false)
 	guiWindowSetSizable(self.window, false)
 	
-	self.infoLabelText = "Welcome to Drunk Drivers Club! \n\nRegister on www.ddc.community!\n\nHave fun!"
+	self.infoLabelText = "Welcome to Drunk Drivers Club! \n\nWebsite: www.ddc.community\n\n Discord: https://discord.gg/tr74pGR\n\n Have fun!"
 	self.infoLabel = guiCreateLabel(0.05, 0, 0.4, 1, self.infoLabelText, true, self.window)
 	
 	guiSetFont(self.infoLabel, "default-bold-small")
@@ -25,7 +25,7 @@ function LoginWindow.new()
 	guiLabelSetHorizontalAlign(self.usernameLabel, "left", false)
 	guiLabelSetVerticalAlign(self.usernameLabel, "center")
 	
-	self.usernameInput = guiCreateEdit(0.67, 0.1, 0.28, 0.10, string.gsub(getPlayerName(localPlayer), '#%x%x%x%x%x%x', ''), true, self.window)
+	self.usernameInput = guiCreateEdit(0.67, 0.1, 0.28, 0.10, "", true, self.window)
 	guiEditSetMaxLength(self.usernameInput, 21)
 	
 	self.passwordLabel = guiCreateLabel(0.55, 0.25, 0.25, 0.10, "Password", true, self.window)
@@ -45,7 +45,12 @@ function LoginWindow.new()
 	self.guestButton = guiCreateButton(0.55, 0.62, 0.40, 0.10, "Play as Guest", true, self.window)
 	guiSetFont(self.guestButton, "default-bold-small")
 	guiSetProperty(self.guestButton, "NormalTextColour", "FFFFFFFF")
+	
 	guiCreateStaticImage( 0.5, 0.08, 0.002, 0.9, "img/white.png", true, self.window)
+	
+	self.registerButton = guiCreateButton(0.55, 0.85, 0.40, 0.10, "Register", true, self.window)
+	guiSetFont(self.registerButton, "default-bold-small")
+	guiSetProperty(self.registerButton, "NormalTextColour", "FFFFFFFF")
 	
 	guiSetVisible(self.window, false)
 	
@@ -61,15 +66,21 @@ function LoginWindow.new()
 	
 	end
 	
-	function self.getPosition()
+	function self.setAnimationPosition(x)
 	
-		return LoginWindow.posX, LoginWindow.posY
+		guiSetPosition(self.window, x - LoginWindow.x + LoginWindow.posX, LoginWindow.posY, false)
 	
 	end
 	
-	function self.setPosition(x, y)
+	function self.setEnabled(enabled)
 	
-		guiSetPosition(self.window, x, y, false)
+		guiSetEnabled(self.window, enabled)
+	
+	end	
+	
+	function self.setUsernameText(username)
+	
+		guiSetText(self.usernameInput, username)
 	
 	end
 	
@@ -106,6 +117,10 @@ function LoginWindow.new()
 		
 			triggerEvent("onGuestButtonClick", localPlayer, username, password, remember_me)
 			
+		elseif source == self.registerButton then
+		
+			triggerEvent("onRegisterButtonClick", localPlayer)
+		
 		end
 	
 	

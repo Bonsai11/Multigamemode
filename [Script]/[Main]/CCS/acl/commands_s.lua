@@ -967,15 +967,18 @@ end
 addCommandHandler('goto', Commands.go)
 
 
-function Commands.checkmap(player, command, ...)
+function Commands.checkmap(player, command, type, ...)
 
 	local arenaElement = getElementParent(player)
 
-	local type = getElementData(arenaElement, "type")
-
 	local query = #{...}>0 and table.concat({...},' ') or nil
 
-	if not query then return end
+	if not type or not query then 
+	
+		outputChatBox("Error: Usage: /checkmap type map", player, 255, 0, 128)
+		return
+		
+	end
 
 	local maps = MapManager.findMap(query, type)
 
@@ -1028,11 +1031,11 @@ function Commands.warp(p, c, player)
 	local x,y,z = getElementPosition(playerVehicle)
 	local rx,ry,rz = getVehicleRotation(playerVehicle)
 	local vx,vy,vz = getElementVelocity(playerVehicle)
-	local rvx,rvy,rvz = getVehicleTurnVelocity(playerVehicle)
+	local rvx,rvy,rvz = getElementAngularVelocity(playerVehicle)
 	z = z + 4
 	setElementPosition(theVehicle, x,y,z, true)
 	setVehicleRotation(theVehicle, rx,ry,rz)
-	setVehicleTurnVelocity(theVehicle, rvx,rvy,rvz)
+	setElementAngularVelocity(theVehicle, rvx,rvy,rvz)
 	setElementVelocity(theVehicle, vx,vy,vz)
 
 	Chat.outputArenaChat(arenaElement, "#ffff00"..getCleanPlayerName(p).." warps to "..getCleanPlayerName(player).."!")
@@ -1064,11 +1067,11 @@ function Commands.here(p, c, player)
 	local x,y,z = getElementPosition(getPedOccupiedVehicle(p))
 	local rx,ry,rz = getVehicleRotation(getPedOccupiedVehicle(p))
 	local vx,vy,vz = getElementVelocity(getPedOccupiedVehicle(p))
-	local rvx,rvy,rvz = getVehicleTurnVelocity(getPedOccupiedVehicle(p))
+	local rvx,rvy,rvz = getElementAngularVelocity(getPedOccupiedVehicle(p))
 	z = z + 4
 	setElementPosition(getPedOccupiedVehicle(player), x, y, z)
 	setVehicleRotation(getPedOccupiedVehicle(player), rx, ry, rz)
-	setVehicleTurnVelocity(getPedOccupiedVehicle(player), rvx, rvy, rvz)
+	setElementAngularVelocity(getPedOccupiedVehicle(player), rvx, rvy, rvz)
 	setElementVelocity(getPedOccupiedVehicle(player), vx, vy, vz)
 
 	Chat.outputArenaChat(arenaElement, "#ffff00"..getCleanPlayerName(p)..' warps '..getCleanPlayerName(player)..'!')
@@ -1169,28 +1172,6 @@ function Commands.setArenaSpectators(p, c)
 
 end
 addCommandHandler("setarenaspectators", Commands.setArenaSpectators)
-
-
-function Commands.deletemap(p, c)
-
-	local arenaElement = getElementParent(p)
-
-	local map = getElementData(arenaElement, "map")
-
-	if not map then return end
-
-	local resource = getResourceFromName(map.resource)
-
-	if not resource then return end
-
-	deleteResource(resource)
-
-	MapManager.fetchMaps(p)
-
-	Chat.outputArenaChat(arenaElement, "#ffff00"..getCleanPlayerName(p).." deleted this map from the Arena!")
-
-end
-addCommandHandler("deletemap", Commands.deletemap)
 
 
 function Commands.setArenaVehicleColor(p, c, t)

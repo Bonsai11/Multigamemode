@@ -7,7 +7,6 @@ Respawn.fetchInterval = 50
 Respawn.rewindKey = "backspace"
 Respawn.isRewinding = false
 Respawn.recording = false
-Respawn.sound = nil
 Respawn.speed = 1
 Respawn.lastTick = 0
 Respawn.respawned = false
@@ -15,7 +14,9 @@ Respawn.waitingForRelease = false
 Respawn.releaseKeys = {}
 Respawn.forbiddenModels = {425, 447, 520, 464, 432, 476}
 
-function Respawn.main(map)
+function Respawn.main()
+	
+	if getElementData(localPlayer, "Spectator") then return end
 
 	if not getElementData(source, "GhostMode") then return end
 
@@ -32,31 +33,56 @@ function Respawn.main(map)
 	Respawn.data = {}
 	Respawn.currentIndex = 1
 	Respawn.fetchData()
-	Respawn.recording = true
-	addEventHandler("onClientRender", root, Respawn.fetchData)
+	addEventHandler("onClientMapStart", root, Respawn.start)
 	addEventHandler("onClientArenaReset", root, Respawn.reset)
 	addEventHandler("onClientColShapeHit", root, Respawn.pickupHit, true, "high")
+	addEventHandler("onClientPlayerWasted", localPlayer, Respawn.ready)
 	bindKey(Respawn.rewindKey, "both", Respawn.rewind)
+
+	local spawnpoint = exports["CCS"]:export_getSpawnPoints()[1]
+
+	table.insert(Respawn.data, {posX = spawnpoint.posX, posY = spawnpoint.posY, posZ = spawnpoint.posZ,
+							   rotX = spawnpoint.rotX, rotY = spawnpoint.rotY, rotZ = spawnpoint.rotZ,
+							   velX = 0, velY = 0, velZ = 0,
+							   turX = 0, turY = 0, turZ = 0,
+							   nitro = 0, model = spawnpoint.modelID, isNosActive = false,
+							   camX = 0, camY = 0, camZ = 0, roll = 0,
+							   camLX = 0, camLY = 0, camLZ = 0, fov = 0})
+	
+	if not getPedOccupiedVehicle(localPlayer) then
+		
+		Respawn.ready()	
+		
+	end
+	
+	Respawn.recording = true	
+	
+end
+addEvent("onClientPlayerReady", true)
+addEventHandler("onClientPlayerReady", localPlayer, Respawn.main)
+
+
+function Respawn.start()
+
+	addEventHandler("onClientRender", root, Respawn.fetchData)
 
 end
 addEvent("onClientMapStart", true)
-addEventHandler("onClientMapStart", root, Respawn.main)
 
 
 function Respawn.reset()
 
 	if not Respawn.state then return end
-
+	
 	Respawn.state = false
 	Respawn.data = {}
 	Respawn.isRewinding = false
 	Respawn.recording = false
 	Respawn.respawned = false
 	Respawn.waitingForRelease = false
-	if isElement(Respawn.sound) then stopSound(Respawn.sound) end
 	unbindKey(Respawn.toggleKey, "down", "res")
 	unbindKey(Respawn.rewindKey, "both", Respawn.rewind)
-	
+		
 	for i, key in pairs(Respawn.releaseKeys) do
 	
 		unbindKey(key, "down", Respawn.release)
@@ -65,40 +91,46 @@ function Respawn.reset()
 	
 	Respawn.releaseKeys = {}
 	
+	removeEventHandler("onClientMapStart", root, Respawn.start)
 	removeEventHandler("onClientRender", root, Respawn.fetchData)
 	removeEventHandler("onClientColShapeHit", root, Respawn.pickupHit)
 	removeCommandHandler("res", Respawn.request)
-	unbindKey("enter", "down", "suicide")
+	unbindKey("enter", "down", Respawn.suicide)
 	removeEventHandler("onClientArenaReset", root, Respawn.reset)
-
+	removeEventHandler("onClientPlayerWasted", localPlayer, Respawn.ready)
+	
 end
 addEvent("onClientArenaReset", true)
 
 
-function Respawn.death()
+function Respawn.ready()
 
 	if not Respawn.state then return end
 
-	triggerEvent("onClientCreateNotification", localPlayer, "Press Enter to respawn!", "information")
-
+	triggerEvent("onClientCreateNotification", localPlayer, "Press Enter to respawn!", "information")	
+		
+	if Respawn.respawned then
+	
+		triggerEvent("onClientRequestSpectatorMode", source)
+	
+	end
+		
 	Respawn.recording = false
 	Respawn.respawned = false
-	unbindKey("enter", "down", "suicide")
+	unbindKey("enter", "down", Respawn.suicide)
 	unbindKey(Respawn.rewindKey, "both", Respawn.rewind)
 	addCommandHandler("res", Respawn.request)
 	bindKey(Respawn.toggleKey, "down", "res")
-	
+
 	Respawn.currentIndex = #Respawn.data
 	
 end
-addEventHandler("onClientPlayerWasted", localPlayer, Respawn.death)
 
 
 function Respawn.stop()
 
 	Respawn.isRewinding = false
 	setCameraTarget(localPlayer)
-	if isElement(Respawn.sound) then stopSound(Respawn.sound) end
 	
 	if not Respawn.waitingForRelease then
 		
@@ -121,8 +153,6 @@ function Respawn.rewind(key, keyState)
 
 	if keyState == "down" then
 
-		Respawn.sound = playSound("wind.mp3", true)
-		setSoundPosition(Respawn.sound, 1)
 		Respawn.currentIndex = math.max(#Respawn.data, Respawn.speed)
 		Respawn.isRewinding = true
 		Respawn.recording = false
@@ -133,6 +163,13 @@ function Respawn.rewind(key, keyState)
 		Respawn.stop()
 
 	end
+
+end
+
+
+function Respawn.suicide()
+
+	setElementHealth(localPlayer, 0)
 
 end
 
@@ -177,10 +214,11 @@ function Respawn.fetchData()
 	table.insert(Respawn.data, {posX = select(1, getElementPosition(vehicle)), posY = select(2, getElementPosition(vehicle)), posZ = select(3, getElementPosition(vehicle)),
 							   rotX = select(1, getElementRotation(vehicle)), rotY = select(2, getElementRotation(vehicle)), rotZ = select(3, getElementRotation(vehicle)),
 							   velX = select(1, getElementVelocity(vehicle)), velY = select(2, getElementVelocity(vehicle)), velZ = select(3, getElementVelocity(vehicle)),
-							   turX = select(1, getVehicleTurnVelocity(vehicle)), turY = select(2, getVehicleTurnVelocity(vehicle)), turZ = select(3, getVehicleTurnVelocity(vehicle)),
+							   turX = select(1, getElementAngularVelocity(vehicle)), turY = select(2, getElementAngularVelocity(vehicle)), turZ = select(3, getElementAngularVelocity(vehicle)),
 							   nitro = getVehicleUpgradeOnSlot(vehicle, 8), model = getElementModel(vehicle), isNosActive = isVehicleNitroActivated(vehicle),
 							   camX = select(1, getCameraMatrix()), camY = select(2, getCameraMatrix()), camZ = select(3, getCameraMatrix()), roll = select(7, getCameraMatrix()),
-							   camLX = select(4, getCameraMatrix()), camLY = select(5, getCameraMatrix()), camLZ = select(6, getCameraMatrix()), fov = select(8, getCameraMatrix())})
+							   camLX = select(4, getCameraMatrix()), camLY = select(5, getCameraMatrix()), camLZ = select(6, getCameraMatrix()), fov = select(8, getCameraMatrix()),
+							   nitroLevel = getVehicleNitroLevel(vehicle), health = getElementHealth(vehicle)})
 
 end
 
@@ -256,12 +294,19 @@ function Respawn.useData()
 	
 	end
 
-	fixVehicle(vehicle)
+	setElementHealth(vehicle, Respawn.data[Respawn.currentIndex].health)
 	setElementModel(vehicle, Respawn.data[Respawn.currentIndex].model)
 	setElementPosition(vehicle, Respawn.data[Respawn.currentIndex].posX, Respawn.data[Respawn.currentIndex].posY, Respawn.data[Respawn.currentIndex].posZ)
 	setElementRotation(vehicle, Respawn.data[Respawn.currentIndex].rotX, Respawn.data[Respawn.currentIndex].rotY, Respawn.data[Respawn.currentIndex].rotZ)
 	addVehicleUpgrade(vehicle, Respawn.data[Respawn.currentIndex].nitro)
 	setVehicleNitroActivated(vehicle, Respawn.data[Respawn.currentIndex].isNosActive)
+	
+	if Respawn.data[Respawn.currentIndex].nitroLevel then
+	
+		setVehicleNitroLevel(vehicle, Respawn.data[Respawn.currentIndex].nitroLevel)
+		
+	end
+	
 	setCameraMatrix(Respawn.data[Respawn.currentIndex].camX, Respawn.data[Respawn.currentIndex].camY, Respawn.data[Respawn.currentIndex].camZ, Respawn.data[Respawn.currentIndex].camLX, Respawn.data[Respawn.currentIndex].camLY, Respawn.data[Respawn.currentIndex].camLZ, Respawn.data[Respawn.currentIndex].roll, Respawn.data[Respawn.currentIndex].fov)
 	setCameraTarget(localPlayer)
 	setElementFrozen(vehicle, true)
@@ -269,7 +314,7 @@ function Respawn.useData()
 end
 
 
-function Respawn.release()
+function Respawn.release() 
 
 	if not Respawn.currentIndex then return end
 
@@ -281,12 +326,8 @@ function Respawn.release()
 	setElementFrozen(vehicle, false)
 	toggleAllControls(true)
 	
-	if #getCommandsBoundToKey("enter") ~= 0 then
-	
-		bindKey("enter", "down", "suicide")
-	
-	end
-	
+	bindKey("enter", "down", Respawn.suicide)
+
 	for i, key in pairs(Respawn.releaseKeys) do
 	
 		unbindKey(key, "down", Respawn.release)
@@ -294,7 +335,7 @@ function Respawn.release()
 	end
 	
 	setElementVelocity(vehicle, Respawn.data[Respawn.currentIndex].velX, Respawn.data[Respawn.currentIndex].velY, Respawn.data[Respawn.currentIndex].velZ)
-	setVehicleTurnVelocity(vehicle, Respawn.data[Respawn.currentIndex].turX, Respawn.data[Respawn.currentIndex].turY, Respawn.data[Respawn.currentIndex].turZ)
+	setElementAngularVelocity(vehicle, Respawn.data[Respawn.currentIndex].turX, Respawn.data[Respawn.currentIndex].turY, Respawn.data[Respawn.currentIndex].turZ)
 	Respawn.currentIndex = nil
 
 	Respawn.recording = true

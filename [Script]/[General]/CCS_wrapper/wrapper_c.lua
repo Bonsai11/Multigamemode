@@ -15,6 +15,7 @@ Wrapper.lists.binds = {}
 Wrapper.lists.vehicle = {}
 Wrapper.lists.shapes = {}
 Wrapper.lists.collision = {}
+Wrapper.lists.water = {}
 local _createObject = createObject 
 local _setTimer = setTimer
 local _addEventHandler = addEventHandler
@@ -41,6 +42,7 @@ local _setElementDimension = setElementDimension
 local _createColSphere = createColSphere
 local _setCloudsEnabled = setCloudsEnabled
 local _setWeather = setWeather
+local _createWater = createWater
 
 outputChatBox = function() end
 
@@ -280,6 +282,16 @@ createVehicle = function(...)
 	
 end
 
+--Water
+createWater = function(...)
+	
+	local water = _createWater(...)
+	_setElementDimension(water, getElementDimension(localPlayer))
+	table.insert(Wrapper.lists.water, water)
+	return water
+
+end
+
 
 function table.copy(tab, recursive)
 
@@ -459,6 +471,12 @@ function Wrapper.unloadScript()
 	
 	end
 	
+	for i, water in pairs(Wrapper.lists.water) do
+		if isElement(water) then
+			destroyElement(water)
+		end
+	end	
+	
 	setWaterLevel(0)
 	resetSkyGradient()
 	resetWaterColor()
@@ -498,6 +516,7 @@ function Wrapper.unloadScript()
 	Wrapper.lists.shapes = {}	
 	Wrapper.lists.shaders = {}	
 	Wrapper.lists.collision = {}
+	Wrapper.lists.water = {}	
 	
 end
 addEvent("onClientArenaReset", true)

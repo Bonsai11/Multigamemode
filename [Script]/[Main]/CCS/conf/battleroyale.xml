@@ -1,0 +1,1349 @@
+<battleroyale>
+	<spawns mode="Los Santos">
+		<spawnpoint posX="2505.65" posY="-1785.04" posZ="13.31" />
+		<spawnpoint posX="2134.48" posY="-1965.79" posZ="14.03" />
+		<spawnpoint posX="1619.63" posY="-1892.32" posZ="13.54" />
+		<spawnpoint posX="829.66" posY="-1802.76" posZ="13.23" />
+		<spawnpoint posX="778.08" posY="-1334.05" posZ="13.54" />
+		<spawnpoint posX="666.60" posY="-468.21" posZ="16.33" />
+		<spawnpoint posX="1246.44" posY="207.66" posZ="23.05" />
+		<spawnpoint posX="1955.95" posY="-274.26" posZ="2.91" />
+		<spawnpoint posX="2217.57" posY="-1166.01" posZ="25.72" />
+		<spawnpoint posX="2406.84" posY="-1402.56" posZ="24.10" />
+	</spawns>
+	<pickups mode="Los Santos">
+		<spawnpoint posX="2070.64" posY="-1586.18" posZ="13.49" />
+		<spawnpoint posX="2095.38" posY="-1806.94" posZ="13.55" />
+		<spawnpoint posX="1943.67" posY="-1979.41" posZ="13.55" />
+		<spawnpoint posX="1890.18" posY="-2101.99" posZ="13.56" />
+		<spawnpoint posX="2007.03" posY="-2137.36" posZ="13.55" />
+		<spawnpoint posX="2141.38" posY="-2178.65" posZ="13.55" />
+		<spawnpoint posX="2190.68" posY="-2227.54" posZ="15.17" />
+		<spawnpoint posX="2126.64" posY="-2277.98" posZ="20.66" />
+		<spawnpoint posX="2005.3" posY="-2180.83" posZ="13.55" />
+		<spawnpoint posX="1909.42" posY="-1992.63" posZ="13.55" />
+		<spawnpoint posX="1874.66" posY="-1955.76" posZ="20.07" />
+		<spawnpoint posX="1794.34" posY="-1914.04" posZ="13.4" />
+		<spawnpoint posX="1714.61" posY="-1911.51" posZ="13.57" />
+		<spawnpoint posX="1691.07" posY="-1958.36" posZ="8.25" />
+		<spawnpoint posX="1609.51" posY="-1835.54" posZ="13.51" />
+		<spawnpoint posX="1546.85" posY="-1760.96" posZ="13.55" />
+		<spawnpoint posX="1547.68" posY="-1609.48" posZ="13.38" />
+		<spawnpoint posX="1538.74" posY="-1657.33" posZ="5.9" />
+		<spawnpoint posX="1388.81" posY="-1623.68" posZ="13.55" />
+		<spawnpoint posX="1343.89" posY="-1647.63" posZ="13.58" />
+		<spawnpoint posX="1360.01" posY="-1718.37" posZ="8.56" />
+		<spawnpoint posX="1340.07" posY="-1772.06" posZ="13.54" />
+		<spawnpoint posX="1296.02" posY="-1871.22" posZ="13.55" />
+		<spawnpoint posX="1222.89" posY="-1815.07" posZ="16.59" />
+		<spawnpoint posX="1103.49" posY="-1835.87" posZ="16.6" />
+		<spawnpoint posX="1110.13" posY="-1796.32" posZ="16.59" />
+		<spawnpoint posX="943.09" posY="-1815.31" posZ="13.1" />
+		<spawnpoint posX="736.44" posY="-1797.13" posZ="13.13" />
+		<spawnpoint posX="662.92" posY="-1867" posZ="5.46" />
+		<spawnpoint posX="559.58" posY="-1769.03" posZ="5.8" />
+		<spawnpoint posX="437.38" posY="-1807.46" posZ="5.55" />
+		<spawnpoint posX="399.09" posY="-1839.47" posZ="7.84" />
+		<spawnpoint posX="368" posY="-1795.5" posZ="5.16" />
+		<spawnpoint posX="517.74" posY="-1763.02" posZ="14.24" />
+		<spawnpoint posX="487.63" posY="-1643.28" posZ="23.7" />
+		<spawnpoint posX="507.57" posY="-1606.66" posZ="16.33" />
+		<spawnpoint posX="484.53" posY="-1508.95" posZ="20.4" />
+		<spawnpoint posX="400.65" posY="-1532.51" posZ="32.27" />
+		<spawnpoint posX="329.05" posY="-1520.42" posZ="35.87" />
+		<spawnpoint posX="449.79" posY="-1352.53" posZ="14.84" />
+		<spawnpoint posX="342.02" posY="-1350.23" posZ="14.51" />
+		<spawnpoint posX="283.06" posY="-1439.75" posZ="23.73" />
+		<spawnpoint posX="417.35" posY="-1299.04" posZ="15.01" />
+		<spawnpoint posX="536.11" posY="-1287.21" posZ="17.24" />
+		<spawnpoint posX="680.65" posY="-1275.59" posZ="13.59" />
+		<spawnpoint posX="727.78" posY="-1275.05" posZ="13.65" />
+		<spawnpoint posX="817.98" posY="-1273.1" posZ="13.6" />
+		<spawnpoint posX="915.25" posY="-1234.91" posZ="17.21" />
+		<spawnpoint posX="815.85" posY="-1097.79" posZ="25.79" />
+		<spawnpoint posX="938.94" posY="-1086.73" posZ="24.3" />
+		<spawnpoint posX="1031.1" posY="-1093.66" posZ="23.83" />
+		<spawnpoint posX="1013.57" posY="-1016.76" posZ="32.1" />
+		<spawnpoint posX="920.05" posY="-936.65" posZ="42.66" />
+		<spawnpoint posX="839.14" posY="-926.82" posZ="55.25" />
+		<spawnpoint posX="834.97" posY="-890.29" posZ="68.77" />
+		<spawnpoint posX="932.4" posY="-855.03" posZ="93.49" />
+		<spawnpoint posX="977.47" posY="-769.93" posZ="112.2" />
+		<spawnpoint posX="945.89" posY="-719.07" posZ="122.21" />
+		<spawnpoint posX="866.66" posY="-710.96" posZ="105.68" />
+		<spawnpoint posX="979.04" posY="-674.57" posZ="121.98" />
+		<spawnpoint posX="1094.58" posY="-642.92" posZ="113.06" />
+		<spawnpoint posX="1109.3" posY="-731.42" posZ="100.42" />
+		<spawnpoint posX="1280.99" posY="-830.25" posZ="83.14" />
+		<spawnpoint posX="1330.06" posY="-890.24" posZ="39.58" />
+		<spawnpoint posX="1422.41" posY="-917.98" posZ="36.05" />
+		<spawnpoint posX="1464.3" posY="-901.01" posZ="54.84" />
+		<spawnpoint posX="1428.11" posY="-806.12" posZ="86.45" />
+		<spawnpoint posX="1537.58" posY="-759" posZ="79.95" />
+		<spawnpoint posX="1658.25" posY="-1063.75" posZ="23.9" />
+		<spawnpoint posX="1727.91" posY="-1116.63" posZ="24.09" />
+		<spawnpoint posX="1817.77" posY="-1141.09" posZ="24.08" />
+		<spawnpoint posX="1883.84" posY="-1095.68" posZ="25.19" />
+		<spawnpoint posX="1936.29" posY="-1069.79" posZ="24.42" />
+		<spawnpoint posX="2055.61" posY="-1117.53" posZ="25.28" />
+		<spawnpoint posX="2122.18" posY="-1141.17" posZ="24.93" />
+		<spawnpoint posX="2029.86" posY="-1286.27" posZ="20.95" />
+		<spawnpoint posX="1999.9" posY="-1353.9" posZ="23.92" />
+		<spawnpoint posX="2029.83" posY="-1417.2" posZ="16.99" />
+		<spawnpoint posX="2136.97" posY="-1365.97" posZ="25.06" />
+		<spawnpoint posX="2171.43" posY="-1517.26" posZ="23.56" />
+		<spawnpoint posX="2192.61" posY="-1340.34" posZ="23.98" />
+		<spawnpoint posX="2257.35" posY="-1341.58" posZ="23.98" />
+		<spawnpoint posX="2231.28" posY="-1261.63" posZ="23.93" />
+		<spawnpoint posX="2240.2" posY="-1170.49" posZ="33.53" />
+		<spawnpoint posX="2210.07" posY="-1174.45" posZ="25.73" />
+		<spawnpoint posX="2205.83" posY="-1061.05" posZ="44.1" />
+		<spawnpoint posX="2283.72" posY="-1050.17" posZ="49.48" />
+		<spawnpoint posX="2374.53" posY="-1141.17" posZ="28.51" />
+		<spawnpoint posX="2393.79" posY="-1231.78" posZ="25.43" />
+		<spawnpoint posX="2410.5" posY="-1302.48" posZ="24.65" />
+		<spawnpoint posX="2464.09" posY="-1413.27" posZ="23.75" />
+		<spawnpoint posX="2481.01" posY="-1420.14" posZ="28.84" />
+		<spawnpoint posX="2471.75" posY="-1461.3" posZ="24.01" />
+		<spawnpoint posX="2520.23" posY="-1482.5" posZ="24" />
+		<spawnpoint posX="2537.76" posY="-1434.87" posZ="24" />
+		<spawnpoint posX="2613.86" posY="-1411.37" posZ="34.7" />
+		<spawnpoint posX="2676.97" posY="-1329.49" posZ="42.3" />
+		<spawnpoint posX="2748.48" posY="-1276.79" posZ="58.24" />
+		<spawnpoint posX="2660.98" posY="-1224.89" posZ="59.42" />
+		<spawnpoint posX="2751.15" posY="-1177.47" posZ="69.4" />
+		<spawnpoint posX="2696.88" posY="-1111.47" posZ="69.58" />
+		<spawnpoint posX="2813.27" posY="-1182.17" posZ="25.27" />
+		<spawnpoint posX="2799.89" posY="-1089.73" posZ="30.72" />
+		<spawnpoint posX="2855.3" posY="-1348.27" posZ="11.07" />
+		<spawnpoint posX="2867.33" posY="-1437.36" posZ="10.97" />
+		<spawnpoint posX="2809.07" posY="-1559.32" posZ="11.09" />
+		<spawnpoint posX="2770.48" posY="-1625.32" posZ="10.93" />
+		<spawnpoint posX="2870.3" posY="-1589.23" posZ="22.48" />
+		<spawnpoint posX="2791.82" posY="-1715.55" posZ="11.84" />
+		<spawnpoint posX="2786.16" posY="-1818.36" posZ="10.39" />
+		<spawnpoint posX="2747.62" posY="-1943.68" posZ="13.55" />
+		<spawnpoint posX="2793.44" posY="-1944.87" posZ="13.55" />
+		<spawnpoint posX="2798.9" posY="-2029.63" posZ="13.55" />
+		<spawnpoint posX="2639.82" posY="-2094.19" posZ="13.55" />
+		<spawnpoint posX="2600.17" posY="-2117.43" posZ="13.55" />
+		<spawnpoint posX="2500.46" posY="-2112.64" posZ="13.55" />
+		<spawnpoint posX="2396.07" posY="-2105.36" posZ="13.55" />
+		<spawnpoint posX="2371.31" posY="-2114.68" posZ="27.18" />
+		<spawnpoint posX="2371.56" posY="-2135.58" posZ="27.17" />
+		<spawnpoint posX="2371.98" posY="-2160.78" posZ="21.88" />
+		<spawnpoint posX="2284.92" posY="-2217" posZ="13.55" />
+		<spawnpoint posX="2252.33" posY="-2263.17" posZ="14.38" />
+		<spawnpoint posX="2223.31" posY="-2279.11" posZ="14.76" />
+		<spawnpoint posX="2165.3" posY="-2332.48" posZ="13.55" />
+		<spawnpoint posX="2082.71" posY="-2318.34" posZ="13.55" />
+		<spawnpoint posX="2041.71" posY="-2435.93" posZ="13.55" />
+		<spawnpoint posX="1884.74" posY="-2542.96" posZ="17.23" />
+		<spawnpoint posX="1815.05" posY="-2460.59" posZ="13.55" />
+		<spawnpoint posX="1649.93" posY="-2421.36" posZ="13.55" />
+		<spawnpoint posX="1572.68" posY="-2515.43" posZ="13.55" />
+		<spawnpoint posX="1652.96" posY="-2560.28" posZ="13.55" />
+		<spawnpoint posX="1651.61" posY="-2657.36" posZ="13.55" />
+		<spawnpoint posX="1816.79" posY="-2692.95" posZ="13.55" />
+		<spawnpoint posX="1924.94" posY="-2665.29" posZ="13.55" />
+		<spawnpoint posX="2107.71" posY="-2637.09" posZ="13.67" />
+		<spawnpoint posX="2180.99" posY="-2666.07" posZ="17.88" />
+		<spawnpoint posX="2271.51" posY="-2641.58" posZ="13.63" />
+		<spawnpoint posX="2270.42" posY="-2692.02" posZ="13.55" />
+		<spawnpoint posX="2388.55" posY="-2692.21" posZ="13.64" />
+		<spawnpoint posX="2431.73" posY="-2707.8" posZ="3" />
+		<spawnpoint posX="2509.43" posY="-2689.47" posZ="13.65" />
+		<spawnpoint posX="2512.86" posY="-2589.17" posZ="13.64" />
+		<spawnpoint posX="2495.38" posY="-2471.16" posZ="17.88" />
+		<spawnpoint posX="2413.98" posY="-2473.28" posZ="13.63" />
+		<spawnpoint posX="2370.76" posY="-2532.58" posZ="13.33" />
+		<spawnpoint posX="2267.58" posY="-2521.53" posZ="8.34" />
+		<spawnpoint posX="2209.15" posY="-2470.61" posZ="13.55" />
+		<spawnpoint posX="2226.46" posY="-2374.59" posZ="17.42" />
+		<spawnpoint posX="2185.13" posY="-1986.96" posZ="13.55" />
+		<spawnpoint posX="2117.9" posY="-1919.62" posZ="13.55" />
+		<spawnpoint posX="2047.61" posY="-1899.56" posZ="13.55" />
+		<spawnpoint posX="2007.63" posY="-1965.12" posZ="16.69" />
+		<spawnpoint posX="1901.46" posY="-1884.87" posZ="13.5" />
+		<spawnpoint posX="1839.56" posY="-1856.43" posZ="13.38" />
+		<spawnpoint posX="1742.51" posY="-1839.09" posZ="13.57" />
+		<spawnpoint posX="1502.99" posY="-1827.61" posZ="13.55" />
+		<spawnpoint posX="1341.45" posY="-1820.64" posZ="13.53" />
+		<spawnpoint posX="1234.44" posY="-1657.26" posZ="11.8" />
+		<spawnpoint posX="1209.75" posY="-1614.13" posZ="13.55" />
+		<spawnpoint posX="1118.98" posY="-1619.51" posZ="13.9" />
+		<spawnpoint posX="1048.52" posY="-1618.52" posZ="20.46" />
+		<spawnpoint posX="978.69" posY="-1528.77" posZ="13.57" />
+		<spawnpoint posX="1005.25" posY="-1447.94" posZ="13.55" />
+		<spawnpoint posX="958.23" posY="-1370.73" posZ="13.66" />
+		<spawnpoint posX="881.49" posY="-1456.35" posZ="13.59" />
+		<spawnpoint posX="810.63" posY="-1438.74" posZ="13.51" />
+		<spawnpoint posX="757.24" posY="-1348.95" posZ="13.51" />
+		<spawnpoint posX="819.58" posY="-1347.61" posZ="22.55" />
+		<spawnpoint posX="822.56" posY="-1353.1" posZ="13.54" />
+		<spawnpoint posX="814.59" posY="-1350.77" posZ="-0.51" />
+		<spawnpoint posX="842.77" posY="-1377.94" posZ="-0.5" />
+		<spawnpoint posX="977.16" posY="-1257.01" posZ="16.96" />
+		<spawnpoint posX="1034.48" posY="-1256.71" posZ="15.18" />
+		<spawnpoint posX="1088.01" posY="-1245.39" posZ="15.83" />
+		<spawnpoint posX="1112.52" posY="-1183.22" posZ="18.32" />
+		<spawnpoint posX="1142.69" posY="-1181.54" posZ="32.03" />
+		<spawnpoint posX="1184.94" posY="-1257.06" posZ="15.18" />
+		<spawnpoint posX="1216.39" posY="-1302.32" posZ="13.77" />
+		<spawnpoint posX="1239.26" posY="-1344.86" posZ="13.38" />
+		<spawnpoint posX="1283.06" posY="-1329.2" posZ="13.38" />
+		<spawnpoint posX="1248.81" posY="-1260.14" posZ="13.21" />
+		<spawnpoint posX="1291.05" posY="-1246.26" posZ="13.55" />
+		<spawnpoint posX="1364.57" posY="-1278.59" posZ="13.55" />
+		<spawnpoint posX="1320.09" posY="-1420.73" posZ="14.97" />
+		<spawnpoint posX="1426.02" posY="-1388.3" posZ="13.6" />
+		<spawnpoint posX="1480.3" posY="-1414.08" posZ="11.88" />
+		<spawnpoint posX="1521.78" posY="-1475.69" posZ="9.5" />
+		<spawnpoint posX="1692.85" posY="-1507.5" posZ="13.55" />
+		<spawnpoint posX="1716.48" posY="-1568.59" posZ="13.55" />
+		<spawnpoint posX="1723.68" posY="-1630.03" posZ="20.21" />
+		<spawnpoint posX="1794.72" posY="-1589.86" posZ="13.5" />
+		<spawnpoint posX="1909.57" posY="-1600.29" posZ="13.73" />
+		<spawnpoint posX="1918.4" posY="-1630.6" posZ="13.53" />
+		<spawnpoint posX="1919.31" posY="-1730.13" posZ="13.55" />
+		<spawnpoint posX="1945.2" posY="-1773.6" posZ="13.39" />
+		<spawnpoint posX="2017.96" posY="-1783.79" posZ="13.55" />
+		<spawnpoint posX="2038.62" posY="-1777.97" posZ="13.55" />
+		<spawnpoint posX="1766.77" posY="-1795.38" posZ="3.98" />
+		<spawnpoint posX="1654.19" posY="-1661.43" posZ="22.52" />
+		<spawnpoint posX="1480.84" posY="-1765.9" posZ="18.8" />
+		<spawnpoint posX="1290.72" posY="-1505.77" posZ="10.05" />
+		<spawnpoint posX="558.42" posY="-1507.76" posZ="14.55" />
+		<spawnpoint posX="550.54" posY="-1361.26" posZ="15.39" />
+		<spawnpoint posX="996.39" posY="-1246.66" posZ="19.41" />
+		<spawnpoint posX="1104.48" posY="-1329.12" posZ="13.79" />
+		<spawnpoint posX="1397.75" posY="-1574.53" posZ="14.25" />
+		<spawnpoint posX="1262.99" posY="-2005.08" posZ="59.53" />
+		<spawnpoint posX="1182.7" posY="-2037.48" posZ="69.01" />
+		<spawnpoint posX="1124.96" posY="-2036.12" posZ="69.88" />
+		<spawnpoint posX="1017.48" posY="-1927.09" posZ="12.51" />
+		<spawnpoint posX="1087.97" posY="-1666.07" posZ="13.71" />
+		<spawnpoint posX="1169.65" posY="-1640.93" posZ="14" />
+		<spawnpoint posX="1196.55" posY="-1682.95" posZ="13.16" />
+		<spawnpoint posX="1206.02" posY="-1745.22" posZ="13.59" />
+		<spawnpoint posX="1583.25" posY="-2285.13" posZ="13.54" />
+		<spawnpoint posX="1537.48" posY="-2336.95" posZ="13.55" />
+		<spawnpoint posX="1404.19" posY="-2324.09" posZ="13.55" />
+		<spawnpoint posX="1381.62" posY="-2235.68" posZ="13.55" />
+		<spawnpoint posX="1536.15" posY="-2233.69" posZ="13.55" />
+		<spawnpoint posX="1691.87" posY="-2329.78" posZ="13.55" />
+		<spawnpoint posX="1693.52" posY="-2287.27" posZ="-1.23" />
+		<spawnpoint posX="1791.06" posY="-2303.44" posZ="-2.59" />
+		<spawnpoint posX="1589.58" posY="-2284.51" posZ="-1.2" />
+		<spawnpoint posX="1501.44" posY="-2267.85" posZ="-2.81" />
+		<spawnpoint posX="1476.57" posY="-2256.03" posZ="-2.82" />
+		<spawnpoint posX="1407.81" posY="-2439.3" posZ="6.23" />
+		<spawnpoint posX="1236.07" posY="-2379.23" posZ="8.63" />
+		<spawnpoint posX="1211.78" posY="-2344.31" posZ="14.03" />
+		<spawnpoint posX="1510.42" posY="-2049.93" posZ="30.74" />
+		<spawnpoint posX="1388.94" posY="-2014.21" posZ="49.54" />
+		<spawnpoint posX="1407.6" posY="-1788.71" posZ="13.55" />
+		<spawnpoint posX="1479.66" posY="-1663.55" posZ="14.55" />
+		<spawnpoint posX="1607.54" posY="-1522.12" posZ="13.61" />
+		<spawnpoint posX="1507.31" posY="-1489.39" posZ="13.55" />
+		<spawnpoint posX="1413.65" posY="-1492.53" posZ="20.44" />
+		<spawnpoint posX="1440.71" posY="-1454.11" posZ="20.42" />
+		<spawnpoint posX="1418.92" posY="-1256.12" posZ="13.58" />
+		<spawnpoint posX="1492.75" posY="-1246.2" posZ="14.57" />
+		<spawnpoint posX="1516.2" posY="-1203.16" posZ="23.59" />
+		<spawnpoint posX="1611.75" posY="-1204.85" posZ="19.86" />
+		<spawnpoint posX="1647.78" posY="-1246.96" posZ="14.81" />
+		<spawnpoint posX="1574.04" posY="-1330.29" posZ="16.48" />
+		<spawnpoint posX="1668.29" posY="-1366.55" posZ="17.44" />
+		<spawnpoint posX="1551.43" posY="-1392.29" posZ="14.02" />
+		<spawnpoint posX="1504.43" posY="-1354.04" posZ="13.96" />
+		<spawnpoint posX="1874.70" posY="-2289.32" posZ="13.54" />
+		<spawnpoint posX="1468.26" posY="-1974.33" posZ="30.32" />
+		<spawnpoint posX="376.38" posY="-2054.36" posZ="8.01" />
+		<spawnpoint posX="294.06" posY="-1540.32" posZ="24.59" />
+		<spawnpoint posX="709.06" posY="-1428.08" posZ="13.53" />
+		<spawnpoint posX="1035.48" posY="-1123.88" posZ="23.89" />
+		<spawnpoint posX="265.75" posY="-555.40" posZ="38.87" />
+		<spawnpoint posX="265.65" posY="-142.83" posZ="1.57" />
+		<spawnpoint posX="1201.28" posY="177.29" posZ="20.52" />
+		<spawnpoint posX="1687.82" posY="-1460.46" posZ="13.54" />
+		<spawnpoint posX="1976.15" posY="-1234.28" posZ="20.04" />
+		<spawnpoint posX="1804.13" posY="-1696.61" posZ="13.53" />
+		<spawnpoint posX="2468.11" posY="-1218.91" posZ="30.94" />
+		<spawnpoint posX="2635.78" posY="-2003.85" posZ="13.55" />
+		<spawnpoint posX="2593.05" posY="-658.04" posZ="135.65" />
+		<spawnpoint posX="2041.67" posY="-1644.88" posZ="13.54" />
+		<spawnpoint posX="2872.78" posY="-2125.54" posZ="4.48" />
+		<spawnpoint posX="2264.91" posY="-1937.74" posZ="13.54" />
+		<spawnpoint posX="834.94" posY="-2058.5" posZ="12.87" />
+		<spawnpoint posX="1127.98" posY="-1560.9" posZ="13.62" />
+		<spawnpoint posX="1178.34" posY="-2228.46" posZ="44.01" />
+		<spawnpoint posX="1541.59" posY="-1675.32" posZ="13.55" />
+		<spawnpoint posX="1435.03" posY="-1329.46" posZ="13.56" />
+		<spawnpoint posX="314.54" posY="-1182.22" posZ="78.99" />
+		<spawnpoint posX="2100.8" posY="-1448.07" posZ="23.99" />
+		<spawnpoint posX="1823.02" posY="-2024.88" posZ="13.38" />
+		<spawnpoint posX="1669.36" posY="-2113.58" posZ="13.55" />
+		<spawnpoint posX="1682.57" posY="-2286" posZ="13.51" />
+		<spawnpoint posX="2481.35" posY="-1701.9" posZ="13.53" />
+		<spawnpoint posX="2814.35" posY="-1472.52" posZ="16.19" />
+		<spawnpoint posX="2650.95" posY="-1060.8" posZ="69.6" />
+		<spawnpoint posX="2174.8" posY="-994.95" posZ="62.98" />
+		<spawnpoint posX="1931.95" posY="-702.05" posZ="115.15" />
+		<spawnpoint posX="1773.54" posY="-164.16" posZ="77.17" />"
+		<spawnpoint posX="2412.41" posY="92.06" posZ="26.47" />
+		<spawnpoint posX="2104.55" posY="-102.68" posZ="2.17" />
+		<spawnpoint posX="785.96" posY="-512.02" posZ="16.74" />"
+		<spawnpoint posX="551.54" posY="-17.93" posZ="27.52" />
+		<spawnpoint posX="-29.5" posY="33.94" posZ="3.12" />
+		<spawnpoint posX="1386.36" posY="-289.25" posZ="1.45" />
+		<spawnpoint posX="413.37" posY="-705.74" posZ="25.16" />
+		<spawnpoint posX="2120.38" posY="-357.23" posZ="66.94" />
+		<spawnpoint posX="2407.36" posY="-2449.12" posZ="13.63" />
+		<spawnpoint posX="2371.93" posY="-2266.21" posZ="6.06" />
+		<spawnpoint posX="1534.33" posY="-841.49" posZ="64.99" />
+		<spawnpoint posX="1449.21" posY="-634.93" posZ="95.69" />
+		<spawnpoint posX="614.69" posY="-1642.54" posZ="16.4" />
+		<spawnpoint posX="1134.49" posY="444.55" posZ="30.3" />	
+	</pickups>
+	<vehicles mode="Los Santos">
+		<spawnpoint posX="942.78" posY="-1813.18" posZ="13.28" rotZ="358.46" />
+		<spawnpoint posX="735.85" posY="-1800.23" posZ="12.9" rotZ="346.26" />
+		<spawnpoint posX="364.36" posY="-1824.4" posZ="7.84" rotZ="178.34" />
+		<spawnpoint posX="330.25" posY="-1517.61" posZ="35.87" rotZ="314.95" />
+		<spawnpoint posX="500.18" posY="-1549.47" posZ="17.51" rotZ="29.84" />
+		<spawnpoint posX="440.11" posY="-1295.71" posZ="15.18" rotZ="213.45" />
+		<spawnpoint posX="721.45" posY="-1122.79" posZ="18.17" rotZ="334.4" />
+		<spawnpoint posX="777.94" posY="-1376.49" posZ="13.61" rotZ="180.24" />
+		<spawnpoint posX="898.96" posY="-1483.9" posZ="13.56" rotZ="272.36" />
+		<spawnpoint posX="1183.32" posY="-1320.96" posZ="13.58" rotZ="0.41" />
+		<spawnpoint posX="1211.1" posY="-1053.16" posZ="31.79" rotZ="271.73" />
+		<spawnpoint posX="1243.12" posY="-748.27" posZ="94.57" rotZ="189.98" />
+		<spawnpoint posX="889.75" posY="-713.86" posZ="108.22" rotZ="64.95" />
+		<spawnpoint posX="669.38" posY="-582.88" posZ="17.66" rotZ="3.85" />
+		<spawnpoint posX="318.48" posY="-235.77" posZ="1.57" rotZ="357.59" />
+		<spawnpoint posX="331.28" posY="62.88" posZ="3.58" rotZ="27.04" />
+		<spawnpoint posX="741.8" posY="262.78" posZ="27.09" rotZ="287.71" />
+		<spawnpoint posX="1236.55" posY="182.16" posZ="19.9" rotZ="243.85" />
+		<spawnpoint posX="983.47" posY="-49.1" posZ="79.94" rotZ="105.33" />
+		<spawnpoint posX="1045.56" posY="-351.31" posZ="73.99" rotZ="182.41" />
+		<spawnpoint posX="1471.88" posY="-729.38" posZ="93.13" rotZ="281.42" />
+		<spawnpoint posX="2263.3" posY="-118.31" posZ="27.02" rotZ="359.44" />
+		<spawnpoint posX="1931.78" posY="171.83" posZ="37.28" rotZ="72.77" />
+		<spawnpoint posX="2362.2" posY="-654.56" posZ="127.98" rotZ="281.11" />
+		<spawnpoint posX="2476.83" posY="-960.3" posZ="80.2" rotZ="177.4" />
+		<spawnpoint posX="2685.48" posY="-1100.94" posZ="69.34" rotZ="180.21" />
+		<spawnpoint posX="2856.96" posY="-1355.17" posZ="11.07" rotZ="94.7" />
+		<spawnpoint posX="2829.75" posY="-1699.56" posZ="9.99" rotZ="78.72" />
+		<spawnpoint posX="2763.92" posY="-1973.66" posZ="13.55" rotZ="181.18" />
+		<spawnpoint posX="2511.96" posY="-2007.24" posZ="13.28" rotZ="91.56" />
+		<spawnpoint posX="2418.95" posY="-2233.66" posZ="13.55" rotZ="135.43" />
+		<spawnpoint posX="2438.44" posY="-2428.12" posZ="13.63" rotZ="129.79" />
+		<spawnpoint posX="1994.82" posY="-2380.68" posZ="13.55" rotZ="90.94" />
+		<spawnpoint posX="1558.88" posY="-2315.4" posZ="13.55" rotZ="266.38" />
+		<spawnpoint posX="1398.03" posY="-2225.15" posZ="13.55" rotZ="0.36" />
+		<spawnpoint posX="1245.53" posY="-2011.69" posZ="59.83" rotZ="357.85" />
+		<spawnpoint posX="1289.35" posY="-1675.63" posZ="13.55" rotZ="0.67" />
+		<spawnpoint posX="1324.35" posY="-1462.12" posZ="13.55" rotZ="90.92" />
+		<spawnpoint posX="1338.13" posY="-910.66" posZ="36.02" rotZ="0.05" />
+		<spawnpoint posX="1427.32" posY="-1055.08" posZ="23.16" rotZ="181.44" />
+		<spawnpoint posX="1631.04" posY="-1103.17" posZ="23.91" rotZ="87.47" />
+		<spawnpoint posX="1956.17" posY="-1091.77" posZ="25.26" rotZ="261.34" />
+		<spawnpoint posX="2149.37" posY="-1170.95" posZ="23.82" rotZ="95.28" />
+		<spawnpoint posX="2411.04" posY="-1273.81" posZ="24.17" rotZ="179.57" />
+		<spawnpoint posX="2392.17" posY="-1500.52" posZ="23.83" rotZ="91.51" />
+		<spawnpoint posX="2473.64" posY="-1697.93" posZ="13.52" rotZ="358.17" />
+		<spawnpoint posX="2169.56" posY="-1726.46" posZ="13.54" rotZ="89.03" />
+		<spawnpoint posX="2062.34" posY="-1920.07" posZ="13.55" rotZ="2.55" />
+		<spawnpoint posX="1879.99" posY="-2024.64" posZ="13.39" rotZ="359.11" />
+		<spawnpoint posX="1675.46" posY="-1751.42" posZ="13.54" rotZ="1.61" />
+		<spawnpoint posX="1830.52" posY="-1403.08" posZ="13.43" rotZ="89.66" />	
+	</vehicles>
+	<spawns mode="San Fierro">
+		<spawnpoint posX="-1423.58" posY="-291.59" posZ="14.15" />
+		<spawnpoint posX="-2321.97" posY="-1630.34" posZ="483.7" />
+		<spawnpoint posX="-2635.15" posY="1361.47" posZ="7.12" />
+		<spawnpoint posX="-1704.19" posY="1339.58" posZ="7.18" />
+		<spawnpoint posX="-2029.25" posY="172.84" posZ="28.84" />
+		<spawnpoint posX="-2707.9" posY="387.38" posZ="4.37" />
+		<spawnpoint posX="-2406.73" posY="-596.97" posZ="132.65" />
+		<spawnpoint posX="-2978.29" posY="469.66" posZ="4.91" />
+		<spawnpoint posX="-1427.98" posY="-954.08" posZ="200.92" />
+		<spawnpoint posX="-2022.95" posY="924.97" posZ="45.94" />
+	</spawns>
+	<pickups mode="San Fierro">
+		<spawnpoint posX="-2319.35" posY="-1616.18" posZ="483.75" />
+		<spawnpoint posX="-2234.99" posY="-1742.47" posZ="480.84" />
+		<spawnpoint posX="-2238.59" posY="-1744.92" posZ="480.85" />
+		<spawnpoint posX="-1826.73" posY="-1617.51" posZ="23.02" />
+		<spawnpoint posX="-1603.72" posY="-501.2" posZ="22.09" />
+		<spawnpoint posX="-1859.3" posY="-1615.3" posZ="21.78" />
+		<spawnpoint posX="-1909.31" posY="-1671.15" posZ="23.02" />
+		<spawnpoint posX="-1854.63" posY="-1707.05" posZ="25.37" />
+		<spawnpoint posX="-1758.33" posY="-1668.6" posZ="35.87" />
+		<spawnpoint posX="-1255.85" posY="34.37" posZ="14.14" />
+		<spawnpoint posX="-1626.83" posY="-1462.85" posZ="58.35" />
+		<spawnpoint posX="-1602.26" posY="-1391.2" posZ="44.41" />
+		<spawnpoint posX="-1639.1" posY="-1266.11" posZ="57.83" />
+		<spawnpoint posX="-1482.61" posY="146.04" posZ="18.77" />
+		<spawnpoint posX="-1623.99" posY="2.37" posZ="17.33" />
+		<spawnpoint posX="-1762.72" posY="-1068.6" posZ="68.49" />
+		<spawnpoint posX="-1775.29" posY="-1000.89" posZ="70.95" />
+		<spawnpoint posX="-1859.19" posY="-1193.82" posZ="34.86" />
+		<spawnpoint posX="-1948.43" posY="-1195.73" posZ="34.86" />
+		<spawnpoint posX="-1975.3" posY="-1146.25" posZ="30.28" />
+		<spawnpoint posX="-1536.02" posY="363.07" posZ="7.19" />
+		<spawnpoint posX="-1999.61" posY="-1017.42" posZ="32.17" />
+		<spawnpoint posX="-1976.65" posY="-1016.14" posZ="32.17" />
+		<spawnpoint posX="-1968.38" posY="-982.68" posZ="32.23" />
+		<spawnpoint posX="-2082.68" posY="-936.62" posZ="32.17" />
+		<spawnpoint posX="-1702.07" posY="394.33" posZ="7.18" />
+		<spawnpoint posX="-2129.58" posY="-871.21" posZ="32.21" />
+		<spawnpoint posX="-1947.18" posY="486.61" posZ="31.97" />
+		<spawnpoint posX="-2086.2" posY="-734.84" posZ="32.17" />
+		<spawnpoint posX="-2031.77" posY="-751.51" posZ="32.17" />
+		<spawnpoint posX="-1952.17" posY="-736.29" posZ="35.89" />
+		<spawnpoint posX="-1953.92" posY="-775.23" posZ="35.89" />
+		<spawnpoint posX="-1955.69" posY="-807.09" posZ="35.89" />
+		<spawnpoint posX="-1954.91" posY="-858.49" posZ="35.89" />
+		<spawnpoint posX="-2105.98" posY="208.41" posZ="35.25" />
+		<spawnpoint posX="-1954.85" posY="-906.86" posZ="35.89" />
+		<spawnpoint posX="-1954.08" posY="-938.17" posZ="35.89" />
+		<spawnpoint posX="-1954.19" posY="-990.94" posZ="35.89" />
+		<spawnpoint posX="-2021.54" posY="84.3" posZ="28" />
+		<spawnpoint posX="-1968.7" posY="137.79" posZ="27.69" />
+		<spawnpoint posX="-1905.09" posY="-682.43" posZ="32.16" />
+		<spawnpoint posX="-1903.27" posY="-568.25" posZ="24.59" />
+		<spawnpoint posX="-1903.98" posY="-480.39" posZ="25.17" />
+		<spawnpoint posX="-1973.58" posY="-524.23" posZ="35.34" />
+		<spawnpoint posX="-1719.88" posY="-123.45" posZ="3.55" />
+		<spawnpoint posX="-1814.36" posY="-192.27" posZ="13.78" />
+		<spawnpoint posX="-2022.17" posY="-405.91" posZ="38.73" />
+		<spawnpoint posX="-2036.61" posY="-394.21" posZ="35.53" />
+		<spawnpoint posX="-2107.09" posY="-394.56" posZ="35.53" />
+		<spawnpoint posX="-2111.58" posY="-487.92" posZ="35.53" />
+		<spawnpoint posX="-2162.88" posY="-397.06" posZ="35.34" />
+		<spawnpoint posX="-2219.38" posY="-373.27" posZ="44.29" />
+		<spawnpoint posX="-2217.78" posY="-306.16" posZ="44.29" />
+		<spawnpoint posX="-2063.07" posY="-107.47" posZ="35.32" />
+		<spawnpoint posX="-2024.58" posY="-53.99" posZ="35.36" />
+		<spawnpoint posX="-2287.75" posY="-339.33" posZ="50.9" />
+		<spawnpoint posX="-2302.67" posY="-339.13" posZ="65.35" />
+		<spawnpoint posX="-2283.76" posY="-383.25" posZ="67.84" />
+		<spawnpoint posX="-2087.97" posY="59.98" posZ="34.65" />
+		<spawnpoint posX="-2345.82" posY="-437.95" posZ="83.41" />
+		<spawnpoint posX="-2111.73" posY="126.57" posZ="35.25" />
+		<spawnpoint posX="-2426.6" posY="-494.75" posZ="109.41" />
+		<spawnpoint posX="-2395.55" posY="-573.41" posZ="132.12" />
+		<spawnpoint posX="-2377.63" posY="-595.98" posZ="132.12" />
+		<spawnpoint posX="-2540.43" posY="-622.72" posZ="132.71" />
+		<spawnpoint posX="-2235.5" posY="251.19" posZ="35.33" />
+		<spawnpoint posX="-2501.58" posY="-679.11" posZ="139.32" />
+		<spawnpoint posX="-2521.39" posY="-704.35" posZ="139.32" />
+		<spawnpoint posX="-2239.91" posY="370.95" posZ="34.84" />
+		<spawnpoint posX="-2771.24" posY="-483.8" posZ="7.54" />
+		<spawnpoint posX="-2725.47" posY="-469.63" posZ="2.83" />
+		<spawnpoint posX="-1906.11" posY="530.59" posZ="35.17" />
+		<spawnpoint posX="-2797.63" posY="-353.29" posZ="7.04" />
+		<spawnpoint posX="-2750.4" posY="-339.48" posZ="7.19" />
+		<spawnpoint posX="-2761.83" posY="-278.99" posZ="7.04" />
+		<spawnpoint posX="-2739.69" posY="-231.44" posZ="7.07" />
+		<spawnpoint posX="-1680.71" posY="705.52" posZ="30.6" />
+		<spawnpoint posX="-2765.4" posY="-185.56" posZ="7.19" />
+		<spawnpoint posX="-1493.98" posY="665.98" posZ="7.17" />
+		<spawnpoint posX="-2753.42" posY="-154.59" posZ="6.98" />
+		<spawnpoint posX="-2765.97" posY="-86.45" posZ="7.19" />
+		<spawnpoint posX="-1603.55" posY="793.31" posZ="6.82" />
+		<spawnpoint posX="-2756.46" posY="-41.2" posZ="6.97" />
+		<spawnpoint posX="-2755.99" posY="3.98" posZ="7.14" />
+		<spawnpoint posX="-2774.47" posY="66.59" posZ="7.19" />
+		<spawnpoint posX="-2747.37" posY="103.54" posZ="7.34" />
+		<spawnpoint posX="-1452.84" posY="1077.63" posZ="7.19" />
+		<spawnpoint posX="-2722.12" posY="76.71" posZ="4.34" />
+		<spawnpoint posX="-1487.6" posY="1200.08" posZ="7.19" />
+		<spawnpoint posX="-1505.39" posY="1372.2" posZ="3.51" />
+		<spawnpoint posX="-2748.87" posY="204.03" posZ="7.09" />
+		<spawnpoint posX="-2775.4" posY="239.58" posZ="7.19" />
+		<spawnpoint posX="-2737.63" posY="231.94" posZ="4.35" />
+		<spawnpoint posX="-2688.91" posY="234.32" posZ="4.34" />
+		<spawnpoint posX="-1705.49" posY="1222.46" posZ="30.08" />
+		<spawnpoint posX="-1852.5" posY="1301.55" posZ="59.73" />
+		<spawnpoint posX="-2706.61" posY="375.83" posZ="4.97" />
+		<spawnpoint posX="-2764.93" posY="375.16" posZ="6.34" />
+		<spawnpoint posX="-2770.38" posY="361.22" posZ="4.49" />
+		<spawnpoint posX="-2650.11" posY="376.35" posZ="6.16" />
+		<spawnpoint posX="-2587.74" posY="328.83" posZ="4.85" />
+		<spawnpoint posX="-2560" posY="310.21" posZ="15.95" />
+		<spawnpoint posX="-2509.46" posY="302.17" posZ="35.12" />
+		<spawnpoint posX="-2525.21" posY="277.94" posZ="33.73" />
+		<spawnpoint posX="-2470.04" posY="261.23" posZ="35.17" />
+		<spawnpoint posX="-2301.41" posY="1100.23" posZ="80.01" />
+		<spawnpoint posX="-2421.78" posY="334.84" posZ="35.7" />
+		<spawnpoint posX="-2424.31" posY="243.11" posZ="23.91" />
+		<spawnpoint posX="-2520.94" posY="147.13" posZ="4.34" />
+		<spawnpoint posX="-2440.42" posY="953.46" posZ="45.3" />
+		<spawnpoint posX="-2575.31" posY="118.61" posZ="4.34" />
+		<spawnpoint posX="-2613.84" posY="71.52" posZ="4.34" />
+		<spawnpoint posX="-2349.28" posY="984.19" posZ="50.7" />
+		<spawnpoint posX="-2628.27" posY="-5.88" posZ="6.13" />
+		<spawnpoint posX="-2648.6" posY="-27.45" posZ="6.13" />
+		<spawnpoint posX="-2719.1" posY="-37.54" posZ="4.34" />
+		<spawnpoint posX="-2154.67" posY="790.54" posZ="69.56" />
+		<spawnpoint posX="-2718.12" posY="-126.39" posZ="4.34" />
+		<spawnpoint posX="-2656.18" posY="-114.36" posZ="4.01" />
+		<spawnpoint posX="-2069.56" posY="853.73" posZ="65.7" />
+		<spawnpoint posX="-1980.94" posY="883.52" posZ="45.2" />
+		<spawnpoint posX="-2684.77" posY="17.02" posZ="4.34" />
+		<spawnpoint posX="-2658.78" posY="64.23" posZ="4.34" />
+		<spawnpoint posX="-2645.69" posY="63.74" posZ="4.34" />
+		<spawnpoint posX="-2635.62" posY="85.54" posZ="4.06" />
+		<spawnpoint posX="-1949.5" posY="795.85" posZ="55.72" />
+		<spawnpoint posX="-2581.76" posY="-14.44" posZ="4.22" />
+		<spawnpoint posX="-2572.73" posY="-16.84" posZ="8.02" />
+		<spawnpoint posX="-2536.83" posY="-18.98" posZ="16.42" />
+		<spawnpoint posX="-2527.77" posY="-15.37" posZ="25.62" />
+		<spawnpoint posX="-1933.09" posY="661.72" posZ="46.56" />
+		<spawnpoint posX="-2523.85" posY="-33.45" posZ="25.62" />
+		<spawnpoint posX="-2482.87" posY="6.51" posZ="25.62" />
+		<spawnpoint posX="-2453.86" posY="-54.2" posZ="33.83" />
+		<spawnpoint posX="-2446.05" posY="-83.81" posZ="34.22" />
+		<spawnpoint posX="-2463.55" posY="-95.32" posZ="25.87" />
+		<spawnpoint posX="-2107.64" posY="463.49" posZ="35.17" />
+		<spawnpoint posX="-2477.27" posY="-128.5" posZ="25.62" />
+		<spawnpoint posX="-2485.98" posY="-176.75" posZ="25.62" />
+		<spawnpoint posX="-2402.33" posY="-155.71" posZ="35.32" />
+		<spawnpoint posX="-2357.39" posY="-106.43" posZ="35.32" />
+		<spawnpoint posX="-2318.36" posY="-100.07" posZ="35.32" />
+		<spawnpoint posX="-1950.56" posY="264.6" posZ="41.05" />
+		<spawnpoint posX="-2321.28" posY="-150.38" posZ="35.55" />
+		<spawnpoint posX="-2311.23" posY="-41.84" posZ="35.32" />
+		<spawnpoint posX="-1652.34" posY="258.16" posZ="1.18" />
+		<spawnpoint posX="-2271.66" posY="2.17" posZ="35.32" />
+		<spawnpoint posX="-2210.49" posY="17.41" posZ="35.32" />
+		<spawnpoint posX="-2181.97" posY="40.63" posZ="35.32" />
+		<spawnpoint posX="-1470.21" posY="324.35" posZ="7.19" />
+		<spawnpoint posX="-2150.4" posY="-105.89" posZ="35.32" />
+		<spawnpoint posX="-1332.84" posY="373.26" posZ="7.19" />
+		<spawnpoint posX="-2135.95" posY="-122.78" posZ="36.52" />
+		<spawnpoint posX="-2149.29" posY="-144.52" posZ="36.52" />
+		<spawnpoint posX="-2099.03" posY="-154.27" posZ="35.32" />
+		<spawnpoint posX="-1344.87" posY="497.92" posZ="11.2" />
+		<spawnpoint posX="-2145.84" posY="-190.88" posZ="35.32" />
+		<spawnpoint posX="-1374.62" posY="507.98" posZ="11.2" />
+		<spawnpoint posX="-2186.6" posY="-212.49" posZ="36.52" />
+		<spawnpoint posX="-1400.66" posY="505.43" posZ="3.04" />
+		<spawnpoint posX="-2178.31" posY="-235.72" posZ="36.52" />
+		<spawnpoint posX="-2161.44" posY="-265.51" posZ="36.52" />
+		<spawnpoint posX="-2084.12" posY="-238.04" posZ="35.32" />
+		<spawnpoint posX="-1254.65" posY="501.77" posZ="18.23" />
+		<spawnpoint posX="-2031.44" posY="-94.6" posZ="35.16" />
+		<spawnpoint posX="-1908.2" posY="-199.19" posZ="23.12" />
+		<spawnpoint posX="-1864.72" posY="-210.88" posZ="18.39" />
+		<spawnpoint posX="-1821.42" posY="-161.52" posZ="9.41" />
+		<spawnpoint posX="-1836.22" posY="-100.08" posZ="15.12" />
+		<spawnpoint posX="-1794.02" posY="757.3" posZ="24.89" />
+		<spawnpoint posX="-1729.39" posY="5.19" posZ="3.55" />
+		<spawnpoint posX="-1783.85" posY="667.51" posZ="35.17" />
+		<spawnpoint posX="-1677.97" posY="64.16" posZ="-11.23" />
+		<spawnpoint posX="-1595.52" posY="146.59" posZ="-10.83" />
+		<spawnpoint posX="-1605.07" posY="168.05" posZ="3.55" />
+		<spawnpoint posX="-1524.75" posY="149.96" posZ="3.55" />
+		<spawnpoint posX="-1536.18" posY="90.98" posZ="17.33" />
+		<spawnpoint posX="-1588.65" posY="37.6" posZ="17.35" />
+		<spawnpoint posX="-1649.48" posY="-23.2" posZ="3.55" />
+		<spawnpoint posX="-2490.45" posY="486.36" posZ="25.58" />
+		<spawnpoint posX="-1616.7" posY="-80.2" posZ="1.96" />
+		<spawnpoint posX="-1696.42" posY="-98.02" posZ="3.55" />
+		<spawnpoint posX="-1677.33" posY="-161.07" posZ="14.15" />
+		<spawnpoint posX="-1491.01" posY="-42.51" posZ="14.55" />
+		<spawnpoint posX="-1417.59" posY="-155.26" posZ="14.15" />
+		<spawnpoint posX="-2502.64" posY="767.32" posZ="35.17" />
+		<spawnpoint posX="-1292.27" posY="-294.26" posZ="14.2" />
+		<spawnpoint posX="-1370.6" posY="-428.75" posZ="14.14" />
+		<spawnpoint posX="-2442.16" posY="752.57" posZ="35.18" />
+		<spawnpoint posX="-1436.56" posY="-532.48" posZ="14.17" />
+		<spawnpoint posX="-2333.44" posY="726.52" posZ="44.7" />
+		<spawnpoint posX="-1441.57" posY="-392.01" posZ="6.9" />
+		<spawnpoint posX="-1588.65" posY="-362.69" posZ="6" />
+		<spawnpoint posX="-2276.59" posY="817.56" posZ="49.5" />
+		<spawnpoint posX="-1424.11" posY="-292.88" posZ="6" />
+		<spawnpoint posX="-2556.85" posY="855.49" posZ="56.8" />
+		<spawnpoint posX="-2643.13" posY="848.07" posZ="62.67" />
+		<spawnpoint posX="-1371.04" posY="-208.9" posZ="6.1" />
+		<spawnpoint posX="-1362.59" posY="-187.57" posZ="6.34" />
+		<spawnpoint posX="-2718.14" posY="795.02" posZ="50.7" />
+		<spawnpoint posX="-1353.19" posY="-102.34" posZ="6" />
+		<spawnpoint posX="-1361.5" posY="-79.76" posZ="6.34" />
+		<spawnpoint posX="-1354.78" posY="5.34" posZ="6" />
+		<spawnpoint posX="-1435.71" posY="-33.53" posZ="6" />
+		<spawnpoint posX="-1468.55" posY="-0.83" posZ="6" />
+		<spawnpoint posX="-2860.07" posY="694.6" posZ="23.58" />
+		<spawnpoint posX="-1467.48" posY="-92.59" posZ="6.05" />
+		<spawnpoint posX="-1467.45" posY="-151.73" posZ="6.03" />
+		<spawnpoint posX="-1458.84" posY="-193.81" posZ="6" />
+		<spawnpoint posX="-2988.84" posY="470.14" posZ="4.91" />
+		<spawnpoint posX="-1405.8" posY="16.54" posZ="5.41" />
+		<spawnpoint posX="-1346.35" posY="123.59" posZ="2.93" />
+		<spawnpoint posX="-2910.47" posY="243.43" posZ="2.59" />
+		<spawnpoint posX="-1293.12" posY="140.18" posZ="14.55" />
+		<spawnpoint posX="-1028.41" posY="456.82" posZ="14.55" />
+		<spawnpoint posX="-1036.62" posY="463.32" posZ="14.55" />
+		<spawnpoint posX="-1224.71" posY="454.65" posZ="7.19" />
+		<spawnpoint posX="-1315.04" posY="497.12" posZ="11.2" />
+		<spawnpoint posX="-1549.05" posY="468.24" posZ="7.19" />
+		<spawnpoint posX="-1780.81" posY="548.25" posZ="35.12" />
+		<spawnpoint posX="-1831.84" posY="652.48" posZ="30.43" />
+		<spawnpoint posX="-2457.7" posY="-948.43" posZ="12.45" />
+		<spawnpoint posX="-1913.71" posY="712.34" posZ="46.56" />
+		<spawnpoint posX="-1966" posY="712.86" posZ="46.56" />
+		<spawnpoint posX="-2028.6" posY="709.68" posZ="49.8" />
+		<spawnpoint posX="-1978.75" posY="499.02" posZ="35.17" />
+		<spawnpoint posX="-2656.17" posY="-665.51" posZ="74.32" />
+		<spawnpoint posX="-1978.28" posY="468.11" posZ="29.02" />
+		<spawnpoint posX="-1924.43" posY="471.71" posZ="35.17" />
+		<spawnpoint posX="-1916.09" posY="304.53" posZ="41.05" />
+		<spawnpoint posX="-1978.55" posY="246.69" posZ="35.17" />
+		<spawnpoint posX="-1955.35" posY="303.74" posZ="35.47" />
+		<spawnpoint posX="-1950.75" posY="269.32" posZ="35.47" />
+		<spawnpoint posX="-1953.83" posY="298.53" posZ="41.05" />
+		<spawnpoint posX="-2060.16" posY="303.86" posZ="41.56" />
+		<spawnpoint posX="-2046.06" posY="306.43" posZ="40.22" />
+		<spawnpoint posX="-2063.03" posY="255.63" posZ="35.29" />
+		<spawnpoint posX="-2090.82" posY="176.92" posZ="35.05" />
+		<spawnpoint posX="-2058.44" posY="81.73" posZ="28.39" />
+		<spawnpoint posX="-1939.63" posY="134.08" posZ="26.28" />
+		<spawnpoint posX="-1886.79" posY="360.08" posZ="43.06" />
+		<spawnpoint posX="-1753.28" posY="511.99" posZ="39.11" />
+		<spawnpoint posX="-1616.4" posY="683.04" posZ="7.19" />
+		<spawnpoint posX="-1612.4" posY="734.26" posZ="-5.24" />
+		<spawnpoint posX="-1588" posY="701.48" posZ="-4.91" />
+		<spawnpoint posX="-1625.69" posY="661.79" posZ="-5.24" />
+		<spawnpoint posX="-1508.54" posY="740.19" posZ="7.19" />
+		<spawnpoint posX="-1434.85" posY="847.3" posZ="7.19" />
+		<spawnpoint posX="-1435.5" posY="1003.39" posZ="7.19" />
+		<spawnpoint posX="-1557.99" posY="1070.63" posZ="7.19" />
+		<spawnpoint posX="-1666.41" posY="1064.7" posZ="7.92" />
+		<spawnpoint posX="-1723.67" posY="1021.52" posZ="45.21" />
+		<spawnpoint posX="-2312.37" posY="1545.63" posZ="18.77" />
+		<spawnpoint posX="-1751.66" posY="959.59" posZ="24.88" />
+		<spawnpoint posX="-1780.78" posY="969.94" posZ="24.73" />
+		<spawnpoint posX="-1720.13" posY="1018.03" posZ="17.59" />
+		<spawnpoint posX="-1704.12" posY="1019.48" posZ="17.59" />
+		<spawnpoint posX="-1781.11" posY="1086.51" posZ="45.45" />
+		<spawnpoint posX="-2647.38" posY="1233.32" posZ="51.08" />
+		<spawnpoint posX="-1868.79" posY="1088.89" posZ="47.07" />
+		<spawnpoint posX="-1953.49" posY="1105.87" posZ="54.94" />
+		<spawnpoint posX="-2045.22" posY="1104.71" posZ="53.29" />
+		<spawnpoint posX="-2520.11" posY="1153.81" posZ="55.45" />
+		<spawnpoint posX="-2115.27" posY="1138.08" posZ="55.1" />
+		<spawnpoint posX="-2134.06" posY="1217.73" posZ="47.27" />
+		<spawnpoint posX="-2110.38" posY="1233.34" posZ="19.15" />
+		<spawnpoint posX="-2010.1" posY="1227.29" posZ="31.64" />
+		<spawnpoint posX="-1944.16" posY="1228.36" posZ="31.61" />
+		<spawnpoint posX="-1952.3" posY="1329.74" posZ="7.19" />
+		<spawnpoint posX="-2540.29" posY="922.03" posZ="67.09" />
+		<spawnpoint posX="-2012.12" posY="1384.5" posZ="7.18" />
+		<spawnpoint posX="-2075.76" posY="1424.01" posZ="7.1" />
+		<spawnpoint posX="-1867.03" posY="1299.03" posZ="9.21" />
+		<spawnpoint posX="-1820.08" posY="1307.3" posZ="19.26" />
+		<spawnpoint posX="-1816.7" posY="1296.14" posZ="22.56" />
+		<spawnpoint posX="-1846.68" posY="1301.29" posZ="31.85" />
+		<spawnpoint posX="-2835.82" posY="1310.48" posZ="7.1" />
+		<spawnpoint posX="-1871.73" posY="1280.26" posZ="46.44" />
+		<spawnpoint posX="-1798.61" posY="1304.02" posZ="50.45" />
+		<spawnpoint posX="-1804.94" posY="1174.97" posZ="25.13" />
+		<spawnpoint posX="-2095.24" posY="495.81" posZ="35.17" />
+		<spawnpoint posX="-2125.57" posY="655.46" posZ="52.37" />
+		<spawnpoint posX="-1932.87" posY="-1164.14" posZ="14.43" />
+	</pickups>
+	<vehicles mode="San Fierro">
+		<spawnpoint posX="-2326.23" posY="-1621.48" posZ="483.71" rotZ="239.37" />
+		<spawnpoint posX="-1394.55" posY="-530.12" posZ="14.15" rotZ="205.53" />
+		<spawnpoint posX="-1818.46" posY="-1610.94" posZ="23.02" rotZ="180.66" />
+		<spawnpoint posX="-1894.45" posY="-1707.57" posZ="21.76" rotZ="142.09" />
+		<spawnpoint posX="-1488.71" posY="-222.8" posZ="14.15" rotZ="357.47" />
+		<spawnpoint posX="-1583.37" posY="-1594.29" posZ="37.33" rotZ="257.94" />
+		<spawnpoint posX="-1730.61" posY="-1212.82" posZ="54.18" rotZ="22.38" />
+		<spawnpoint posX="-1715" posY="63.57" posZ="3.55" rotZ="43.84" />
+		<spawnpoint posX="-1753.26" posY="245.07" posZ="6.61" rotZ="328.95" />
+		<spawnpoint posX="-1655.13" posY="454.1" posZ="7.18" rotZ="45.41" />
+		<spawnpoint posX="-2124.8" posY="-935.32" posZ="32.02" rotZ="90.2" />
+		<spawnpoint posX="-2147.91" posY="-962.09" posZ="32.02" rotZ="93.06" />
+		<spawnpoint posX="-2135.73" posY="-879.17" posZ="32.02" rotZ="271.22" />
+		<spawnpoint posX="-2149.81" posY="-793.72" posZ="32.02" rotZ="271.78" />
+		<spawnpoint posX="-2026.91" posY="385.64" posZ="35.17" rotZ="88.65" />
+		<spawnpoint posX="-1985.48" posY="273.77" posZ="35.18" rotZ="86.77" />
+		<spawnpoint posX="-2046.77" posY="126.66" posZ="28.84" rotZ="180.46" />
+		<spawnpoint posX="-1898.78" posY="-945.84" posZ="32.02" rotZ="271.52" />
+		<spawnpoint posX="-1873.44" posY="-909.66" posZ="32.02" rotZ="271.78" />
+		<spawnpoint posX="-1886.08" posY="-865" posZ="32.02" rotZ="90.01" />
+		<spawnpoint posX="-1873.49" posY="-805.01" posZ="32.02" rotZ="271.04" />
+		<spawnpoint posX="-1898.56" posY="-759.78" posZ="32.02" rotZ="270.2" />
+		<spawnpoint posX="-1823.69" posY="2.62" posZ="15.12" rotZ="269.78" />
+		<spawnpoint posX="-1701.46" posY="-80.2" posZ="3.57" rotZ="48.28" />
+		<spawnpoint posX="-1728.28" posY="-351.7" posZ="14.14" rotZ="177.95" />
+		<spawnpoint posX="-2099.29" posY="-14.2" posZ="35.32" rotZ="182.68" />
+		<spawnpoint posX="-2356.63" posY="-446.17" posZ="80.97" rotZ="58.58" />
+		<spawnpoint posX="-2173.81" posY="106.51" posZ="35.32" rotZ="86.82" />
+		<spawnpoint posX="-2393.59" posY="-596.36" posZ="132.65" rotZ="123.02" />
+		<spawnpoint posX="-2266.64" posY="141.14" posZ="35.16" rotZ="269.16" />
+		<spawnpoint posX="-2528.2" posY="-601.81" posZ="132.74" rotZ="181.16" />
+		<spawnpoint posX="-2266.83" posY="208.5" posZ="35.16" rotZ="270.72" />
+		<spawnpoint posX="-2196.98" posY="294.67" posZ="35.12" rotZ="180.8" />
+		<spawnpoint posX="-2881.77" posY="-854.73" posZ="7.23" rotZ="345.97" />
+		<spawnpoint posX="-2238.9" posY="532.12" posZ="35.18" rotZ="358.74" />
+		<spawnpoint posX="-1947.57" posY="577.89" posZ="35.17" rotZ="284.17" />
+		<spawnpoint posX="-2803.53" posY="-464.71" posZ="7.19" rotZ="46.26" />
+		<spawnpoint posX="-2772.81" posY="-405.63" posZ="7.21" rotZ="89.15" />
+		<spawnpoint posX="-2762.46" posY="-296.98" posZ="7.04" rotZ="0.09" />
+		<spawnpoint posX="-2747.33" posY="-197.1" posZ="5.94" rotZ="88.78" />
+		<spawnpoint posX="-1612.05" posY="671.51" posZ="7.19" rotZ="358.15" />
+		<spawnpoint posX="-1518.55" posY="899.43" posZ="7.19" rotZ="358.48" />
+		<spawnpoint posX="-2739.57" posY="126.51" posZ="4.54" rotZ="181.41" />
+		<spawnpoint posX="-1647.84" posY="1308.64" posZ="7.03" rotZ="133.53" />
+		<spawnpoint posX="-2710.9" posY="193.78" posZ="4.18" rotZ="1.26" />
+		<spawnpoint posX="-2674.81" posY="268.63" posZ="4.34" rotZ="180.16" />
+		<spawnpoint posX="-1791.24" posY="1310.67" posZ="59.73" rotZ="359.42" />
+		<spawnpoint posX="-2092.94" posY="1362.44" posZ="7.1" rotZ="187.73" />
+		<spawnpoint posX="-2377.1" posY="1287.18" posZ="21.84" rotZ="88.72" />
+		<spawnpoint posX="-2503.17" posY="361.6" posZ="27.77" rotZ="241.15" />
+		<spawnpoint posX="-2477.1" posY="412.62" posZ="27.77" rotZ="317.72" />
+		<spawnpoint posX="-2491.92" posY="367.13" posZ="35.12" rotZ="235.31" />
+		<spawnpoint posX="-2416.08" posY="327.33" posZ="34.97" rotZ="327.99" />
+		<spawnpoint posX="-2362.56" posY="1111.57" posZ="55.73" rotZ="68.38" />
+		<spawnpoint posX="-2404.68" posY="978.2" posZ="45.3" rotZ="184" />
+		<spawnpoint posX="-2627.02" posY="-34.67" posZ="4.34" rotZ="177.17" />
+		<spawnpoint posX="-2238.23" posY="893.75" posZ="66.66" rotZ="269.54" />
+		<spawnpoint posX="-2106.37" posY="800.82" posZ="69.56" rotZ="269.54" />
+		<spawnpoint posX="-1909.34" posY="883.2" posZ="35.17" rotZ="178.98" />
+		<spawnpoint posX="-2456.65" posY="-2.95" posZ="27.94" rotZ="181.93" />
+		<spawnpoint posX="-1888.4" posY="288.93" posZ="41.05" rotZ="0.41" />
+		<spawnpoint posX="-1357.96" posY="327.2" posZ="7.19" rotZ="269.25" />
+		<spawnpoint posX="-2146.18" posY="-103.1" posZ="35.32" rotZ="269.03" />
+		<spawnpoint posX="-2038.85" posY="-254.04" posZ="35.32" rotZ="6.27" />
+		<spawnpoint posX="-2076.96" posY="-85.55" posZ="35.16" rotZ="1.91" />
+		<spawnpoint posX="-1740.66" posY="819.94" posZ="24.89" rotZ="0.74" />
+		<spawnpoint posX="-1704.52" posY="14.42" posZ="3.55" rotZ="315.75" />
+		<spawnpoint posX="-2413.52" posY="531.36" posZ="29.93" rotZ="67.17" />
+		<spawnpoint posX="-2653.97" posY="625.84" posZ="14.45" rotZ="263.92" />
+		<spawnpoint posX="-2568.46" posY="627.88" posZ="27.81" rotZ="182.48" />
+		<spawnpoint posX="-1336.81" posY="-296.07" posZ="14.15" rotZ="351.98" />
+		<spawnpoint posX="-2285.72" posY="723.74" posZ="49.43" rotZ="272.76" />
+		<spawnpoint posX="-1398.72" posY="-325.41" posZ="6" rotZ="34.73" />
+		<spawnpoint posX="-1385.01" posY="-228.58" posZ="6" rotZ="88.98" />
+		<spawnpoint posX="-2671.84" posY="822.23" posZ="49.98" rotZ="0.82" />
+		<spawnpoint posX="-1359.77" posY="-165.55" posZ="6" rotZ="2.25" />
+		<spawnpoint posX="-1338.65" posY="-29.64" posZ="6" rotZ="271.5" />
+		<spawnpoint posX="-2793.64" posY="765.49" posZ="50.13" rotZ="357.71" />
+		<spawnpoint posX="-1386.34" posY="-0.94" posZ="6" rotZ="263.79" />
+		<spawnpoint posX="-2875.57" posY="734.83" posZ="29.79" rotZ="98.91" />
+		<spawnpoint posX="-2871.9" posY="420.58" posZ="4.94" rotZ="265.29" />
+		<spawnpoint posX="-1220.63" posY="34.23" posZ="14.15" rotZ="5.51" />
+		<spawnpoint posX="-2757.17" posY="172.09" posZ="7.01" rotZ="359.61" />
+		<spawnpoint posX="-2762.77" posY="25.67" posZ="7.02" rotZ="182.88" />
+		<spawnpoint posX="-1029.54" posY="464.51" posZ="14.54" rotZ="143.86" />
+		<spawnpoint posX="-1224.25" posY="458.73" posZ="7.19" rotZ="86.82" />
+		<spawnpoint posX="-2304.34" posY="-169.03" posZ="35.31" rotZ="183.83" />
+		<spawnpoint posX="-1400.33" posY="502.38" posZ="18.23" rotZ="110.37" />
+		<spawnpoint posX="-1919.97" posY="300.6" posZ="41.05" rotZ="203.48" />
+		<spawnpoint posX="-2655.05" posY="-197.22" posZ="4.16" rotZ="2.77" />
+		<spawnpoint posX="-2797.67" posY="-102.17" posZ="7.19" rotZ="272.21" />
+		<spawnpoint posX="-2580.56" posY="210.29" posZ="8.73" rotZ="26.24" />
+		<spawnpoint posX="-1637.72" posY="673.99" posZ="-5.24" rotZ="90.38" />
+		<spawnpoint posX="-1659.89" posY="529.83" posZ="38.44" rotZ="315.45" />
+		<spawnpoint posX="-1669.48" posY="1014.81" posZ="7.92" rotZ="3.22" />
+		<spawnpoint posX="-2640.39" posY="1334.16" posZ="7.2" rotZ="92.4" />
+		<spawnpoint posX="-2501.58" posY="1222.46" posZ="37.43" rotZ="148.51" />
+		<spawnpoint posX="-2007.86" posY="1086.61" posZ="55.72" rotZ="92.24" />
+		<spawnpoint posX="-2541.2" posY="994.18" posZ="78.28" rotZ="94.62" />
+		<spawnpoint posX="-2721.67" posY="984.05" posZ="54.46" rotZ="2.18" />
+		<spawnpoint posX="-2893.11" posY="1037.67" posZ="35.03" rotZ="108.72" />
+		<spawnpoint posX="-1810.19" posY="1311.72" posZ="31.85" rotZ="9.35" />
+		<spawnpoint posX="-1790.99" posY="1310.38" posZ="41.15" rotZ="0.57" />
+		<spawnpoint posX="-2762.15" posY="1251.01" posZ="11.77" rotZ="38.22" />
+	</vehicles>
+	<spawns mode="Las Venturas">	
+		<spawnpoint posX="-916.54" posY="2014.58" posZ="60.91" />
+		<spawnpoint posX="214.62" posY="1904.17" posZ="17.64" />
+		<spawnpoint posX="683.01" posY="896.29" posZ="-39.8" />
+		<spawnpoint posX="1687.2" posY="1449.45" posZ="10.77" />
+		<spawnpoint posX="2612.41" posY="1824.18" posZ="10.82" />
+		<spawnpoint posX="395.64" posY="2531.34" posZ="16.54" />
+		<spawnpoint posX="1766.3" posY="2857.32" posZ="10.83" />
+		<spawnpoint posX="2293.58" posY="570.49" posZ="7.78" />
+		<spawnpoint posX="-73.87" posY="951.48" posZ="20.12" />
+		<spawnpoint posX="1097.94" posY="1613.18" posZ="12.55" />
+	</spawns>	
+	<pickups mode="Las Venturas">	
+		<spawnpoint posX="-556.02" posY="1994.08" posZ="60.36" />
+		<spawnpoint posX="-425.84" posY="2241.04" posZ="42.43" />
+		<spawnpoint posX="-404.55" posY="2226.78" posZ="42.43" />
+		<spawnpoint posX="-352.4" posY="2229.56" posZ="42.48" />
+		<spawnpoint posX="-332.96" posY="2219.47" posZ="42.49" />
+		<spawnpoint posX="-365" posY="2363.07" posZ="30.56" />
+		<spawnpoint posX="-391.63" posY="2486.58" posZ="41.27" />
+		<spawnpoint posX="2006.77" posY="1248.72" posZ="10.81" />
+		<spawnpoint posX="-313.12" posY="2659.72" posZ="62.98" />
+		<spawnpoint posX="-295.5" posY="2679.94" posZ="62.64" />
+		<spawnpoint posX="-281.82" posY="2673.07" posZ="62.61" />
+		<spawnpoint posX="-276.01" posY="2718.93" posZ="62.63" />
+		<spawnpoint posX="-224.19" posY="2766.47" posZ="62.64" />
+		<spawnpoint posX="-213.72" posY="2718.98" posZ="62.69" />
+		<spawnpoint posX="-257.2" posY="2584.8" posZ="63.57" />
+		<spawnpoint posX="1905.79" posY="991.08" posZ="10.82" />
+		<spawnpoint posX="-126.44" posY="2640.96" posZ="63.94" />
+		<spawnpoint posX="1993.24" posY="955.66" posZ="10.82" />
+		<spawnpoint posX="116.9" posY="2577.78" posZ="16.68" />
+		<spawnpoint posX="2130.53" posY="892.95" posZ="10.82" />
+		<spawnpoint posX="184.85" posY="2594.36" posZ="16.7" />
+		<spawnpoint posX="2150.81" posY="2734.7" posZ="11.18" />
+		<spawnpoint posX="2201.5" posY="933.78" posZ="10.82" />
+		<spawnpoint posX="246.34" posY="2597.14" posZ="16.48" />
+		<spawnpoint posX="315.66" posY="2589.39" posZ="16.5" />
+		<spawnpoint posX="386.01" posY="2598.07" posZ="16.48" />
+		<spawnpoint posX="2066.14" posY="2722.26" posZ="10.82" />
+		<spawnpoint posX="425.04" posY="2546.72" posZ="16.3" />
+		<spawnpoint posX="2049.46" posY="2763.86" posZ="10.82" />
+		<spawnpoint posX="320.9" posY="2437.86" posZ="16.48" />
+		<spawnpoint posX="2383.83" posY="994.96" posZ="10.82" />
+		<spawnpoint posX="2037.26" posY="2722.17" posZ="11.3" />
+		<spawnpoint posX="240.67" posY="2420.01" posZ="16.49" />
+		<spawnpoint posX="2018.15" posY="2723.28" posZ="10.82" />
+		<spawnpoint posX="123.87" posY="2405.17" posZ="16.48" />
+		<spawnpoint posX="2039.72" posY="2765.47" posZ="10.82" />
+		<spawnpoint posX="2018.74" posY="2765.74" posZ="10.82" />
+		<spawnpoint posX="-33.7" posY="2344.42" posZ="24.14" />
+		<spawnpoint posX="2406.7" posY="1212.82" posZ="7.16" />
+		<spawnpoint posX="1992.65" posY="2763.57" posZ="10.82" />
+		<spawnpoint posX="195.27" posY="2077.17" posZ="22.64" />
+		<spawnpoint posX="1998.7" posY="2722.59" posZ="10.82" />
+		<spawnpoint posX="287.63" posY="2045.81" posZ="17.64" />
+		<spawnpoint posX="276.43" posY="2012.04" posZ="17.64" />
+		<spawnpoint posX="1969.88" posY="2722.25" posZ="11.3" />
+		<spawnpoint posX="276.97" posY="1976.95" posZ="17.64" />
+		<spawnpoint posX="1967.49" posY="2765.66" posZ="10.82" />
+		<spawnpoint posX="2442.27" posY="1402.25" posZ="10.91" />
+		<spawnpoint posX="1950.67" posY="2722.8" posZ="10.82" />
+		<spawnpoint posX="2402.02" posY="1516.03" posZ="10.82" />
+		<spawnpoint posX="279.15" posY="1835.6" posZ="17.65" />
+		<spawnpoint posX="212.14" posY="1811.12" posZ="21.87" />
+		<spawnpoint posX="1931.33" posY="2722.48" posZ="10.82" />
+		<spawnpoint posX="165.68" posY="1849.93" posZ="33.9" />
+		<spawnpoint posX="143.11" posY="1875.37" posZ="17.84" />
+		<spawnpoint posX="1928.72" posY="2774.44" posZ="10.82" />
+		<spawnpoint posX="119.96" posY="1926.78" posZ="19.06" />
+		<spawnpoint posX="161.38" posY="1931.84" posZ="33.9" />
+		<spawnpoint posX="1921.67" posY="2664.15" posZ="10.82" />
+		<spawnpoint posX="1950.49" posY="2663.57" posZ="10.82" />
+		<spawnpoint posX="2536.5" posY="1507.51" posZ="11.16" />
+		<spawnpoint posX="223.1" posY="1860.72" posZ="13.15" />
+		<spawnpoint posX="1969.74" posY="2663.01" posZ="10.82" />
+		<spawnpoint posX="2517.17" posY="1567.99" posZ="11.56" />
+		<spawnpoint posX="1989.14" posY="2664.1" posZ="10.82" />
+		<spawnpoint posX="250.95" posY="1861.29" posZ="8.76" />
+		<spawnpoint posX="2017.89" posY="2663.81" posZ="11.05" />
+		<spawnpoint posX="2037.17" posY="2663.35" posZ="10.82" />
+		<spawnpoint posX="2056.6" posY="2664.6" posZ="10.82" />
+		<spawnpoint posX="287.94" posY="1819.99" posZ="4.71" />
+		<spawnpoint posX="2108.27" posY="2652.73" posZ="10.81" />
+		<spawnpoint posX="296.04" posY="1839.79" posZ="7.83" />
+		<spawnpoint posX="2103.62" posY="2678.8" posZ="10.81" />
+		<spawnpoint posX="2598.11" posY="1894.47" posZ="11.02" />
+		<spawnpoint posX="314.34" posY="1856.07" posZ="7.83" />
+		<spawnpoint posX="2520.93" posY="1891.57" posZ="10.82" />
+		<spawnpoint posX="275.79" posY="1856.46" posZ="8.76" />
+		<spawnpoint posX="272.49" posY="1879.68" posZ="-30.39" />
+		<spawnpoint posX="266.19" posY="1879.67" posZ="-30.39" />
+		<spawnpoint posX="2388.63" posY="1942.76" posZ="6.02" />
+		<spawnpoint posX="1792.41" posY="2744.15" posZ="11.34" />
+		<spawnpoint posX="2380.95" posY="1844.04" posZ="11.66" />
+		<spawnpoint posX="245.69" posY="1858.87" posZ="14.08" />
+		<spawnpoint posX="1791.83" posY="2742" posZ="11.34" />
+		<spawnpoint posX="1795.44" posY="2755.55" posZ="11.34" />
+		<spawnpoint posX="2313.49" posY="1794.35" posZ="10.82" />
+		<spawnpoint posX="1794.79" posY="2753.33" posZ="11.34" />
+		<spawnpoint posX="266.26" posY="1816.3" posZ="1.01" />
+		<spawnpoint posX="1798.42" posY="2766.64" posZ="11.34" />
+		<spawnpoint posX="1797.79" posY="2764.57" posZ="11.34" />
+		<spawnpoint posX="1800.82" posY="2775.87" posZ="14.27" />
+		<spawnpoint posX="1798.62" posY="2766.95" posZ="14.27" />
+		<spawnpoint posX="1797.85" posY="2764.68" posZ="14.27" />
+		<spawnpoint posX="216.24" posY="1822.64" posZ="6.41" />
+		<spawnpoint posX="1795.43" posY="2755.77" posZ="14.27" />
+		<spawnpoint posX="1794.74" posY="2753.16" posZ="14.27" />
+		<spawnpoint posX="2663.87" posY="1632.36" posZ="10.82" />
+		<spawnpoint posX="1791.77" posY="2741.88" posZ="14.27" />
+		<spawnpoint posX="1792.36" posY="2744.24" posZ="14.27" />
+		<spawnpoint posX="1789.31" posY="2732.82" posZ="11.34" />
+		<spawnpoint posX="1778.46" posY="2735.63" posZ="11.35" />
+		<spawnpoint posX="2666.28" posY="1929.31" posZ="10.82" />
+		<spawnpoint posX="1780.88" posY="2744.87" posZ="11.34" />
+		<spawnpoint posX="1781.48" posY="2747.25" posZ="11.34" />
+		<spawnpoint posX="1783.83" posY="2755.91" posZ="11.34" />
+		<spawnpoint posX="1784.45" posY="2758.42" posZ="11.34" />
+		<spawnpoint posX="282.32" posY="1787.75" posZ="18.06" />
+		<spawnpoint posX="1786.88" posY="2767.35" posZ="11.34" />
+		<spawnpoint posX="1787.52" posY="2769.78" posZ="11.34" />
+		<spawnpoint posX="247.3" posY="1700.77" posZ="22.63" />
+		<spawnpoint posX="2603.32" posY="2133.07" posZ="10.82" />
+		<spawnpoint posX="1789.93" posY="2778.92" posZ="14.27" />
+		<spawnpoint posX="1787.45" posY="2769.92" posZ="14.27" />
+		<spawnpoint posX="1786.93" posY="2767.56" posZ="14.27" />
+		<spawnpoint posX="1784.61" posY="2758.61" posZ="14.27" />
+		<spawnpoint posX="1783.83" posY="2756.1" posZ="14.27" />
+		<spawnpoint posX="1781.33" posY="2747.16" posZ="14.27" />
+		<spawnpoint posX="1780.88" posY="2744.79" posZ="14.27" />
+		<spawnpoint posX="1778.24" posY="2735.84" posZ="14.27" />
+		<spawnpoint posX="652.7" posY="1695.6" posZ="6.99" />
+		<spawnpoint posX="675.87" posY="1728.21" posZ="7.12" />
+		<spawnpoint posX="1789.44" posY="2733.09" posZ="14.27" />
+		<spawnpoint posX="1735.7" posY="2691.53" posZ="10.82" />
+		<spawnpoint posX="1703.74" posY="2689.47" posZ="10.82" />
+		<spawnpoint posX="653.1" posY="1710.22" posZ="7.19" />
+		<spawnpoint posX="1678.22" posY="2691.48" posZ="10.82" />
+		<spawnpoint posX="774.9" posY="1884.59" posZ="4.99" />
+		<spawnpoint posX="1663.23" posY="2753.62" posZ="10.82" />
+		<spawnpoint posX="757.63" posY="1981.38" posZ="5.34" />
+		<spawnpoint posX="1652.43" posY="2709.33" posZ="10.83" />
+		<spawnpoint posX="767.72" posY="2004.69" posZ="5.68" />
+		<spawnpoint posX="779.08" posY="2028.25" posZ="6.71" />
+		<spawnpoint posX="1643.77" posY="2752.75" posZ="10.82" />
+		<spawnpoint posX="754.24" posY="2030.38" posZ="6.71" />
+		<spawnpoint posX="720.48" posY="1993.23" posZ="4.94" />
+		<spawnpoint posX="1627.13" posY="2711.76" posZ="10.82" />
+		<spawnpoint posX="700.21" posY="1962.03" posZ="5.54" />
+		<spawnpoint posX="1626.78" posY="2753.57" posZ="10.82" />
+		<spawnpoint posX="1601.02" posY="2709.64" posZ="10.82" />
+		<spawnpoint posX="1599.58" posY="2756.95" posZ="10.82" />
+		<spawnpoint posX="1580.12" posY="2709.5" posZ="10.82" />
+		<spawnpoint posX="2242.26" posY="2496.14" posZ="10.82" />
+		<spawnpoint posX="1570.22" posY="2711.29" posZ="10.82" />
+		<spawnpoint posX="2327.08" posY="2526.85" posZ="10.82" />
+		<spawnpoint posX="888.18" posY="2044.23" posZ="11.46" />
+		<spawnpoint posX="871.23" posY="2061.36" posZ="11.37" />
+		<spawnpoint posX="892.86" posY="1989.57" posZ="11.17" />
+		<spawnpoint posX="884.54" posY="1973.81" posZ="11.46" />
+		<spawnpoint posX="1573.13" posY="2658.9" posZ="10.82" />
+		<spawnpoint posX="921.17" posY="2001.56" posZ="11.49" />
+		<spawnpoint posX="922.52" posY="2032.99" posZ="11.15" />
+		<spawnpoint posX="1606.55" posY="2679.46" posZ="10.82" />
+		<spawnpoint posX="1611.02" posY="2648.19" posZ="10.82" />
+		<spawnpoint posX="1020.84" posY="2020.96" posZ="11.1" />
+		<spawnpoint posX="1600.55" posY="2609.1" posZ="10.82" />
+		<spawnpoint posX="1022.83" posY="1999.62" posZ="11.18" />
+		<spawnpoint posX="1618.74" posY="2609.35" posZ="10.82" />
+		<spawnpoint posX="1063.11" posY="2085.56" posZ="10.82" />
+		<spawnpoint posX="1085.7" posY="2092.84" posZ="15.35" />
+		<spawnpoint posX="1089.07" posY="2115.48" posZ="15.35" />
+		<spawnpoint posX="1073.64" posY="2131.27" posZ="10.82" />
+		<spawnpoint posX="1623.51" posY="2568.25" posZ="10.82" />
+		<spawnpoint posX="1638.28" posY="2609.96" posZ="10.82" />
+		<spawnpoint posX="1646.43" posY="2570.3" posZ="10.82" />
+		<spawnpoint posX="1055.76" posY="2037.92" posZ="10.82" />
+		<spawnpoint posX="2045.99" posY="2142.76" posZ="10.82" />
+		<spawnpoint posX="1666.99" posY="2609.23" posZ="11.05" />
+		<spawnpoint posX="1051.23" posY="1974.81" posZ="10.82" />
+		<spawnpoint posX="1995.15" posY="2083.67" posZ="10.82" />
+		<spawnpoint posX="1022.38" posY="1924.5" posZ="11.22" />
+		<spawnpoint posX="1665.6" posY="2570.24" posZ="11.05" />
+		<spawnpoint posX="994.09" posY="1894.59" posZ="11.18" />
+		<spawnpoint posX="1019.64" posY="1871.56" posZ="11.02" />
+		<spawnpoint posX="1596.66" posY="2568.24" posZ="10.82" />
+		<spawnpoint posX="1099.37" posY="1911.69" posZ="10.82" />
+		<spawnpoint posX="1564.57" posY="2566.74" posZ="10.82" />
+		<spawnpoint posX="1121.42" posY="2036.93" posZ="10.82" />
+		<spawnpoint posX="1136.78" posY="2097.98" posZ="11.06" />
+		<spawnpoint posX="1551.51" posY="2568.15" posZ="10.82" />
+		<spawnpoint posX="1595.42" posY="2290.83" posZ="10.82" />
+		<spawnpoint posX="1554.5" posY="2610.15" posZ="10.82" />
+		<spawnpoint posX="1171.07" posY="2024.65" posZ="10.82" />
+		<spawnpoint posX="1513.21" posY="2566.18" posZ="10.82" />
+		<spawnpoint posX="1515.9" posY="2609.26" posZ="11.05" />
+		<spawnpoint posX="1087.58" posY="2159.55" posZ="10.82" />
+		<spawnpoint posX="1503.39" posY="2568.03" posZ="10.82" />
+		<spawnpoint posX="1451.26" posY="2565.96" posZ="10.83" />
+		<spawnpoint posX="1545.52" posY="2143.73" posZ="10.82" />
+		<spawnpoint posX="1441.71" posY="2568.34" posZ="10.82" />
+		<spawnpoint posX="1088.15" posY="2188.38" posZ="17.13" />
+		<spawnpoint posX="1101.27" posY="2211.62" posZ="17.13" />
+		<spawnpoint posX="1417.93" posY="2568.25" posZ="10.82" />
+		<spawnpoint posX="1122.57" posY="2253.91" posZ="16.72" />
+		<spawnpoint posX="1470.77" posY="1997.65" posZ="10.82" />
+		<spawnpoint posX="1107.78" posY="2307.83" posZ="16.72" />
+		<spawnpoint posX="1154.42" posY="2340.92" posZ="10.82" />
+		<spawnpoint posX="1359.62" posY="2566.22" posZ="10.82" />
+		<spawnpoint posX="1349.8" posY="2567.96" posZ="10.82" />
+		<spawnpoint posX="1344.54" posY="2609.54" posZ="11.05" />
+		<spawnpoint posX="1150.07" posY="2206.08" posZ="10.82" />
+		<spawnpoint posX="1399.93" posY="1912.67" posZ="11.13" />
+		<spawnpoint posX="1313.71" posY="2609.67" posZ="11.05" />
+		<spawnpoint posX="1325.74" posY="2568.28" posZ="10.82" />
+		<spawnpoint posX="1475.13" posY="1833.47" posZ="10.81" />
+		<spawnpoint posX="1284.91" posY="2609.7" posZ="10.82" />
+		<spawnpoint posX="1070.76" posY="2331.92" posZ="10.82" />
+		<spawnpoint posX="1265.55" posY="2609.52" posZ="10.82" />
+		<spawnpoint posX="1070.66" posY="2415.12" posZ="10.82" />
+		<spawnpoint posX="1272.32" posY="2564.31" posZ="10.82" />
+		<spawnpoint posX="1270.21" posY="2554.46" posZ="10.83" />
+		<spawnpoint posX="1274.59" posY="2522.48" posZ="10.82" />
+		<spawnpoint posX="1150.98" posY="2338.32" posZ="16.72" />
+		<spawnpoint posX="1315.01" posY="2524.52" posZ="10.82" />
+		<spawnpoint posX="1690.19" posY="1448.38" posZ="10.77" />
+		<spawnpoint posX="1225.68" posY="2584.68" posZ="10.82" />
+		<spawnpoint posX="1706.03" posY="1159.8" posZ="10.73" />
+		<spawnpoint posX="1223.92" posY="2616.88" posZ="10.82" />
+		<spawnpoint posX="1656.09" posY="1101.32" posZ="10.82" />
+		<spawnpoint posX="1450.12" posY="2374.48" posZ="10.82" />
+		<spawnpoint posX="1489.84" posY="2371.16" posZ="10.82" />
+		<spawnpoint posX="1540.77" posY="2344.29" posZ="10.82" />
+		<spawnpoint posX="1591.44" posY="2368.38" posZ="10.82" />
+		<spawnpoint posX="1639.96" posY="2382.02" posZ="10.82" />
+		<spawnpoint posX="1635.11" posY="2327.5" posZ="10.82" />
+		<spawnpoint posX="1311.66" posY="1091.11" posZ="10.82" />
+		<spawnpoint posX="1091.54" posY="1072.75" posZ="10.84" />
+		<spawnpoint posX="1628.01" posY="2236.83" posZ="10.82" />
+		<spawnpoint posX="1689.2" posY="2249.26" posZ="10.82" />
+		<spawnpoint posX="1711.99" posY="2224.93" posZ="10.82" />
+		<spawnpoint posX="1077.1" posY="1239.33" posZ="10.83" />
+		<spawnpoint posX="1741.89" posY="2186.33" posZ="11.1" />
+		<spawnpoint posX="1764.5" posY="2134.72" posZ="11.03" />
+		<spawnpoint posX="1733.45" posY="2111.78" posZ="12.7" />
+		<spawnpoint posX="1741.42" posY="2069.73" posZ="10.82" />
+		<spawnpoint posX="1742.5" posY="2018.78" posZ="10.82" />
+		<spawnpoint posX="1738.51" posY="1977.6" posZ="11.13" />
+		<spawnpoint posX="1098.02" posY="1419.59" posZ="11.82" />
+		<spawnpoint posX="1736.72" posY="1917.2" posZ="11.13" />
+		<spawnpoint posX="1670.7" posY="1854.23" posZ="10.81" />
+		<spawnpoint posX="1670.37" posY="1786.92" posZ="10.82" />
+		<spawnpoint posX="1097.24" posY="1651.53" posZ="11.79" />
+		<spawnpoint posX="1682.27" posY="1751.91" posZ="10.83" />
+		<spawnpoint posX="1584.74" posY="1729.55" posZ="10.82" />
+		<spawnpoint posX="1594.17" posY="1822.36" posZ="10.82" />
+		<spawnpoint posX="2196.32" posY="1677.17" posZ="12.37" />
+		<spawnpoint posX="1606.37" posY="1847.53" posZ="10.82" />
+		<spawnpoint posX="981.52" posY="1735.39" posZ="8.65" />
+		<spawnpoint posX="1331.97" posY="1734.56" posZ="10.82" />
+		<spawnpoint posX="1337.87" posY="1651.14" posZ="14.88" />
+		<spawnpoint posX="1292.8" posY="1655.61" posZ="10.82" />
+		<spawnpoint posX="541.33" posY="1556.35" posZ="1" />
+		<spawnpoint posX="1272.53" posY="1504.47" posZ="10.82" />
+		<spawnpoint posX="2200.7" posY="1394.33" posZ="11.06" />
+		<spawnpoint posX="1273.28" posY="1358.03" posZ="10.81" />
+		<spawnpoint posX="1274.96" posY="1325.22" posZ="10.81" />
+		<spawnpoint posX="1318.67" posY="1253.04" posZ="10.82" />
+		<spawnpoint posX="246.94" posY="1410.64" posZ="23.37" />
+		<spawnpoint posX="2451.24" posY="1300.22" posZ="10.82" />
+		<spawnpoint posX="2438.67" posY="1293.36" posZ="10.82" />
+		<spawnpoint posX="2449.28" posY="1283.41" posZ="10.82" />
+		<spawnpoint posX="149.21" posY="1373.17" posZ="10.59" />
+		<spawnpoint posX="2440.66" posY="1232.31" posZ="10.96" />
+		<spawnpoint posX="1517.76" posY="1228.33" posZ="10.81" />
+		<spawnpoint posX="1579.67" posY="1376.54" posZ="10.85" />
+		<spawnpoint posX="2436.4" posY="1204.79" posZ="14.34" />
+		<spawnpoint posX="1585.42" posY="1502.42" posZ="10.83" />
+		<spawnpoint posX="2436.32" posY="1210.51" posZ="14.34" />
+		<spawnpoint posX="2440.37" posY="1214.1" posZ="14.34" />
+		<spawnpoint posX="1678.93" posY="1576.06" posZ="10.79" />
+		<spawnpoint posX="2440.36" posY="1221.36" posZ="14.34" />
+		<spawnpoint posX="2440.11" posY="1224.76" posZ="14.34" />
+		<spawnpoint posX="2440.22" posY="1232.12" posZ="14.34" />
+		<spawnpoint posX="-145.51" posY="1181.98" posZ="19.74" />
+		<spawnpoint posX="1784.34" posY="1789.89" posZ="23.06" />
+		<spawnpoint posX="2581.58" posY="1060.96" posZ="11.64" />
+		<spawnpoint posX="1963.72" posY="1797.94" posZ="12.74" />
+		<spawnpoint posX="2009.1" posY="1739.27" posZ="12.74" />
+		<spawnpoint posX="2637.2" posY="1129.2" posZ="11.18" />
+		<spawnpoint posX="2563.01" posY="1214.98" posZ="10.96" />
+		<spawnpoint posX="1958.99" posY="1745.67" posZ="18.93" />
+		<spawnpoint posX="1928.68" posY="1812.17" posZ="18.9" />
+		<spawnpoint posX="2540.32" posY="1232.04" posZ="10.96" />
+		<spawnpoint posX="2540.44" posY="1232.34" posZ="14.34" />
+		<spawnpoint posX="2540.07" posY="1224.98" posZ="14.34" />
+		<spawnpoint posX="2540.07" posY="1221.51" posZ="14.34" />
+		<spawnpoint posX="2540.07" posY="1214.52" posZ="14.34" />
+		<spawnpoint posX="2536.31" posY="1210.54" posZ="14.34" />
+		<spawnpoint posX="2536.4" posY="1204.68" posZ="14.34" />
+		<spawnpoint posX="-43.83" posY="1171.97" posZ="19.5" />
+		<spawnpoint posX="1873.27" posY="1935.6" posZ="7.59" />
+		<spawnpoint posX="1889.89" posY="1990.13" posZ="7.59" />
+		<spawnpoint posX="2496.21" posY="1292.46" posZ="10.81" />
+		<spawnpoint posX="1877.78" posY="2020.07" posZ="7.61" />
+		<spawnpoint posX="2497.72" posY="1273.33" posZ="10.81" />
+		<spawnpoint posX="172.04" posY="1168.89" posZ="14.76" />
+		<spawnpoint posX="2482.34" posY="1325.25" posZ="10.82" />
+		<spawnpoint posX="1945.29" posY="2055.06" posZ="10.82" />
+		<spawnpoint posX="2512.16" posY="1325.38" posZ="10.82" />
+		<spawnpoint posX="2512.48" posY="1361.73" posZ="10.83" />
+		<spawnpoint posX="2009.8" posY="2146.38" posZ="10.82" />
+		<spawnpoint posX="2483.39" posY="1361.37" posZ="10.82" />
+		<spawnpoint posX="426.81" posY="1324.79" posZ="14.61" />
+		<spawnpoint posX="2003.73" posY="2146.21" posZ="13.84" />
+		<spawnpoint posX="2019.79" posY="2133.61" posZ="13.84" />
+		<spawnpoint posX="2036.78" posY="2180.72" posZ="10.82" />
+		<spawnpoint posX="2041.13" posY="2212.43" posZ="10.82" />
+		<spawnpoint posX="2418.72" posY="1408.34" posZ="10.82" />
+		<spawnpoint posX="2001.96" posY="2300.11" posZ="10.82" />
+		<spawnpoint posX="2417.86" posY="1430.37" posZ="10.82" />
+		<spawnpoint posX="713.12" posY="1202.52" posZ="13.4" />
+		<spawnpoint posX="2418.72" posY="1451.98" posZ="10.82" />
+		<spawnpoint posX="2398.31" posY="1463.85" posZ="10.82" />
+		<spawnpoint posX="2074.98" posY="2295.04" posZ="10.82" />
+		<spawnpoint posX="2122.01" posY="2310.54" posZ="11.74" />
+		<spawnpoint posX="2354.53" posY="1602.67" posZ="10.82" />
+		<spawnpoint posX="2167.25" posY="2118.76" posZ="10.82" />
+		<spawnpoint posX="2260.29" posY="2159.32" posZ="10.82" />
+		<spawnpoint posX="709.52" posY="913.84" posZ="-18.65" />
+		<spawnpoint posX="2335.13" posY="2180.08" posZ="10.84" />
+		<spawnpoint posX="2364.59" posY="2186.81" posZ="10.83" />
+		<spawnpoint posX="589.49" posY="869.91" posZ="-42.5" />
+		<spawnpoint posX="2478.38" posY="2126.17" posZ="10.82" />
+		<spawnpoint posX="2534.98" posY="2083.94" posZ="10.82" />
+		<spawnpoint posX="2493.67" posY="2032.86" posZ="11.06" />
+		<spawnpoint posX="2456.63" posY="2031.58" posZ="11.06" />
+		<spawnpoint posX="2589.4" posY="1738.19" posZ="11.02" />
+		<spawnpoint posX="2475.98" posY="1953.79" posZ="10.45" />
+		<spawnpoint posX="2478.16" posY="1921.66" posZ="13.48" />
+		<spawnpoint posX="2589.47" posY="1656.11" posZ="11.02" />
+		<spawnpoint posX="2456.15" posY="1872.63" posZ="8.16" />
+		<spawnpoint posX="2615.31" posY="1655.35" posZ="11.02" />
+		<spawnpoint posX="2638.26" posY="1671.09" posZ="11.02" />
+		<spawnpoint posX="2486.36" posY="1847.58" posZ="10.82" />
+		<spawnpoint posX="2634.06" posY="1716.37" posZ="11.02" />
+		<spawnpoint posX="2381.68" posY="1846.28" posZ="6.02" />
+		<spawnpoint posX="2633.86" posY="1823.69" posZ="11.02" />
+		<spawnpoint posX="2638.33" posY="1849.66" posZ="11.02" />
+		<spawnpoint posX="2349.06" posY="1890.97" posZ="10.83" />
+		<spawnpoint posX="1543.63" posY="753.24" posZ="10.83" />
+		<spawnpoint posX="2572.07" posY="1904.03" posZ="11.02" />
+		<spawnpoint posX="1628.17" posY="588.25" posZ="1.76" />
+		<spawnpoint posX="2546.6" posY="1971.44" posZ="10.82" />
+		<spawnpoint posX="2275.73" posY="2036.46" posZ="10.82" />
+		<spawnpoint posX="2258.57" posY="2062.68" posZ="10.82" />
+		<spawnpoint posX="2529.3" posY="2023.91" posZ="11.18" />
+		<spawnpoint posX="2198.77" posY="2065.44" posZ="10.82" />
+		<spawnpoint posX="1634.41" posY="756.04" posZ="10.82" />
+		<spawnpoint posX="2196.42" posY="2065.45" posZ="10.82" />
+		<spawnpoint posX="2518.92" posY="2033.31" posZ="11.17" />
+		<spawnpoint posX="2186.17" posY="1993.15" posZ="10.82" />
+		<spawnpoint posX="2506.95" posY="2120.88" posZ="10.84" />
+		<spawnpoint posX="1730.99" posY="977.3" posZ="10.82" />
+		<spawnpoint posX="2304.4" posY="1973.9" posZ="15.35" />
+		<spawnpoint posX="2303.03" posY="1965.89" posZ="9.87" />
+		<spawnpoint posX="2246.35" posY="1983" posZ="10.09" />
+		<spawnpoint posX="2322.96" posY="1965.43" posZ="5.31" />
+		<spawnpoint posX="2274.88" posY="1943.37" posZ="10.09" />
+		<spawnpoint posX="2058.39" posY="656.72" posZ="11.3" />
+		<spawnpoint posX="2278.25" posY="1969.44" posZ="15.57" />
+		<spawnpoint posX="2288.32" posY="612.84" posZ="10.82" />
+		<spawnpoint posX="2086.09" posY="2054.7" posZ="10.57" />
+		<spawnpoint posX="2086.77" posY="2066.37" posZ="10.57" />
+		<spawnpoint posX="2086.2" posY="2090.1" posZ="10.57" />
+		<spawnpoint posX="2054.19" posY="2096.78" posZ="10.57" />
+		<spawnpoint posX="2405.25" posY="727.92" posZ="11.21" />
+		<spawnpoint posX="2277.64" posY="1969.61" posZ="31.5" />
+		<spawnpoint posX="2160.37" posY="2194.77" posZ="10.35" />
+		<spawnpoint posX="2127.52" posY="2376.81" posZ="10.34" />
+		<spawnpoint posX="2256.73" posY="1997.41" posZ="14.86" />
+		<spawnpoint posX="2677.37" posY="870.63" posZ="10.94" />
+		<spawnpoint posX="2286.86" posY="2431.7" posZ="10.33" />
+		<spawnpoint posX="2337.43" posY="2458.57" posZ="14.49" />
+		<spawnpoint posX="2024.8" posY="1921.8" posZ="11.86" />
+		<spawnpoint posX="2839.81" posY="991.81" posZ="10.75" />
+		<spawnpoint posX="2282.14" posY="2424.06" posZ="-7.73" />
+		<spawnpoint posX="2764.61" posY="1429.65" posZ="10.48" />
+		<spawnpoint posX="1891.77" posY="1589.68" posZ="10.27" />
+		<spawnpoint posX="1907.92" posY="1516.89" posZ="13.53" />
+		<spawnpoint posX="1901.73" posY="1389.46" posZ="8.77" />
+		<spawnpoint posX="1933.82" posY="1347.46" posZ="9.43" />
+		<spawnpoint posX="2226.02" posY="1840.29" posZ="10.34" />
+		<spawnpoint posX="1956.96" posY="1342.86" posZ="14.89" />
+		<spawnpoint posX="2000.99" posY="1539.05" posZ="13.1" />
+		<spawnpoint posX="2132.6" posY="1461.75" posZ="10.33" />
+		<spawnpoint posX="2137.24" posY="1504.05" posZ="10.34" />
+		<spawnpoint posX="2000.82" posY="1526.71" posZ="14.13" />
+		<spawnpoint posX="2214.35" posY="1518.33" posZ="10.33" />
+		<spawnpoint posX="1999.87" posY="1550.04" posZ="13.11" />
+		<spawnpoint posX="2233.54" posY="1415.77" posZ="10.25" />
+		<spawnpoint posX="2323.34" posY="1283.58" posZ="96.88" />
+		<spawnpoint posX="2007.74" posY="1166.73" posZ="10.33" />
+		<spawnpoint posX="2015.53" posY="1151.08" posZ="10.34" />
+		<spawnpoint posX="2015.38" posY="1182.9" posZ="10.33" />
+		<spawnpoint posX="2015.37" posY="1106.38" posZ="10.34" />
+		<spawnpoint posX="2225.12" posY="1284.86" posZ="26.97" />
+		<spawnpoint posX="1857.26" posY="1118.29" posZ="10.33" />
+		<spawnpoint posX="1981.95" posY="1649.9" posZ="12.24" />
+		<spawnpoint posX="1856.34" posY="1098.13" posZ="10.34" />
+		<spawnpoint posX="1856.91" posY="1079.26" posZ="10.33" />
+		<spawnpoint posX="2156.15" posY="1128.32" posZ="12.16" />
+		<spawnpoint posX="1855.81" posY="1057.66" posZ="10.33" />
+		<spawnpoint posX="2100.4" posY="1158.62" posZ="11.16" />
+		<spawnpoint posX="1855.57" posY="1000.43" posZ="10.34" />
+		<spawnpoint posX="1855.52" posY="980.37" posZ="10.34" />
+		<spawnpoint posX="2108.23" posY="1007.46" posZ="10.37" />
+		<spawnpoint posX="1855.51" posY="960.7" posZ="10.34" />
+		<spawnpoint posX="1855.86" posY="940.95" posZ="10.34" />
+		<spawnpoint posX="1882.03" posY="920.98" posZ="10.33" />
+		<spawnpoint posX="2117.72" posY="939.9" posZ="10.33" />
+		<spawnpoint posX="1902.01" posY="920.55" posZ="10.34" />
+		<spawnpoint posX="1922.78" posY="920.59" posZ="10.32" />
+		<spawnpoint posX="1943.01" posY="921.05" posZ="10.33" />
+		<spawnpoint posX="1962.95" posY="920.78" posZ="10.33" />
+		<spawnpoint posX="258.26" posY="2935.77" posZ="1.77" />
+		<spawnpoint posX="1983.32" posY="921.35" posZ="10.33" />
+		<spawnpoint posX="2002.86" posY="921.04" posZ="10.33" />
+		<spawnpoint posX="2164.27" posY="1016.64" posZ="10.33" />
+		<spawnpoint posX="2269.58" posY="961.12" posZ="10.33" />
+		<spawnpoint posX="2248.54" posY="961.74" posZ="10.34" />
+		<spawnpoint posX="2490.76" posY="918.44" posZ="10.54" />
+		<spawnpoint posX="2525.53" posY="922.77" posZ="10.34" />
+		<spawnpoint posX="2575" posY="808.62" posZ="10.95" />
+		<spawnpoint posX="2543.31" posY="1023.96" posZ="10.35" />
+		<spawnpoint posX="2638.64" posY="1065.5" posZ="10.33" />
+		<spawnpoint posX="2586.4" posY="1035.04" posZ="10.34" />
+		<spawnpoint posX="2554.08" posY="1106.11" posZ="10.34" />
+		<spawnpoint posX="2574.94" posY="1143.19" posZ="10.33" />
+		<spawnpoint posX="2572.21" posY="1209.98" posZ="10.34" />
+		<spawnpoint posX="2623.53" posY="1237.29" posZ="10.33" />
+		<spawnpoint posX="2626.31" posY="1233.87" posZ="21.79" />
+		<spawnpoint posX="2627.48" posY="1226.58" posZ="26.92" />
+		<spawnpoint posX="2656.97" posY="1215.12" posZ="26.92" />
+		<spawnpoint posX="2648.23" posY="1195.99" posZ="26.92" />
+		<spawnpoint posX="2627.97" posY="1188.87" posZ="17.83" />
+		<spawnpoint posX="2669.99" posY="1166.96" posZ="10.82" />
+		<spawnpoint posX="2567.38" posY="1544.35" posZ="10.34" />
+		<spawnpoint posX="2561.21" posY="1561.69" posZ="10.33" />
+		<spawnpoint posX="2567.13" posY="1578.26" posZ="10.34" />
+		<spawnpoint posX="2611.65" posY="1403.76" posZ="10.33" />
+		<spawnpoint posX="2599.62" posY="1446.89" posZ="10.33" />
+		<spawnpoint posX="2164.89" posY="1810.59" posZ="10.33" />
+		<spawnpoint posX="2195.99" posY="1867.42" posZ="10.52" />
+	</pickups>
+	<vehicles mode="Las Venturas">
+		<spawnpoint posX="-518.15" posY="1999.85" posZ="60.57" rotZ="254.91" />
+		<spawnpoint posX="-433.5" posY="2214.3" posZ="42.43" rotZ="356.02" />
+		<spawnpoint posX="2102.46" posY="1240.66" posZ="10.82" rotZ="91.52" />
+		<spawnpoint posX="-391.72" posY="2478.17" posZ="41.43" rotZ="291.41" />
+		<spawnpoint posX="-279.39" posY="2658.09" posZ="62.62" rotZ="72.17" />
+		<spawnpoint posX="1844.55" posY="1244.87" posZ="10.83" rotZ="93.09" />
+		<spawnpoint posX="1884.39" posY="1111.17" posZ="10.82" rotZ="179.88" />
+		<spawnpoint posX="-210.48" posY="2596.99" posZ="62.7" rotZ="179.87" />
+		<spawnpoint posX="1882.33" posY="1010.13" posZ="10.82" rotZ="89.01" />
+		<spawnpoint posX="2177.29" posY="2754.94" posZ="10.82" rotZ="359.37" />
+		<spawnpoint posX="2122.56" posY="988.52" posZ="10.82" rotZ="178.31" />
+		<spawnpoint posX="2219.26" posY="954.39" posZ="10.82" rotZ="355.66" />
+		<spawnpoint posX="403.22" posY="2522.84" posZ="16.48" rotZ="112.74" />
+		<spawnpoint posX="111.86" posY="2388.02" posZ="16.48" rotZ="123.12" />
+		<spawnpoint posX="2380.41" posY="1084.57" posZ="10.82" rotZ="90.29" />
+		<spawnpoint posX="-47.05" posY="2338.92" posZ="24.13" rotZ="180.54" />
+		<spawnpoint posX="2437.55" posY="1218.27" posZ="10.96" rotZ="1.93" />
+		<spawnpoint posX="2444.69" posY="1268.09" posZ="10.82" rotZ="179.57" />
+		<spawnpoint posX="271.71" posY="2021.52" posZ="17.64" rotZ="279.44" />
+		<spawnpoint posX="2452.01" posY="1356.54" posZ="10.82" rotZ="0.65" />
+		<spawnpoint posX="2333.28" posY="1494.55" posZ="10.82" rotZ="90.58" />
+		<spawnpoint posX="2350.96" posY="1433.64" posZ="34.47" rotZ="271.06" />
+		<spawnpoint posX="2503.26" posY="1435.51" posZ="10.82" rotZ="272" />
+		<spawnpoint posX="2598.85" posY="1691" posZ="10.82" rotZ="271.37" />
+		<spawnpoint posX="250.16" posY="1810.1" posZ="4.71" rotZ="356.24" />
+		<spawnpoint posX="2603.34" posY="1811.9" posZ="10.82" rotZ="90.92" />
+		<spawnpoint posX="2429.37" posY="1955.16" posZ="6.02" rotZ="181.44" />
+		<spawnpoint posX="2399.13" posY="1668.55" posZ="10.82" rotZ="180.48" />
+		<spawnpoint posX="2475.67" posY="1676.11" posZ="10.82" rotZ="359.4" />
+		<spawnpoint posX="2590.4" posY="1967.89" posZ="10.82" rotZ="180.82" />
+		<spawnpoint posX="2586.75" posY="2056.88" posZ="10.82" rotZ="271.97" />
+		<spawnpoint posX="289.16" posY="1791.04" posZ="17.64" rotZ="9.89" />
+		<spawnpoint posX="2610.53" posY="2098.43" posZ="10.82" rotZ="1.9" />
+		<spawnpoint posX="2421.08" posY="2126.82" posZ="10.82" rotZ="90.89" />
+		<spawnpoint posX="619.91" posY="1678.4" posZ="6.99" rotZ="303.97" />
+		<spawnpoint posX="1905.41" posY="2568.49" posZ="10.82" rotZ="287.62" />
+		<spawnpoint posX="2050.48" posY="2470" posZ="10.82" rotZ="179.83" />
+		<spawnpoint posX="1673.52" posY="2693.76" posZ="10.82" rotZ="1.7" />
+		<spawnpoint posX="2077.29" posY="2422.68" posZ="10.82" rotZ="268.19" />
+		<spawnpoint posX="785.39" posY="1961.91" posZ="5.34" rotZ="61.59" />
+		<spawnpoint posX="2093.39" posY="2415.84" posZ="74.58" rotZ="171.06" />
+		<spawnpoint posX="701.77" posY="1947.83" posZ="5.54" rotZ="184.1" />
+		<spawnpoint posX="2200.87" posY="2528.29" posZ="10.81" rotZ="359.04" />
+		<spawnpoint posX="881.86" posY="2040.47" posZ="11.46" rotZ="269.86" />
+		<spawnpoint posX="2428.35" posY="2531.48" posZ="21.88" rotZ="181.37" />
+		<spawnpoint posX="1548.68" posY="2667.36" posZ="10.83" rotZ="359.09" />
+		<spawnpoint posX="2528.99" posY="2466.05" posZ="10.82" rotZ="272.56" />
+		<spawnpoint posX="2581.64" posY="2267.85" posZ="10.82" rotZ="270.05" />
+		<spawnpoint posX="2101.53" posY="2141.78" posZ="10.82" rotZ="92.08" />
+		<spawnpoint posX="1037.2" posY="2070.08" posZ="10.82" rotZ="311.76" />
+		<spawnpoint posX="990.13" posY="1886.27" posZ="11.35" rotZ="275.56" />
+		<spawnpoint posX="1845.61" posY="2069.23" posZ="10.91" rotZ="178.24" />
+		<spawnpoint posX="1084.72" posY="1858.72" posZ="10.82" rotZ="267.5" />
+		<spawnpoint posX="1749.14" posY="2242.95" posZ="10.82" rotZ="92.39" />
+		<spawnpoint posX="1529.48" posY="2292.8" posZ="10.82" rotZ="177.3" />
+		<spawnpoint posX="1086.16" posY="2182.41" posZ="16.72" rotZ="1.68" />
+		<spawnpoint posX="1508.26" posY="2145.14" posZ="10.82" rotZ="269.42" />
+		<spawnpoint posX="1103.23" posY="2228.45" posZ="16.72" rotZ="179.1" />
+		<spawnpoint posX="1456.12" posY="1959.98" posZ="11.08" rotZ="177.64" />
+		<spawnpoint posX="1315.4" posY="1941.27" posZ="11.08" rotZ="180.46" />
+		<spawnpoint posX="1137.03" posY="2253.35" posZ="10.83" rotZ="86.77" />
+		<spawnpoint posX="1628.31" posY="1623.84" posZ="10.82" rotZ="180.46" />
+		<spawnpoint posX="1323.99" posY="2519.78" posZ="10.82" rotZ="88.92" />
+		<spawnpoint posX="1695.4" posY="1307.39" posZ="10.82" rotZ="180.15" />
+		<spawnpoint posX="1233.74" posY="2609.48" posZ="10.82" rotZ="272.85" />
+		<spawnpoint posX="1238.62" posY="2591.9" posZ="10.82" rotZ="268.61" />
+		<spawnpoint posX="1668.27" posY="1000.92" posZ="10.82" rotZ="180.77" />
+		<spawnpoint posX="1393.1" posY="1033.75" posZ="10.82" rotZ="92.1" />
+		<spawnpoint posX="1710.37" posY="2197.77" posZ="10.82" rotZ="185.65" />
+		<spawnpoint posX="1730.66" posY="2079.29" posZ="10.82" rotZ="243.71" />
+		<spawnpoint posX="1065.96" posY="1348.41" posZ="10.82" rotZ="351.86" />
+		<spawnpoint posX="1744.37" posY="1977.56" posZ="10.82" rotZ="91.31" />
+		<spawnpoint posX="1084.11" posY="1796.48" posZ="10.82" rotZ="91.49" />
+		<spawnpoint posX="1019.82" posY="1830.13" posZ="10.82" rotZ="0.63" />
+		<spawnpoint posX="1576.06" posY="1755.34" posZ="10.73" rotZ="12.98" />
+		<spawnpoint posX="2173.83" posY="1711.21" posZ="11.05" rotZ="76.8" />
+		<spawnpoint posX="796.69" posY="1689.25" posZ="5.28" rotZ="3.76" />
+		<spawnpoint posX="2217.08" posY="1389.34" posZ="10.82" rotZ="269.82" />
+		<spawnpoint posX="440.71" posY="1461.26" posZ="6.16" rotZ="181.11" />
+		<spawnpoint posX="1298.64" posY="1410.81" posZ="10.82" rotZ="194.42" />
+		<spawnpoint posX="285.42" posY="1394.41" posZ="10.59" rotZ="0.94" />
+		<spawnpoint posX="4.85" posY="1363.56" posZ="9.17" rotZ="92.44" />
+		<spawnpoint posX="-82.22" posY="1340.86" posZ="10.87" rotZ="185.18" />
+		<spawnpoint posX="-176.16" posY="1219.92" posZ="19.74" rotZ="91.81" />
+		<spawnpoint posX="1885.34" posY="1815.23" posZ="12.74" rotZ="0.4" />
+		<spawnpoint posX="2590.44" posY="1059.62" posZ="10.82" rotZ="269.87" />
+		<spawnpoint posX="2639.94" posY="1106.45" posZ="10.82" rotZ="89.1" />
+		<spawnpoint posX="1992.77" posY="1729.61" posZ="12.74" rotZ="165.89" />
+		<spawnpoint posX="1941.56" posY="1729.66" posZ="12.71" rotZ="180.32" />
+		<spawnpoint posX="-86.95" posY="1220.98" posZ="19.74" rotZ="0.96" />
+		<spawnpoint posX="1933.47" posY="1953.67" posZ="7.59" rotZ="1.98" />
+		<spawnpoint posX="314.14" posY="1140.9" posZ="8.59" rotZ="269.78" />
+		<spawnpoint posX="2012.77" posY="2192.71" posZ="10.82" rotZ="177.15" />
+		<spawnpoint posX="2062.61" posY="2251.22" posZ="10.18" rotZ="91.77" />
+		<spawnpoint posX="640.01" posY="1239.06" posZ="11.69" rotZ="210.88" />
+		<spawnpoint posX="824.99" posY="856.46" posZ="12.06" rotZ="292.97" />
+		<spawnpoint posX="2315.23" posY="1731.82" posZ="10.82" rotZ="359.17" />
+		<spawnpoint posX="568.98" posY="841.44" posZ="-41.82" rotZ="283.28" />
+		<spawnpoint posX="2449.44" posY="1992.52" posZ="10.82" rotZ="181.41" />
+		<spawnpoint posX="2390.83" posY="1826.9" posZ="6.02" rotZ="351.44" />
+		<spawnpoint posX="1412.13" posY="771.77" posZ="10.82" rotZ="271.4" />
+		<spawnpoint posX="1705.44" posY="672.74" posZ="10.82" rotZ="175.54" />
+		<spawnpoint posX="2295.17" posY="2038.56" posZ="10.82" rotZ="267.93" />
+		<spawnpoint posX="1942.01" posY="710.12" posZ="10.82" rotZ="180.84" />
+		<spawnpoint posX="1854.51" posY="656.05" posZ="11.16" rotZ="91.86" />
+		<spawnpoint posX="2223.71" posY="1936.15" posZ="9.87" rotZ="90.28" />
+		<spawnpoint posX="2169.22" posY="696.3" posZ="11.36" rotZ="0.07" />
+		<spawnpoint posX="2243.62" posY="1977.89" posZ="15.35" rotZ="178.98" />
+		<spawnpoint posX="2352.63" posY="701.2" posZ="11.09" rotZ="182.1" />
+		<spawnpoint posX="2236.43" posY="1976.65" posZ="20.34" rotZ="178.51" />
+		<spawnpoint posX="2279.84" posY="1976.69" posZ="25.81" rotZ="182.02" />
+		<spawnpoint posX="2279.54" posY="1938.83" posZ="25.81" rotZ="180.18" />
+		<spawnpoint posX="2039.64" posY="2153.05" posZ="10.33" rotZ="91.21" />
+		<spawnpoint posX="2616.54" posY="742.25" posZ="10.82" rotZ="1.33" />
+		<spawnpoint posX="2222.78" posY="1953.83" posZ="31.29" rotZ="262.37" />
+		<spawnpoint posX="2813.05" posY="897.32" posZ="10.76" rotZ="182.1" />
+		<spawnpoint posX="2051.96" posY="1901.09" posZ="11.62" rotZ="346.07" />
+		<spawnpoint posX="2297.96" posY="2456.06" posZ="2.79" rotZ="267.03" />
+		<spawnpoint posX="2281.8" posY="2474.41" posZ="-7.94" rotZ="0.66" />
+		<spawnpoint posX="2794.73" posY="1294.54" posZ="10.75" rotZ="2.58" />
+		<spawnpoint posX="2107.09" posY="1395.07" posZ="10.34" rotZ="4.09" />
+		<spawnpoint posX="2179.35" posY="1798.38" posZ="10.82" rotZ="1.33" />
+		<spawnpoint posX="265.84" posY="2887.4" posZ="11.12" rotZ="302.68" />
+		<spawnpoint posX="-167.02" posY="2719.37" posZ="62.04" rotZ="88.38" />
+		<spawnpoint posX="2498.22" posY="935.27" posZ="10.34" rotZ="5.76" />
+		<spawnpoint posX="2463.02" posY="921.75" posZ="10.34" rotZ="271.69" />
+	</vehicles>	
+</battleroyale>

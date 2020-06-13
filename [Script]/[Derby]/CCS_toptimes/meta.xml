@@ -1,0 +1,13 @@
+<meta>
+	<info author="Bonsai, Cat.Master" version="2.0.0" type="script" name="leaderboard" description="leaderboard" showInResourceBrowser="true"/>
+	<min_mta_version client="1.5.2" server="1.5.2" />
+	<script src="leaderboard_s.lua" type="server" />
+	<script src="leaderboard_c.lua" type="client" cache="false"/>
+	
+	<file src="fonts/Inter-UI-Regular.ttf"/>
+	<file src="fonts/Inter-UI-Medium.ttf"/>
+	<file src="images/rank.png"/>
+	<file src="images/country.png"/>
+	<file src="images/flags.png"/>	
+	<file src="images/gradient_highlight.png"/>
+</meta>

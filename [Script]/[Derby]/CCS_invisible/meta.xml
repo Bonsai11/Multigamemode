@@ -1,0 +1,4 @@
+<meta>
+	<info author="Cat.Master" version="1" type="script" description="invisible"/>
+	<script src="invisible_c.lua" type="client"/>
+</meta>

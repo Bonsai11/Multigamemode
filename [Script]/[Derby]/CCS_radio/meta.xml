@@ -1,0 +1,12 @@
+<meta>
+	<info type="script" author="Cat.Master" version="1" description="radio"></info>
+    <script src="radio_s.lua" />
+    <script src="radio_c.lua" type="client" />
+	<file src="html/images/song-image.png" />
+	<file src="html/src/ddc-radio.html" />
+	<file src="html/index.html" />
+    <file src="html/bower_components/font-roboto-local/roboto.html" />
+	<file src="html/bower_components/font-roboto-local/fonts/roboto/Roboto-Regular.ttf" />
+	<file src="html/bower_components/font-roboto-local/fonts/roboto/Roboto-Medium.ttf" />
+	<file src="html/bower_components/font-roboto-local/fonts/roboto/Roboto-Bold.ttf" />
+</meta>

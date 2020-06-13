@@ -16,7 +16,7 @@ addEventHandler("onClientMapStart", root, Killdetection.load)
 function Killdetection.unload()
 
 	removeEventHandler("onClientVehicleCollision", root, Killdetection.detectHit)
-
+	setElementData(localPlayer, "derby_killer", nil)
 	if isTimer(Killdetection.resetTimer) then killTimer(Killdetection.resetTimer) end
 	
 end

@@ -7,8 +7,10 @@ Chat.emotis = {"( ͡o ͜ʖ ͡o)", "( ͡~ ͜ʖ ͡o)", "(っ＾◡＾)っ#ff0000�
 			    "༼ つ ◕_◕ ༽つ", "(͡ ͡° ͜ つ ͡͡°)", "(ノಠ益ಠ)ノ彡┻━┻", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "(☞ﾟ∀ﾟ)☞", "(ᵔᴥᵔ)", "ಠ╭╮ಠ", "\\ (•◡•) /", "ᕙ(⇀‸↼‶)ᕗ", "(ง°ل͜°)ง",
 				"∩༼˵☯‿☯˵༽つ¤=[]:::::>", "°͜ʖ°?", "(͡o ◡ ͡o )╭∩╮", "┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿", "(っ＾◡＾)っ#FA58F4♥#ffffff", "(っ＾◡＾)っ#00FF00♥#ffffff", "(っ＾◡＾)っ#FFBF00♥#ffffff",
 				"(っ＾◡＾)っ#2EFEF7♥#ffffff", "(っ＾◡＾)っ#ffffff♥#ffffff", "(｡✿‿✿｡)", "(｡◕‿◕｡)", "( ́ ◕◞ε◟◕`)", "┏(＾0＾)┛┗(＾0＾)┓", "(づ｡◕‿‿◕｡)づ", "(✿◠‿◠)", "ᕦ(ò_óˇ)ᕤ", "٩◔‿◔۶", 
-				"( ͡°_ʖ ͡°)", "(ง ͠° ͟ʖ #)ง", "╭∩╮( ͡° ل͟ ͡° )╭∩╮", "(◕︵◕)", "( ͡e ͜ʖ ͡e)╭∩╮ᶠᶸᶜᵏᵧₒᵤ", "¿°͜ʖ°?", "(✖╭╮✖)", "シ"}
-				  
+				"( ͡°_ʖ ͡°)", "(ง ͠° ͟ʖ #)ง", "╭∩╮( ͡° ͟ʖ ͡° )╭∩╮", "(◕︵◕)", "( ͡e ͜ʖ ͡e)╭∩╮ᶠᶸᶜᵏᵧₒᵤ", "¿°͜ʖ°?", "(✖╭╮✖)", "シ", "(っ◠‿ ◠)っ ❤"}
+
+Chat.emotis[69] = "♋"	
+				
 function Chat.global(player, command, ...)
 
 	if not isElement(player) then return end
@@ -163,7 +165,7 @@ function Chat.redirect(message, messageType)
 		
 	local chat_color = getElementData(source, "setting:chat_color") or "#ffffff"
 	
-	local message = Chat.parseEmotis(message)	
+	message = Chat.parseEmotis(message)	
 	
 	if not getElementData(arenaElement, "showSpectatorChat") and getElementData(source, "Spectator") then
 		
@@ -175,6 +177,10 @@ function Chat.redirect(message, messageType)
 	
 	if messageType == 0 then
 
+		triggerEvent("onPlayerArenaChat", source, message, messageType)
+
+		if wasEventCancelled() then return end
+
 		if getElementData(arenaElement, "silence") and not exports["CCS"]:export_acl_check(source, "silence") then
 	
 			outputChatBox("Sorry, Silence mode is active!", source, 255, 0, 128)
@@ -185,6 +191,10 @@ function Chat.redirect(message, messageType)
 		Chat.outputArenaChat(arenaElement, getPlayerName(source).."#ffffff: "..chat_color..message)
 
 	elseif messageType == 1 then
+	
+		triggerEvent("onPlayerArenaChat", source, message, messageType)
+	
+		if wasEventCancelled() then return end
 	
 		if getElementData(arenaElement, "silence") and not exports["CCS"]:export_acl_check(source, "silence") then
 	
@@ -223,7 +233,7 @@ function Chat.outputLanguageChat(language, message)
 		
 		if getElementData(p, "Language") == language then
 			
-			outputChatBox("#aaff00["..language.."]#ffffff "..message, p, 255, 255, 255, true)
+			outputChatBox("#aaff00["..language.."] #ffffff"..message, p, 255, 255, 255, true)
 	
 		end
 	
@@ -261,7 +271,7 @@ function Chat.outputGroupChat(group, message)
 		
 		if getElementData(p, "chat:group") == group then
 			
-			outputChatBox("#ff00ff[Group]#ffffff "..message, p, 255, 255, 255, true)
+			outputChatBox("#ff00ff[Group] #ffffff"..message, p, 255, 255, 255, true)
 	
 		end
 	
@@ -276,9 +286,9 @@ function Chat.outputGlobalChat(message)
 
 	if not message then return end
 	
-	outputChatBox("#ffaa00[Global] #ffffff "..message, root, 255, 255, 255, true)
+	outputChatBox("#ffaa00[Global] #ffffff"..message, root, 255, 255, 255, true)
 
-	triggerEvent("onServerChatMessage", root, "#ffaa00[Global] #ffffff "..message)
+	triggerEvent("onServerChatMessage", root, "#ffaa00[Global] #ffffff"..message)
 
 end
 export_outputGlobalChat = Chat.outputGlobalChat
@@ -436,9 +446,9 @@ function Chat.personalMessage(p, c, name, ...)
 	
 	local hisName = getPlayerName(player):gsub('#%x%x%x%x%x%x', '')
 
-	outputChatBox("You > "..hisName..": "..message:gsub('#%x%x%x%x%x%x', ''), p, 255, 0, 128)
+	outputChatBox("[PM] TO "..hisName..": "..message:gsub('#%x%x%x%x%x%x', ''), p, 255, 0, 128)
 
-	outputChatBox(myName.." > You: "..message:gsub('#%x%x%x%x%x%x', ''), player, 255, 0, 128)
+	outputChatBox("[PM] FROM "..myName..": "..message:gsub('#%x%x%x%x%x%x', ''), player, 255, 0, 128)
 	
 	triggerClientEvent(player, "onClientPrivateMessage", p, message)
 
@@ -643,3 +653,33 @@ function Chat.parseEmotis(msg)
 	return msg
 
 end
+
+
+function Chat.getLanguages()
+
+	return Chat.languages
+	
+end
+export_getLanguages = Chat.getLanguages
+
+
+function Chat.emojis(p)
+
+	local emojiCount = 0
+
+	for i, emoji in pairs(Chat.emotis) do
+	
+		emojiCount = emojiCount + 1
+	
+	end
+
+	outputChatBox(emojiCount.. " emojis found! Check Console for a list!", p, 255, 0, 128, true)
+
+	for i, emoji in pairs(Chat.emotis) do
+	
+		outputConsole(tostring(i..": "..emoji), p)
+	
+	end
+
+end
+addCommandHandler("emojis", Chat.emojis)

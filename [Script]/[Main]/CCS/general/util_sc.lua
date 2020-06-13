@@ -130,7 +130,50 @@ end
 function Util.hex2rgb(hex)
 
     hex = hex:gsub("#","")
+	
     return tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6))
 
 end
 export_hex2rgb = Util.hex2rgb
+
+
+function Util.toboolean(boolean)
+
+	return true and boolean == "true" or false
+
+end
+
+
+function Util.findRotation(x1, y1, x2, y2) 
+
+	local t = -math.deg(math.atan2(x2-x1,y2-y1))
+	
+	return t < 0 and t + 360 or t
+	
+end
+
+function dxDrawCircleLine(x, y, radius, color, width, postgui, numPoints)
+
+	if not numPoints then
+	
+		numPoints = math.floor( math.pow( radius, 0.4 ) * 5 )
+		
+	end
+	
+	local step = math.pi * 2 / numPoints
+	local sx, sy
+	
+	for p = 0, numPoints do
+	
+		local ex = math.cos ( p * step ) * radius
+		local ey = math.sin ( p * step ) * radius
+		
+		if sx then
+			dxDrawLine( x + sx, y + sy, x + ex, y + ey, color, width, postgui)
+		end
+		
+		sx, sy = ex, ey
+		
+	end
+		
+end

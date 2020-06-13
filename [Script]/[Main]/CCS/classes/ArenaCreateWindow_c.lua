@@ -2,12 +2,15 @@ ArenaCreateWindow = {}
 ArenaCreateWindow.x, ArenaCreateWindow.y = guiGetScreenSize()
 ArenaCreateWindow.width = 400
 ArenaCreateWindow.height = 500
+ArenaCreateWindow.posX = ArenaCreateWindow.x / 2 - ArenaCreateWindow.width / 2
+ArenaCreateWindow.posY = ArenaCreateWindow.y / 2 - ArenaCreateWindow.height / 2
 
-function ArenaCreateWindow.new()
+function ArenaCreateWindow.new(animationX)
 
     local self = {}
 	
-	self.window = guiCreateWindow ( ArenaCreateWindow.x / 2 - ArenaCreateWindow.width / 2, ArenaCreateWindow.y / 2 - ArenaCreateWindow.height / 2, ArenaCreateWindow.width, ArenaCreateWindow.height, "Create Arena", false)
+	ArenaCreateWindow.posX = ArenaCreateWindow.posX + animationX	
+	self.window = guiCreateWindow ( ArenaCreateWindow.posX, ArenaCreateWindow.posY, ArenaCreateWindow.width, ArenaCreateWindow.height, "Create Arena", false)
 	guiWindowSetSizable(self.window, false)
 	guiWindowSetMovable(self.window, false)
 	
@@ -21,6 +24,7 @@ function ArenaCreateWindow.new()
 	self.passwordLabel = guiCreateLabel(0.05, 0.27, 0.2, 0.05, "Password:", true, self.window)	
 	guiLabelSetVerticalAlign(self.passwordLabel, "center")
 	self.passwordBox = guiCreateEdit(0.30, 0.27, 0.65, 0.05, "", true, self.window)
+	guiEditSetMasked(self.passwordBox, true)
 	
 	self.mapsLabel = guiCreateLabel(0.30, 0.35, 0.2, 0.05, "Maps:", true, self.window)
 	self.mapsBoxes = {}
@@ -62,6 +66,12 @@ function ArenaCreateWindow.new()
 	
 	end
 	
+	function self.setAnimationPosition(x)
+	
+		guiSetPosition(self.window, x + ArenaCreateWindow.posX, ArenaCreateWindow.posY, false)
+	
+	end	
+	
 	function self.destroy()
 	
 		destroyElement(self.window)
@@ -73,7 +83,7 @@ function ArenaCreateWindow.new()
 	
 		if source == self.closeButton then
 		
-			self.setVisible(false)
+			triggerEvent ( "onLobbyWindowClose", localPlayer )
 			
 		elseif source == self.createButton then
 		

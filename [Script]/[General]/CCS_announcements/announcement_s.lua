@@ -60,7 +60,7 @@ function Announcement.request()
 		
 	else
 	
-		local arena = getElementID(arenaElement, "name")
+		local arena = getElementData(arenaElement, "alias")
 	
 		local color = getElementData(arenaElement, "color") or "#ffffff"
 	

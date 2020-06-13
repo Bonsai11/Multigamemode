@@ -4,27 +4,11 @@ Spectator.active = false
 Spectator.target = nil
 bindKey("b", "down", "spectate")
 
-function Spectator.main()
-	
-	local arenaElement = getElementParent(localPlayer)
-	
-	if getElementData(arenaElement, "gamemode") ~= "Race" then return end
-	
-	addEventHandler("onClientFinishRace", source, Spectator.toggle)
-	addEventHandler("onClientPlayerWasted", source, Spectator.toggle)
-	
-end
-addEvent("onClientPlayerReady", true)
-addEventHandler("onClientPlayerReady", root, Spectator.main)
-
-
 function Spectator.reset()
 
 	exports["CCS_freecam"]:setFreecamDisabled()
 	Spectator.stop()
-	removeEventHandler("onClientFinishRace", source, Spectator.toggle)
-	removeEventHandler("onClientPlayerWasted", source, Spectator.toggle)
-	
+
 end
 addEvent("onClientArenaReset", true)
 addEventHandler("onClientArenaReset", root, Spectator.reset)
@@ -32,23 +16,27 @@ addEventHandler("onClientArenaReset", root, Spectator.reset)
 
 function Spectator.toggle()
 	
-	if source == localPlayer then
+	if source ~= localPlayer then
 
-		setCameraMatrix(getCameraMatrix())
-		
-		Spectator.startTimer = setTimer(Spectator.start, 3000, 1)
-		
-		return
+		Spectator.dropCamera(source, 1000)
 		
 	end
 
-	Spectator.dropCamera(source, 1000)
-	
 end
-addEvent("onClientFinishRace", true)
+addEventHandler("onClientPlayerWasted", root, Spectator.toggle)
 
 
-function Spectator.start(hidden)
+function Spectator.start(instant)
+
+	if not instant then
+	
+		setCameraMatrix(getCameraMatrix())
+		
+		Spectator.startTimer = setTimer(Spectator.start, 3000, 1, true)
+
+		return
+		
+	end
 	
 	if Spectator.active then return end
 
@@ -59,7 +47,7 @@ function Spectator.start(hidden)
 	bindKey('arrow_l', 'down', Spectator.previous)
 	bindKey('arrow_r', 'down', Spectator.next)
 	
-	if not hidden and not getElementData(localPlayer, "racestate") then 
+	if not getElementData(localPlayer, "racestate") then 
 
 		setElementData(localPlayer, "state", "Spectating")
 		
@@ -75,7 +63,7 @@ addEventHandler("onClientRequestSpectatorMode", root, Spectator.start)
 
 
 function Spectator.stop()
-	
+
 	Spectator.cancelDropCamera()
 	if isTimer(Spectator.tickTimer) then killTimer(Spectator.tickTimer) end
 	if isTimer(Spectator.startTimer) then killTimer(Spectator.startTimer) end
@@ -87,7 +75,9 @@ function Spectator.stop()
 	Spectator.active = false
 
 end
+addEvent("onClientShowPodium", true)
 addEvent("onClientPlayerRespawn", true)
+addEventHandler("onClientShowPodium", root, Spectator.stop)
 addEventHandler("onClientPlayerRespawn", root, Spectator.stop)
 
 
@@ -281,7 +271,7 @@ function Spectator.adminSpectate()
 
 	if not Spectator.active then
 	
-		Spectator.start(true)
+		Spectator.start()
 		
 	else
 	
