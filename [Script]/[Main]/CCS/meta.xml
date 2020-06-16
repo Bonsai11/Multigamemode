@@ -132,9 +132,7 @@
     <include resource="CCS_scoreboard" />
     <include resource="CCS_nitro" />
     <include resource="CCS_reactiontest" />
-	<include resource="CCS_database" />
     <include resource="CCS_toptimes" />
-	<include resource="CCS_stats" />
 	<include resource="CCS_userpanel" />
 	<include resource="CCS_clanpack" />
 	<include resource="CCS_shooterkilldetection" />
@@ -147,7 +145,6 @@
 	<include resource="CCS_antispam" />	
 	<include resource="CCS_afkdetector" />	
 	<include resource="CCS_antispawnkill" />	
-	<include resource="CCS_logger" />	
 	<include resource="CCS_respawn" />
 	<include resource="CCS_lagreducer" />
 	<include resource="CCS_specs" />
